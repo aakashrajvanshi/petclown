@@ -6,7 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
+        "laravel/framework": "5.1.*",
+        "laravel/socialite": "^3.0@dev",
+        "intervention/image": "dev-master",
+        "illuminate/html": "^5.0@dev",
+        "cviebrock/image-validator": "2.0.*@beta"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
