@@ -33,6 +33,7 @@ elixir(function(mix) {
 
     mix.copy('resources/assets/plugins/font-awesome/fonts', 'public/assets/fonts');
     mix.copy('resources/assets/plugins/bootstrap/fonts', 'public/assets/fonts');
+    mix.copy('resources/assets/img','public/assets/img');
 
     mix.scripts([
         "../plugins/jquery/jquery.min.js",
