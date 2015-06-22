@@ -1,0 +1,190 @@
+/* Add here all your css styles (customizations) */
+.petition-to{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 200;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.thumb.petition-to{
+    margin: 10px 5px 5px 5px;
+}
+.petition-heading{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom:10px;
+}
+.thumb.petition-heading {
+    font-size: 24px;
+    margin:5px;
+}
+.petition-from{
+    font-size:14px;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom:12px;
+}
+.thumb.petition-from{
+    margin:5px;
+}
+
+.col{padding-right:6px;padding-left:6px;}
+.pan{padding-top:6px;}
+@media (max-width:700px) {
+    .sidebar.affix {
+        position: static;
+    }
+}
+
+@media (min-width:700px) {
+    .sidebar.affix {
+        top: 100px;
+    }
+}
+
+.sidebar{
+    width:320px;
+}
+.sidebar.affix-bottom{
+    position: absolute;
+}
+hr.mymargin{
+    margin: 15px 0px;
+}
+
+.divmargin{
+    margin:6px 12px;
+}
+.contentmargin{
+    width:100%;
+    padding: 10px 10px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.profileimagesm{
+    width:50px;
+    height:50px;
+    margin-right:10px;
+}
+.profileimagexs{
+    width:25px;
+    height:25px;
+    margin:6px;
+}
+
+.profileimagelg{
+    width:100px;
+    height:100px;
+    margin-right:15px;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.list-inline li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.my.service-block {
+    padding: 2px 3px;
+    margin-bottom: 2px;
+    margin-top:10px;
+}
+
+.my.col-xs-4 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/*
+* This section is for making css changes to core files of the theme
+*/
+i.icon-color-red {
+    color: #e74c3c !important;
+}
+span.right{
+    float: right;
+}
+.progress.goal{
+    height:10px;
+    margin-bottom:15px;
+}
+
+.stats{
+    font-size:35px;
+    font-weight: 200;
+}
+
+/*
+* End of Section for core file changes
+*/
+
+
+/*Change icons size here*/
+.my-social-icons .fa {
+    font-size: 1.8em;
+}
+/*Change icons circle size and color here*/
+.my-social-icons .fa {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFF;
+    color: rgba(255, 255, 255, 0.8);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.my-small-icon.my-social-icons .fa{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.5em;
+}
+
+
+.my-social-icons.icon-circle .fa{
+    border-radius: 50%;
+}
+.my-social-icons.icon-rounded .fa{
+    border-radius:5px  !important;
+}
+.my-social-icons.icon-flat .fa{
+    border-radius: 0;
+}
+
+.my-social-icons .fa:hover, .my-social-icons .fa:active {
+    color: #FFF;
+    -webkit-box-shadow: 1px 1px 3px #333;
+    -moz-box-shadow: 1px 1px 3px #333;
+    box-shadow: 1px 1px 3px #333;
+}
+.my-social-icons.icon-zoom .fa:hover, .my-social-icons.icon-zoom .fa:active {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.shareit{
+    font-size: 30px;
+    font-weight: 500;
+    font-variant: small-caps;
+}
+
+.my-social-icons .fa-facebook,.my-social-icons .fa-facebook-square{background-color:#3C599F;}
+.my-social-icons .fa-github,.my-social-icons .fa-github-alt,.my-social-icons .fa-github-square{background-color:#070709;}
+.my-social-icons .fa-google-plus,.my-social-icons .fa-google-plus-square{background-color:#CF3D2E;}
+.my-social-icons .fa-linkedin,.my-social-icons .fa-linkedin-square{background-color:#0085AE;}
+.my-social-icons .fa-tumblr,.my-social-icons .fa-tumblr-square{background-color:#314E6C;}
+.my-social-icons .fa-twitter,.my-social-icons .fa-twitter-square{background-color:#32CCFE;}

@@ -1,0 +1,43 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+
+Route::get('/', 'PagesController@home');
+Route::get('/home', 'PagesController@home');
+
+Route::get('petition/create',['middleware' => 'auth', 'uses' => 'PetitionController@create']);
+Route::post('petition/create',['middleware' => 'auth', 'uses' => 'PetitionController@store']);
+Route::get('petition/{id}','PetitionController@show');
+Route::get('petitions','PetitionController@index');
+
+Route::post('comment',['middleware' => 'auth', 'uses' => 'CommentController@store']);
+
+//profile resource (authentication done inside the controller)
+Route::resource('profile', 'ProfileController');
+
+//like unlike comments
+Route::get('like/{id}',['middleware' => 'auth', 'uses' => 'CommentController@userlike']);
+Route::get('unlike/{id}',['middleware' => 'auth', 'uses' => 'CommentController@userunlike']);
+
+// Social authentication
+Route::get('oauth/{provider}','LoginController@oauth2provider');
+Route::get('callback/{provider}', 'LoginController@callback');
+
+/*
+ * Authentication Controller
+ * */
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
