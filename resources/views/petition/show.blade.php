@@ -139,8 +139,7 @@
                         {!! Form::Open(['url' => '/comment']) !!}
                         <!-- Content Form Input -->
                         <div class="form-group">
-                            {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'I support this
-                            petition because ...', 'rows'=>'5']) !!}
+                            {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'I support this petition because ...', 'rows'=>'5']) !!}
                             {!! Form::hidden('post_id', $petition->id) !!}
                         </div>
                         <!-- Content Form Input -->
