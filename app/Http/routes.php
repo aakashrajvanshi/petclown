@@ -22,6 +22,9 @@ Route::get('petitions','PetitionController@index');
 
 Route::post('comment',['middleware' => 'auth', 'uses' => 'CommentController@store']);
 
+//Route::resource('admin', 'AdminController');
+Route::resource('admin', 'AdminController');
+
 //profile resource (authentication done inside the controller)
 Route::resource('profile', 'ProfileController');
 
