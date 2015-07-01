@@ -5,24 +5,14 @@
 @stop
 
 @section('content')
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="well well-sm">
-                    <h1>Welcome Surya</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+        
 
     <!--Profile pic-->
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3 profile-pic">
-                <img class="img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
+            <div class="col-md-3 col-sm-2 profile-pic">
+                <img class="hidden-xs hidden-sm img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
 
                 <!--side navigation bar-->
 
@@ -88,8 +78,8 @@
                                 <input class="form-control" type="password" id="cnf-pwd" placeholder="Confirm Password">
                             </div>
                         </div>
-                        <button type="button" class="btn-u btn-u-default">Cancel</button>
-                        <button class="btn-u" type="submit">Save Changes</button>
+                        <button type="button" class="pull-right btn-u btn-u-default">Cancel</button>
+                        <button class="pull-right btn-u" type="submit">Save Changes</button>
                     </form>
                 </div>
 

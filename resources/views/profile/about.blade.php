@@ -10,24 +10,13 @@
     <!--my changes-->
 
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="well well-sm">
-                    <h1>Welcome Surya</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--Profile Pic and Sidebar-->
 
 
     <div class="container">
         <div class="row">
             <div class="col-md-3 profile-pic">
-                <img class="img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
+                <img class="hidden-xs hidden-sm img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
 
                 <!--Side navigation bar-->
 
@@ -44,7 +33,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 col-sm-12">
 
                 <!--Navigation in profile -->
 
@@ -58,7 +47,7 @@
 
                 <div class="profile-about">
                     <h1>About me</h1>
-                    <form class="form-horizontal email-form" role="form">
+                    <form class="form-horizontal profile-form" role="form">
                         <div class="form-group">
                             <label class="control-label col-md-3" for="name">
                                 Name:
@@ -116,8 +105,8 @@
                                 <input class="form-control" type="tel" id="ph-num">
                             </div>
                         </div>
-                        <button type="button" class="btn-u btn-u-default">Cancel</button>
-                        <button class="btn-u" type="submit">Save Changes</button>
+                        <button type="button" class="pull-right btn-u btn-u-default">Cancel</button>
+                        <button class="pull-right btn-u" type="submit">Save Changes</button>
                     </form>
 
                 </div>

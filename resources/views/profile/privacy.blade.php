@@ -11,22 +11,12 @@
 
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="well well-sm">
-                    <h1>Welcome Surya</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--Profile Pic and Sidebar-->
 
     <div class="container">
         <div class="row">
             <div class="col-md-3 profile-pic">
-                <img class="img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
+                <img class="hidden-xs hidden-sm img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
 
 
                 <!--side navigation bar-->
@@ -67,7 +57,7 @@
                         <dd>Who can see my profile?<span class="pull-right"><input type="checkbox" name="public" checked/> Public</span></dd>
                         <hr/>
                     </dl>
-                    <button class="btn-u" type="submit">Save Changes</button>
+                    <button class="pull-right btn-u" type="submit">Save Changes</button>
                 </div>
 
 
