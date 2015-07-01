@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
 
-    This is a admin page
+
 
     @stop
 
@@ -12,7 +12,7 @@
     <html>
     <body>
     <head>
-
+        <title>UserMessages</title>
         <style type="text/css">
             .titleContainer {
                 width: 100%;
@@ -74,18 +74,15 @@
                         <img class="img-responsive profile-img margin-bottom-0" src="http://cdn.tutorialspoint.com/images/free-training.jpg" alt="" width="220px" height="100px">
 
                         <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
-                            <li class="list-group-item active">
+                            <li class="list-group-item">
                                 <a href="admin"><i class="fa fa-bar-chart-o"></i>Petitions</a>
                             </li>
-
                             <li class="list-group-item">
-                                <a href="admin/admincomments"><i class="fa fa-group"></i>Comments</a>
+                                <a href="admin/admincomments"><i class="fa fa-group">Comments</i><span class="badge">10</span></a>
                             </li>
-                            <li class="list-group-item">
-                                <a href="admin/searchuser"><i class="fa fa-group"></i>User</a>
+                            <li class="list-group-item  active">
+                                <a href="admin/searchuser"><i class="fa fa-user"></i>User</a>
                             </li>
-
-                            
                         </ul>
 
 
@@ -110,25 +107,42 @@
 
                         <!--End Datepicker-->
                     </div>
-                    <div class="col-md-9 md-margin-bottom-60">
-                        <div class="titleContainer">
-                            <div class="userImgDiv col-sm-3">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 75px; height: 75px; vertical-align: top;">
-                                    <image xlink:href="http://cdn.tutorialspoint.com/images/free-training.jpg" preserveAspectRatio="xMidYMid" clip-path="url(#avatar-clip)" width="100%" height="px"></image>
-                                </svg>
-                            </div>
-                            <div class="greetingMsgL col-sm-6">Hello, <span id="username">Admin</span>!</div>
-                            <div class="greetingMsgR col-sm-3"><span id="TotalPetitions">0</span><span style="display: block;font-size: 17px;">Total Petitions</span></div>
+                    <div class="col-md-9 md-margin-bottom-40">
+                        <div class="tab-v1">
+                            <ul class="nav nav-justified nav-tabs">
+                                <li class="admin/searchuser"><a  href="admin/searchuser" aria-expanded="true">SearchUser</a></li>
+                                <li class=""><a  href="admin/blockuser" aria-expanded="false">BlockedUser</a></li>
+                                <li class="active"><a href="admin/useradmin" aria-expanded="false">Messages</a></li>
 
+                            </ul>
                         </div>
+                        <div class="security-settings">
+                            <h3>Send Messages To User</h3><br>
+                            <form class="form-horizontal email-form" role="form">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="email">
+                                        Email:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="email" id="email" placeholder="Enter User Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="pwd">
+                                        Message:
+                                    </label>
+                                    <div class="col-md-9">
+                                        <textarea style="margin: 0px; width: 550px; height: 112px;" placeholder="Enter Message"></textarea>
+                                    </div>
+                                </div>
 
-
-
-
-
-
-
-
+                                <div align="middle">
+                                    <button type="button" class="btn-u btn-u-default">Cancel</button>
+                                    <button class="btn-u" type="submit">Send Message</button></br>
+                                    <h4></h4>
+                                </div>
+                            </form>
+                        </div>
 
 
 
@@ -136,6 +150,14 @@
                         <br> <br>
 
 
+
+                    </div>
+                    <!--End Left Sidebar-->
+
+                    <!-- Profile Content -->
+
+                    <!-- End Profile Content -->
+                </div>
 
 
 
