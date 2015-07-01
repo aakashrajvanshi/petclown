@@ -57,7 +57,19 @@ class ProfileController extends Controller {
      */
     public function show($id)
     {
-        //
+        if($id=="about")
+        {
+            return view('profile.about');
+        }
+        elseif($id=="settings"){
+            return view('profile.settings');
+        }
+        elseif($id=="activities"){
+            return view('profile.activities');
+        }
+        elseif($id=="privacy"){
+            return view('profile.privacy');
+        }
     }
 
     /**
