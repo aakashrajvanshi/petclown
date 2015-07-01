@@ -29,8 +29,13 @@
     margin:5px;
 }
 
-.col{padding-right:6px;padding-left:6px;}
-.pan{padding-top:6px;}
+.col{
+    padding-right:6px;
+    padding-left:6px;
+}
+.pan{
+    padding-top:6px;
+}
 @media (max-width:700px) {
     .sidebar.affix {
         position: static;
@@ -105,9 +110,15 @@ hr.mymargin{
 /*
 * This section is for making css changes to core files of the theme
 */
+/*
 i.icon-color-red {
     color: #e74c3c !important;
 }
+*/
+.profile li.like i.icon-color-red{
+    color: #e74c3c;
+}
+
 span.right{
     float: right;
 }
@@ -124,7 +135,6 @@ span.right{
 /*
 * End of Section for core file changes
 */
-
 
 /*Change icons size here*/
 .my-social-icons .fa {

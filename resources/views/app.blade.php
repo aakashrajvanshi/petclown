@@ -95,6 +95,7 @@
             </div>
             <div class=col-md-4 col">
             @yield('sidebar')
+            </div>
         </div>
 
         <div class="row">
@@ -211,7 +212,6 @@
 <!--=== End Footer ===-->
 
 
-</div>
 <!-- JS Global Compulsory -->
 
 <script type="text/javascript" src="assets/js/all.js"></script>
