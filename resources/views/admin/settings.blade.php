@@ -75,17 +75,21 @@
 
                         <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
                             <li class="list-group-item active">
-                                <a href="admin"><i class="fa fa-bar-chart-o"></i>Petitions</a>
+                                <a href="admin"><i class="fa fa-bar-chart-o"></i>News</a>
                             </li>
-
+                            <li class="list-group-item">
+                                <a href="admin/editpetitions"><i class="fa fa-user"></i> Edit Petition</a>
+                            </li>
                             <li class="list-group-item">
                                 <a href="admin/admincomments"><i class="fa fa-group"></i>Comments</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="admin/searchuser"><i class="fa fa-group"></i>User</a>
+                                <a href="admin/adminprofilepage"><i class="fa fa-group"></i>Profile</a>
                             </li>
 
-                            
+                            <li class="list-group-item">
+                                <a href="admin/settings"><i class="fa fa-cog"></i> Settings</a>
+                            </li>
                         </ul>
 
 
@@ -110,31 +114,44 @@
 
                         <!--End Datepicker-->
                     </div>
-                    <div class="col-md-9 md-margin-bottom-60">
-                        <div class="titleContainer">
-                            <div class="userImgDiv col-sm-3">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 75px; height: 75px; vertical-align: top;">
-                                    <image xlink:href="http://cdn.tutorialspoint.com/images/free-training.jpg" preserveAspectRatio="xMidYMid" clip-path="url(#avatar-clip)" width="100%" height="px"></image>
-                                </svg>
-                            </div>
-                            <div class="greetingMsgL col-sm-6">Hello, <span id="username">Admin</span>!</div>
-                            <div class="greetingMsgR col-sm-3"><span id="TotalPetitions">0</span><span style="display: block;font-size: 17px;">Total Petitions</span></div>
+                    <div class="col-md-9 row margin-bottom-80">
+                        <div class="tab-v1">
+                            <ul class="nav nav-justified nav-tabs">
+                                <li class="active"><a  href="admin/settings" aria-expanded="true">Profiles</a></li>
+                                <li class=""><a  href="admin/changepassword" aria-expanded="false">Change Password</a></li>
+                                <li class=""><a href="#" aria-expanded="false">Others</a></li>
 
+                            </ul>
                         </div>
+                        <p style="margin-bottom: 30px"></p>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>No of petitions he supported</th>
+                                <th>Delete<th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Raju Bairi</td>
+                                <td>rajuiiit565@gmail.com</td>
+                                <td>3</td>
+                                <td><a class="btn btn-danger" href="#">
+                                        <i class="fa fa-trash-o fa-lg"></i> Delete</a></td>
+                            </tr>
+                            <tr>
+                                <td>Ramu</td>
+                                <td>ramu@gmail.com</td>
+                                <td>6</td>
+                                <td><a class="btn btn-danger" href="#">
+                                        <i class="fa fa-trash-o fa-lg"></i> Delete</a></td>
+                            </tr>
 
-
-
-
-
-
-
-
-
-
-
-
-                        <br> <br>
-
+                            </tbody>
+                        </table>
+                    </div>
 
 
 
