@@ -63,8 +63,8 @@ class PetitionController extends Controller {
         $petition->petition_to = $data['petition_to'];
         $petition->content = $data['content'];
         $petition->slug = str_slug($petition->heading, "-");
-        if (!empty($data['image'])) {
 
+        if (!empty($data['image'])) {
             $mytime = Carbon::now()->toTimeString();
             $fileName = $data['image']->getClientOriginalName();
             $fileName = $mytime . "-" . $fileName;
@@ -116,7 +116,7 @@ class PetitionController extends Controller {
         } else {
             $petition = Petition::where('slug', '=', $id)->firstorFail();
         }
-        $comments = $petition->comment()->latest()->paginate(3);
+        $comments = $petition->comment()->latest()->paginate(15);
         $comments->load('likedBy', 'user');
 
         if ($request->ajax()) {

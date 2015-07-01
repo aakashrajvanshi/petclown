@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', 'PagesController@home');
 Route::get('/home', 'PagesController@home');
 
@@ -39,7 +38,6 @@ Route::get('callback/{provider}', 'LoginController@callback');
 /*
  * Authentication Controller
  * */
-
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
