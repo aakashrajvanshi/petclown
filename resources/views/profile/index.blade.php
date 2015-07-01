@@ -10,23 +10,12 @@
                      <!--my changes-->
 
 
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="well well-sm">
-                                        <h1>Welcome Surya</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
                         <!--Profile Pic and Sidebar-->
 
                        <div class="container">
                            <div class="row">
-                               <div class="col-md-3 col-sm-3 col-xs-4 profile-pic">
-                                   <img class="img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
+                               <div class="col-md-3 profile-pic">
+                                   <img class="hidden-sm hidden-xs img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
 
                                    <!--side navigation bar-->
 
@@ -47,9 +36,15 @@
 
                                <!--Profile Information-->
 
-                               <div class="col-md-9 col-sm-9 col-xs-8">
+                               <div class="col-md-9 col-sm-12">
+
+                                   <ul class="nav nav-tabs">
+                                       <li class="active"><a href="profile/about">About</a></li>
+                                   </ul>
+
+
                                    <div class="profile-info">
-                                       <h2>About Surya Teja <a href="profile/about"><button class="btn-u pull-right" type="button">Edit</button></a></h2>
+                                       <h2>Profile</h2>
                                        <dl class="dl-horizontal">
                                            <dt><strong>Name </strong></dt>
                                            <dd>
@@ -82,6 +77,7 @@
                                            </dd>
                                            <hr>
                                        </dl>
+                                       <a class="pull-right" href="profile/about"><button class="btn-u" type="button">Edit</button></a>
                                    </div>
 
 
