@@ -47,7 +47,76 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        /** My Work*/
+        if($id=="editpetitions")
+        {
+            return view('admin.editpetitions');
+        }
+        else if($id=="mostviewed")
+        {
+            return view('admin.mostviewed');
+        }
+        else if($id=="mostsupport")
+        {
+            return view('admin.mostsupport');
+        }
+        else if($id=="settings")
+        {
+            return view('admin.settings');
+        }
+        else if($id=="changepassword")
+        {
+            return view('admin.changepassword');
+        }
+        else if($id=="practice")
+        {
+            return view('admin.practice');
+        }
+        else if($id=="adminprofilepage")
+        {
+            return view('admin.adminprofilepage');
+        }
+        else if($id=="addadmin")
+        {
+            return view('admin.addadmin');
+        }
+        else if($id=="adminmessages")
+        {
+            return view('admin.adminmessages');
+        }
+        else if($id=="admincomments")
+        {
+            return view('admin.admincomments');
+        }
+        else if($id=="adminapprovecomments")
+        {
+            return view('admin.adminapprovecomments');
+        }
+        else if($id=="admindeletecomments")
+        {
+            return view('admin.admindeletecomments');
+        }
+        else if($id=="adminspam")
+        {
+            return view('admin.adminspam');
+        }
+        else if($id=='adminflaggedcomments')
+        {
+            return view('admin.adminflaggedcomments');
+        }
+        else if($id=="useradmin")
+        {
+            return view('admin.useradmin');
+        }
+        else if($id=="searchuser")
+        {
+            return view('admin.searchuser');
+        }
+        else if($id=="blockuser")
+        {
+            return view('admin.blockuser');
+        }
+        /** Completed*/
     }
 
     /**
