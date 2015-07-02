@@ -45,13 +45,13 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <ul class="list-inline activity-list">
-                                <li class="col-md-2 pull-left"><i class="fa fa-thumbs-up fa-fw"></i><span class="activity-support">Supports</span></li>
-                                <li class="col-md-6 petition-headerLink"><i class="fa fa-external-link-square fa-fw"></i><a class="header-link" href="#">Rahulji, please have another interview with Arnab Goswami</a></li>
-                                <ul class="col-md-4 list-inline activity-list">
-                                <li class="share-on">Share on</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+                                <li class="col-md-2 pull-left"><i class="fa fa-thumbs-up fa-2x"></i><span class="activity-support">Supported</span></li>
+                                <li class="col-md-10 petition-headerLink"><i class="fa fa-external-link-square fa-2x"></i><a class="header-link" href="#">Rahulji, please have another interview with Arnab Goswami</a></li>
+                                <ul class="list-inline activity-list">
+                                    <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                                    <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                                    <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+                                    <li class="pull-right share-on">Please Share!</li>
                                 </ul>
                             </ul>
                         </div>
