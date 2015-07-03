@@ -6,7 +6,6 @@
     margin-top:10px;
     margin-bottom:10px;
 }
-
 .thumb.petition-to{
     margin: 10px 5px 5px 5px;
 }
@@ -378,36 +377,3 @@ span.right{
 .my-social-icons .fa-linkedin,.my-social-icons .fa-linkedin-square{background-color:#0085AE;}
 .my-social-icons .fa-tumblr,.my-social-icons .fa-tumblr-square{background-color:#314E6C;}
 .my-social-icons .fa-twitter,.my-social-icons .fa-twitter-square{background-color:#32CCFE;}
-
-
-
-
-
-
-
-/*My changes*/
-
-
-.tab-v1 .nav-tabs >.active > a, .tab-v1 .nav-tabs > .active > a:hover, .tab-v1 .nav-tabs > .active > a.focus {
-
-color : #fff;
-    border: none;
-    background: #1CB25C;
-
-}
-.tab-v1 .nav-tabs {
-    border: none;
-    background: none;
-    border-bottom: solid 2px #71BB2E;
-}
-.tab-v1 .nav-tabs >.active > a, .tab-v1 .nav-tabs > .active > a:hover, .tab-v1 .nav-tabs > .active > a.focus {
-    color: #fff;
-    border: none;
-    background: #62A945;
-}
-.tab-v1 .nav-tabs >.active > a, .tab-v1 .nav-tabs > .active > a:hover, .tab-v1 .nav-tabs > .active > a.focus {
-    color: #fff;
-    border: none;
-    background: #498B22;
-}
-

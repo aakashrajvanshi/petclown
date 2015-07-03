@@ -7,15 +7,6 @@
 @section('content')
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="well well-sm">
-                    <h1>Welcome Surya</h1>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!--profile Pic-->
 
@@ -23,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 profile-pic">
-                <img class="img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
+                <img class="hidden-xs hidden-sm img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
 
                 <!--side navigation bar-->
 
@@ -52,54 +43,16 @@
 
                 <div class="panel-group">
                     <div class="panel panel-default">
-                        <div class="panel-heading"><a href="http://surya.com/petition/rahulji-please-have-another-interview-with-arnab-goswami">Rahulji, please have another interview with Arnab Goswami</a></div>
                         <div class="panel-body">
-                            <div class="col-md-9">
-                                There had been a significant hoopla about Rahul Gandhi's famous talk with Mr. Arnab Goswami which some people called political suicide by then contender of the PM post.
-                            </div>
-                            <ul class="list-inline comment-list col-md-3">
-                                <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Panel Header</div>
-                        <div class="panel-body">
-                            <div class="col-md-9">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum.
-                            </div>
-                            <ul class="list-inline comment-list col-md-3">
-                                <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Panel Header</div>
-                        <div class="panel-body">
-                            <div class="col-md-9">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum.
-                            </div>
-                            <ul class="list-inline comment-list col-md-3">
-                                <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Panel Header</div>
-                        <div class="panel-body">
-                            <div class="col-md-9">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum.
-                            </div>
-                            <ul class="list-inline comment-list col-md-3">
-                                <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+                            <ul class="list-inline activity-list">
+                                <li class="col-md-2 pull-left"><i class="fa fa-thumbs-up fa-2x"></i><span class="activity-support">Supported</span></li>
+                                <li class="col-md-10 petition-headerLink"><i class="fa fa-external-link-square fa-2x"></i><a class="header-link" href="#">Rahulji, please have another interview with Arnab Goswami</a></li>
+                                <ul class="list-inline activity-list">
+                                    <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                                    <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                                    <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+                                    <li class="pull-right share-on">Please Share!</li>
+                                </ul>
                             </ul>
                         </div>
                     </div>

@@ -29,7 +29,6 @@
             <div class="col-md-9 col-sm-12">
 
                 <!--Navigation in profile -->
-
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="profile/about">Edit Profile</a></li>
                     <li><a href="profile/settings">Change Password</a></li>
