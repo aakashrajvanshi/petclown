@@ -27,7 +27,7 @@ class Petition extends Model
         return $this->belongsToMany('App\Models\User','user_support_petition')->withTimestamps();
     }
 
-    public function categories()
+    public function category()
     {
         return $this->belongsToMany('App\Models\Category');
     }

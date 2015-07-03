@@ -19,7 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->boolean('verified')->default(false);
             $table->string('emailtoken')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('/images/default/profile.jpg');
+            $table->boolean('ismale')->nullable();
+            $table->string('city',25)->nullable();
+            $table->string('country',25)->nullable();
+            $table->string('alternate_email',60)->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

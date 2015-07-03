@@ -14,6 +14,8 @@ use Session;
 use Image;
 use App\Models\Petition;
 use App\Models\Comment;
+use App\Models\Tag;
+use App\Models\Category;
 
 class PetitionController extends Controller {
 
@@ -44,7 +46,9 @@ class PetitionController extends Controller {
      */
     public function create()
     {
-        return view('petition.create');
+        $tags = Tag::lists('tag', 'id');
+        $category = Category::lists('category', 'id');
+        return view('petition.create', compact('tags','category'));
     }
 
     /**
@@ -97,6 +101,35 @@ class PetitionController extends Controller {
         $comment->petition_id = $petition->id;
         $comment->comment = "I have just created this petition. If you like it, please support it!";
         $comment->save();
+
+        foreach($data['tags'] as $tag)
+        {
+            $alltags = Tag::lists('id');
+            if($alltags->contains($tag)){
+                $petition->tags()->attach($tag);
+            }
+            else
+            {
+                $newtag = new Tag;
+                $newtag->tag = $tag;
+                $newtag->save();
+                $petition->tags()->attach($newtag->id);
+            }
+        }
+        foreach($data['category'] as $cat)
+        {
+            $allcats = Category::lists('id');
+            if($alltags->contains($cat)){
+                $petition->category()->attach($cat);
+            }
+            else
+            {
+                $newcat = new Category;
+                $newcat->category = $cat;
+                $newcat->save();
+                $petition->category()->attach($newcat->id);
+            }
+        }
 
         Session::flash('flash_message', 'Your petition has been created!');
 

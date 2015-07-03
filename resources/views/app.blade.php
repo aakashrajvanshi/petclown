@@ -13,6 +13,7 @@
 
     <!-- Web Fonts -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
 
     <!-- Combined Stylesheets -->
     <link rel="stylesheet" href="assets/css/all.css">
@@ -222,6 +223,8 @@
     });
 </script>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+@yield('footer')
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.js"></script>
 <script src="assets/plugins/html5shiv.js"></script>

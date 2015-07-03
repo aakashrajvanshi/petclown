@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\EditProfileRequest;
 use App\Http\Controllers\Controller;
 use Auth;
 
@@ -44,9 +45,19 @@ class ProfileController extends Controller {
      *
      * @return Response
      */
-    public function store()
+    public function store(EditProfileRequest $request)
     {
-        //
+        $data = $request->all();
+        $user = Auth::user();
+
+        $user->name = $data['name'];
+        $user->ismale = $data['gender'];
+        $user->alternate_email = $data['email'];
+        $user->city = $data['city'];
+        $user->country = $data['country'];
+
+        $user->save();
+        return redirect('profile');
     }
 
     /**
@@ -57,11 +68,11 @@ class ProfileController extends Controller {
      */
     public function show($id)
     {
-        if($id=="about")
-        {
-            return view('profile.about');
+        if($id=="edit") {
+            $user = Auth::user();
+            return view('profile.about', compact('user'));
         }
-        elseif($id=="settings"){
+        else if($id=="settings"){
             return view('profile.settings');
         }
         elseif($id=="activities"){
@@ -80,7 +91,7 @@ class ProfileController extends Controller {
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

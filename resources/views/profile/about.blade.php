@@ -1,17 +1,11 @@
 @extends('app')
 @section('title')
-    <title>Profile Homepage</title>
+    <title>Edit Profile for {{$user->name}}</title>
     <meta name="description" content="Profile of a funny guy or gal">
 @stop
 
 @section('content')
-
-
-    <!--my changes-->
-
-
     <!--Profile Pic and Sidebar-->
-
 
     <div class="container">
         <div class="row">
@@ -19,7 +13,6 @@
                 <img class="hidden-xs hidden-sm img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
 
                 <!--Side navigation bar-->
-
 
                 <ul class="list-group sidebar-nav">
                     <li class="list-group-item">
@@ -46,15 +39,24 @@
                 <!--Edit Profile Page-->
 
                 <div class="profile-about">
+
+                    @if($errors->any())
+                        <ul class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+
                     <h1>About me</h1>
-                    <form class="form-horizontal profile-form" role="form">
+                    <form class="form-horizontal profile-form" role="form" action="/profile" method="POST">
                         <div class="form-group">
                             <label class="control-label col-md-3" for="name">
                                 Name:
                             </label>
                             <div class="col-md-9 input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                                <input class="form-control" type="text" id="name" placeholder="Name">
+                                <input class="form-control" type="text" name="name" value="{{$user->name}}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -63,46 +65,49 @@
                             </label>
                             <div class="col-md-9 input-group">
                                 <span class="input-group-addon"><i class="fa fa-transgender fa-fw"></i></span>
-                                <select class="form-control" id="gender">
-                                    <option>Male</option>
-                                    <option>Female</option>
+                                <select class="form-control" name="gender">
+                                    @if(is_null($user->ismale))
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    @else
+                                        @if($user->ismale)
+                                        <option value="1" selected>Male</option>
+                                        <option value="0">Female</option>
+                                        @else
+                                        <option value="1">Male</option>
+                                        <option value="0" selected>Female</option>
+                                        @endif
+                                    @endif
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3" for="DOB">
-                                Date of Birth:
-                            </label>
-                            <div class="col-md-9 input-group">
-                                <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-                                <input class="form-control" type="date" id="DOB">
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <label class="control-label col-md-3" for="city">
                                 City:
                             </label>
                             <div class="col-md-9 input-group">
                                 <span class="input-group-addon"><i class="fa fa-home fa-fw"></i></span>
-                                <input class="form-control" type="text" id="city">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3" for="email">
-                                Add additional emails:
-                            </label>
-                            <div class="col-md-9 input-group">
-                                <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
-                                <input class="form-control" type="text" id="email">
+                                <input class="form-control" type="text" name="city" value="{{$user->city}}">
+                                {!! csrf_field() !!}
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3" for="ph-num">
-                                Phone number:
+                                Country:
                             </label>
                             <div class="col-md-9 input-group">
                                 <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
-                                <input class="form-control" type="tel" id="ph-num">
+                                <input class="form-control" type="tel" name="country" value="{{$user->country}}">
+                            </div>
+                        </div>
+                          <div class="form-group">
+                            <label class="control-label col-md-3" for="email">
+                                Alternate email:
+                            </label>
+                            <div class="col-md-9 input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                                <input class="form-control" type="text" name="email" value="{{$user->alternate_email}}">
                             </div>
                         </div>
                         <button type="button" class="pull-right btn-u btn-u-default">Cancel</button>
