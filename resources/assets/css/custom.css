@@ -104,7 +104,7 @@ hr.mymargin{
 
 
 
-/*********************My CSS Styles *************************/
+/*************************************** Profile Page CSS Styles ***************************************/
 
 
 /* Sidebar Navigation styles */
@@ -198,16 +198,28 @@ form.form-horizontal.email-form {
 
 ul.activity-list li span.activity-support {
     font-size: medium;
+    border: 1px solid #72c02c;
+    padding: 5px;
+    color: white;
+    background-color: #72c02c;
 }
 
 ul.activity-list li a.header-link {
-    font-size: large;
+    font-size: x-large;
 }
 
 ul.activity-list li.share-on {
-    margin-left: 80px;
     margin-top: 5px;
     font-size: medium;
+    font-weight: bold;
+}
+
+.activity-list li i.fa.fa-thumbs-up.fa-2x {
+    padding-right: 5px;
+}
+
+.activity-list li i.fa.fa-external-link-square.fa-2x {
+    padding-right: 5px;
 }
 
 
@@ -277,6 +289,62 @@ ul.activity-list li.share-on {
     margin-top: 10px;
     margin-bottom: 40px;
 }
+
+.profile-info a button.btn-u {
+    padding: 3px 10px;
+}
+
+
+
+/*******************************Browse Petitions Page Styles*********************************************/
+
+.petition-from div.login-request {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+.login-request a button i.fa.fa-sign-in {
+    padding-left: 5px;
+}
+
+.support-request button i.fa.fa-thumbs-o-up {
+    padding-left: 5px;
+}
+
+.petition-from div.support-request {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+.petition-from ul.share-request {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+div.login-request a button.btn.btn-u {
+    padding: 3px 10px;
+}
+
+div.support-request button.btn.btn-u {
+    padding: 3px 10px;
+}
+
+
+.petition-from ul.share-request li i.fa.fa-facebook-square.fa-2x {
+    color: #3B5998;
+}
+
+.petition-from ul.share-request li i.fa.fa-twitter-square.fa-2x {
+    color: #55acee;
+}
+
+.petition-from ul.share-request li i.fa.fa-google-plus-square.fa-2x {
+    color: #dd4b39;
+}
+
 
 
 
