@@ -18,6 +18,7 @@
             statusbar : false,
             valid_elements : "a[href|target=_blank],strong/b,p,em/i,ol,ul,li,div[align],br,sup,sub,h3,h4,h5,h6,blockquote,code"
         });</script>
+
 @stop
 
 @section('content')
@@ -57,11 +58,38 @@
         {!! Form::textarea('content',null,['class' => 'form-control']) !!}
     </div>
 
+    <!-- 'Categories Select' Form Input -->
+
+    <div class="form-group">
+        {!! Form::label('category','Category:') !!}
+        {!! Form::select('category[]',$category,null,['id'=>'cat_list','class' => 'form-control', 'multiple']) !!}
+    </div>
+
+    <!-- 'Tags Select' Form Input -->
+    <div class="form-group">
+        {!! Form::label('tags','Tags:') !!}
+        {!! Form::select('tags[]',$tags,null,['id'=>'tag_list','class' => 'form-control', 'multiple']) !!}
+    </div>
+
     <!--Petition Submit Button-->
     <div class="form-group">
         {!! Form::submit('Submit Petition',['class' => 'btn btn-primary form-control']) !!}
     </div>
 
     {!! Form::Close() !!}
+
+@stop
+@section('footer')
+
+    <script type="text/javascript">
+        $('#tag_list').select2({
+            placeholder:'choose tags',
+            tags: true,
+        });
+        $('#cat_list').select2({
+            placeholder:'choose a category',
+            tags: true,
+        });
+    </script>
 
 @stop

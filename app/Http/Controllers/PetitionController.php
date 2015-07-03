@@ -14,6 +14,8 @@ use Session;
 use Image;
 use App\Models\Petition;
 use App\Models\Comment;
+use App\Models\Tag;
+use App\Models\Category;
 
 class PetitionController extends Controller {
 
@@ -44,7 +46,9 @@ class PetitionController extends Controller {
      */
     public function create()
     {
-        return view('petition.create');
+        $tags = Tag::lists('tag', 'id');
+        $category = Category::lists('category', 'id');
+        return view('petition.create', compact('tags','category'));
     }
 
     /**
@@ -63,8 +67,8 @@ class PetitionController extends Controller {
         $petition->petition_to = $data['petition_to'];
         $petition->content = $data['content'];
         $petition->slug = str_slug($petition->heading, "-");
-        if (!empty($data['image'])) {
 
+        if (!empty($data['image'])) {
             $mytime = Carbon::now()->toTimeString();
             $fileName = $data['image']->getClientOriginalName();
             $fileName = $mytime . "-" . $fileName;
@@ -98,6 +102,35 @@ class PetitionController extends Controller {
         $comment->comment = "I have just created this petition. If you like it, please support it!";
         $comment->save();
 
+        foreach($data['tags'] as $tag)
+        {
+            $alltags = Tag::lists('id');
+            if($alltags->contains($tag)){
+                $petition->tags()->attach($tag);
+            }
+            else
+            {
+                $newtag = new Tag;
+                $newtag->tag = $tag;
+                $newtag->save();
+                $petition->tags()->attach($newtag->id);
+            }
+        }
+        foreach($data['category'] as $cat)
+        {
+            $allcats = Category::lists('id');
+            if($alltags->contains($cat)){
+                $petition->category()->attach($cat);
+            }
+            else
+            {
+                $newcat = new Category;
+                $newcat->category = $cat;
+                $newcat->save();
+                $petition->category()->attach($newcat->id);
+            }
+        }
+
         Session::flash('flash_message', 'Your petition has been created!');
 
         return redirect('petitions');
@@ -116,7 +149,7 @@ class PetitionController extends Controller {
         } else {
             $petition = Petition::where('slug', '=', $id)->firstorFail();
         }
-        $comments = $petition->comment()->latest()->paginate(3);
+        $comments = $petition->comment()->latest()->paginate(15);
         $comments->load('likedBy', 'user');
 
         if ($request->ajax()) {
