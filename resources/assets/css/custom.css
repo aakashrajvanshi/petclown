@@ -303,51 +303,24 @@ ul.activity-list li.share-on {
 
 /*******************************Browse Petitions Page Styles*********************************************/
 
-.petition-from div.login-request {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: larger;
+.petition-from div.login-request a {
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
-.login-request a button i.fa.fa-sign-in {
-    padding-left: 5px;
-}
 
 .support-request button i.fa.fa-thumbs-o-up {
     padding-left: 5px;
 }
 
-.petition-from div.support-request {
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: larger;
+.petition-from div.support-request a {
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .petition-from ul.share-request {
     margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: larger;
-}
-
-div.login-request a button.btn.btn-u {
-    padding: 3px 10px;
-}
-
-div.support-request button.btn.btn-u {
-    padding: 3px 10px;
-}
-
-
-.petition-from ul.share-request li i.fa.fa-facebook-square.fa-2x {
-    color: #3B5998;
-}
-
-.petition-from ul.share-request li i.fa.fa-twitter-square.fa-2x {
-    color: #55acee;
-}
-
-.petition-from ul.share-request li i.fa.fa-google-plus-square.fa-2x {
-    color: #dd4b39;
+    margin-bottom: 5px;
 }
 
 
