@@ -202,41 +202,38 @@ form.form-horizontal.email-form {
 
 
 ul.activity-list li span.activity-support {
-    font-size: medium;
     border: 1px solid #72c02c;
-    padding: 5px;
+    padding: 2px;
     color: white;
     background-color: #72c02c;
 }
 
+ul.activity-list li.pull-left {
+    margin-top: 4px;
+}
+
 ul.activity-list li a.header-link {
-    font-size: x-large;
+    font-size: larger;
 }
 
 ul.activity-list li.share-on {
     margin-top: 5px;
-    font-size: medium;
-    font-weight: bold;
+    padding-right: 0px;
 }
 
-.activity-list li i.fa.fa-thumbs-up.fa-2x {
+.activity-list li i.fa.fa-thumbs-up.fa-lg {
     padding-right: 5px;
 }
 
-.activity-list li i.fa.fa-external-link-square.fa-2x {
-    padding-right: 5px;
-}
-
-
-.activity-list li.pull-right i.fa.fa-facebook-square.fa-2x {
+.activity-list li i.fa.fa-facebook-square.fa-lg {
     color: #3B5998;
 }
 
-.activity-list li.pull-right i.fa.fa-twitter-square.fa-2x {
+.activity-list li i.fa.fa-twitter-square.fa-lg {
     color: #55acee;
 }
 
-.activity-list li.pull-right i.fa.fa-google-plus-square.fa-2x {
+.activity-list li i.fa.fa-google-plus-square.fa-lg {
     color: #dd4b39;
 }
 

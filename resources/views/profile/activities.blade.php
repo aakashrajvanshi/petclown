@@ -14,7 +14,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 profile-pic">
-                <img class="hidden-xs hidden-sm img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
+                <img class="hidden-sm hidden-xs img-responsive img-margin-bottom img-thumbnail" alt=""
+                     src=""
+                     width="100%">
 
                 <!--side navigation bar-->
 
@@ -26,7 +28,7 @@
                         <a href="profile/activities"><i class="fa fa-pencil fa-fw"></i> Activities</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="profile/about"><i class="fa fa-cog"></i> Settings</a>
+                        <a href="profile/edit"><i class="fa fa-cog"></i> Settings</a>
                     </li>
                 </ul>
             </div>
@@ -45,13 +47,13 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <ul class="list-inline activity-list">
-                                <li class="col-md-2 pull-left"><i class="fa fa-thumbs-up fa-2x"></i><span class="activity-support">Supported</span></li>
-                                <li class="col-md-10 petition-headerLink"><i class="fa fa-external-link-square fa-2x"></i><a class="header-link" href="#">Rahulji, please have another interview with Arnab Goswami</a></li>
+                                <li class="pull-left"><i class="fa fa-thumbs-up fa-lg"></i><span class="activity-support">Supported</span></li>
+                                <li class="petition-headerLink"><a class="header-link" href="#">Rahulji, please have another interview with Arnab Goswami</a></li>
                                 <ul class="list-inline activity-list">
-                                    <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-                                    <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-                                    <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-                                    <li class="pull-right share-on">Please Share!</li>
+                                    <li class="share-on">Please Share!</li>
+                                    <li><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus-square fa-lg"></i></a></li>
                                 </ul>
                             </ul>
                         </div>

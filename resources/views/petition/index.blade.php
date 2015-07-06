@@ -21,6 +21,22 @@
 
                         <div class="thumb petition-from"><img class="profileimagexs rounded-x"
                                                               src="{{$petition->user->avatar}}">{{$petition->user->name}}
+                            @if(Auth::guest())
+                                    <div class="login-request">
+                                        <a class="pull-right" href="{{url('/auth/login')}}">Sign this Petition</a>
+                                    </div>
+                            @elseif($petition->supportedby->contains(Auth::user()))
+                            <ul class="share-request list-inline">
+                                <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                                <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+                                <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                <li class="pull-right"><i class="fa fa-check-circle fa-fw"></i>Please Share!</li>
+                            </ul>
+                                @else
+                                <div class="support-request">
+                                    <a class="pull-right" href="#">Support this Petition</a>
+                                </div>
+                                @endif
                         </div>
 
 
