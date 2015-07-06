@@ -152,10 +152,13 @@ class PetitionController extends Controller {
         $comments = $petition->comment()->latest()->paginate(15);
         $comments->load('likedBy', 'user');
 
+        $tags = $petition->tags()->get();
+        $categories = $petition->category()->get();
+
         if ($request->ajax()) {
             return view('comments.list', array('petition' => $petition, 'comments' => $comments))->render();
         } else {
-            return view('petition.show', array('petition' => $petition, 'comments' => $comments));
+            return view('petition.show', array('petition' => $petition, 'comments' => $comments, 'tags' => $tags, 'categories' => $categories));
         }
     }
 

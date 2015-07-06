@@ -28,6 +28,13 @@
 .thumb.petition-from{
     margin:5px;
 }
+.petition-tags{
+    height:32px;
+    padding: 5px;
+    margin-top: 5px;
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+}
 
 .col{
     padding-right:6px;
@@ -157,17 +164,6 @@ hr.mymargin{
     margin-right: 5px;
 }
 
-.input-group input.form-control {
-    width: 97.5%;
-}
-
-select#gender {
-    width: 97.5%;
-}
-
-.profile-about form.profile-form button.pull-right.btn-u {
-    margin: 20px 0px 0px 10px;
-}
 
 
 
@@ -193,38 +189,21 @@ form.form-horizontal.email-form {
     margin-bottom: 200px;
 }
 
-.security-settings form.email-form button.pull-right.btn-u {
-    margin: 20px 0px 0px 10px;
-}
 
 
 /* Activity page Styles */
 
 
-ul.activity-list li span.activity-support {
-    font-size: medium;
-}
 
-ul.activity-list li a.header-link {
-    font-size: large;
-}
-
-ul.activity-list li.share-on {
-    margin-left: 80px;
-    margin-top: 5px;
-    font-size: medium;
-}
-
-
-.activity-list li.pull-right i.fa.fa-facebook-square.fa-2x {
+.comment-list li.pull-right i.fa.fa-facebook-square.fa-2x {
     color: #3B5998;
 }
 
-.activity-list li.pull-right i.fa.fa-twitter-square.fa-2x {
+.comment-list li.pull-right i.fa.fa-twitter-square.fa-2x {
     color: #55acee;
 }
 
-.activity-list li.pull-right i.fa.fa-google-plus-square.fa-2x {
+.comment-list li.pull-right i.fa.fa-google-plus-square.fa-2x {
     color: #dd4b39;
 }
 
@@ -270,17 +249,12 @@ ul.activity-list li.share-on {
 
 .profile-info h2 {
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .profile-info dl.dl-horizontal hr {
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-.profile-info a.pull-right {
-    margin-top: 10px;
-    margin-bottom: 40px;
 }
 
 
