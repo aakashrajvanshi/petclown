@@ -29,6 +29,14 @@
     margin:5px;
 }
 
+.petition-tags{
+    height:32px;
+    padding: 5px;
+    margin-top: 5px;
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+}
+
 .col{
     padding-right:6px;
     padding-left:6px;
