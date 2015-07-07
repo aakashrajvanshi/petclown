@@ -30,7 +30,7 @@
                                 <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
                                 <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
                                 <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-lg"></i></a></li>
-                                <li class="pull-right"><i class="fa fa-check-circle fa-fw"></i>Please Share!</li>
+                                <li class="pull-right"><i class="fa fa-check-circle fa-lg"></i>Supported</li>
                             </ul>
                                 @else
                                 <div class="support-request">
