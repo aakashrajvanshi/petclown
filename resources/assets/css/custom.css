@@ -329,7 +329,7 @@ ul.activity-list li.share-on {
 /************************************END OF PETITION PAGE STYLES**********************************/
 
 
-/*************************************  HOME PAGE STYLES *******************************************/
+/*************************************  HOME PAGE STYLES ******************************************/
 
 
 div.home-jumbotron {
@@ -338,29 +338,47 @@ div.home-jumbotron {
     margin-bottom: 30px;
 }
 
-div.home-petitions hr {
-    margin-top: 15px;
-    margin-bottom: 15px;
+.home-petitions h2 {
+    margin-bottom: 0px;
 }
 
-div.new-petitions hr {
-    margin-top: 10px;
+.featured-petitions span.featured-header {
+    border-bottom: 2px solid #72c02c;
+}
+
+.popular-petitions span.popular-header {
+    border-bottom: 2px solid #72c02c;
+}
+
+.new-petitions span.latest-header {
+    border-bottom: 2px solid #72c02c;
+}
+
+
+div.home-petitions hr {
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.col-md-12.new-petitions {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+div.new-petitions hr {
+    margin-top: 1px;
+    margin-bottom: 15px;
 }
 
-.col-md-8.popular-petitions {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    margin-bottom: 50px;
+.col-md-8.petitions-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.col-md-12.popular-petitions {
+    margin-bottom: 5px;
+}
+
+.col-md-12.featured-petitions {
+    margin-bottom: 10px;
 }
 
 .col-md-12.home-image.home-jumbotron {
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 0 10px 6px -6px #777;
     width: 98.7%
 }
 
@@ -370,7 +388,7 @@ div.new-petitions hr {
 }
 
 .thumbnails.thumbnail-style {
-    height: 284px;
+    margin-bottom: 0px;
 }
 
 .thumbnail-style a img.img-responsive {
@@ -384,9 +402,16 @@ div.new-petitionList ul.list-inline.comment-list {
     height: 25px;
 }
 
-.popular-petitions button.btn.btn-u.pull-right {
-    padding: 5px;
+.thumbnail-body ul.list-inline.comment-list {
+    margin-bottom: 0px;
+    height: 25px;
+    padding-top: 10px;
+}
+
+a.pull-right.petition-browse {
     margin-bottom: 10px;
+    margin-top: 15px;
+    margin-right: 20px;
 }
 
 .thumbnail-body a.petition-link {
@@ -405,6 +430,9 @@ div.new-petitionList ul.list-inline.comment-list {
     color: #72c02c;
 }
 
+a.petition-link {
+    font-size: larger;
+}
 
 
 
