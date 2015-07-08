@@ -107,6 +107,9 @@ hr.mymargin{
 .bmargin-10{
     margin-bottom: 10px;
 }
+.petpanel{
+    margin: 15px 10px 0px 10px;
+}
 
 .my.service-block {
     padding: 2px 3px;
@@ -290,6 +293,9 @@ ul.activity-list li.share-on {
 .profile-info {
     margin-top: 25px;
     margin-bottom: 20px;
+}
+.verylight{
+    color:#9b9f9f;
 }
 
 .profile-info dl.dl-horizontal hr {

@@ -34,9 +34,10 @@ class PetitionController extends Controller {
      */
     public function index()
     {
-        $petitions = Petition::all()->sortByDesc('created_at');
 
-        return view('petition.index', compact('petitions'));
+        $petitions = Petition::all()->sortByDesc(function ($item){ return $item->supportedby()->count();});
+        $latest = Petition::all()->sortByDesc('created_at');
+        return view('petition.index', compact('petitions','latest'));
     }
 
     /**

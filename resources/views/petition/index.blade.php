@@ -5,71 +5,153 @@
 @stop
 
 @section('content')
-    <h1>Petition List</h1>
-    <hr/>
 
-    @foreach($petitions as $petition)
-        <div class="panel panel-default">
-            <div class="panel-body no-padding no-margin">
-                <div class="row  no-padding no-margin">
-                    <div class="col-xs-12 col-sm-5  no-padding no-margin">
-                        <img src="{{$petition->image_thumb}}" width="100%">
-                    </div>
-                    <div class="col-xs-12 col-sm-7 no-padding no-margin">
-                        <div class="thumb petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong></div>
-                        <h2 class="thumb petition-heading"><a href="petition/{{$petition->slug}}">{{$petition->heading}}</a></h2>
+    <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#popular" aria-controls="popular" role="tab"
+                                                      data-toggle="tab">Popular</a></li>
+            <li role="presentation"><a href="#latest" aria-controls="latest" role="tab" data-toggle="tab">Latest</a>
+            </li>
+        </ul>
+    </div>
+    <br>
 
-                        <div class="thumb petition-from"><img class="profileimagexs rounded-x"
-                                                              src="{{$petition->user->avatar}}">{{$petition->user->name}}
-                            @if(Auth::guest())
-                                    <div class="login-request">
-                                        <a class="pull-right" href="{{url('/auth/login')}}">Sign this Petition</a>
-                                    </div>
-                            @elseif($petition->supportedby->contains(Auth::user()))
-                            <ul class="share-request list-inline">
-                                <li class="pull-right"><a href="#"><i class="fa fa-facebook-square fa-lg"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-twitter-square fa-lg"></i></a></li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-google-plus-square fa-lg"></i></a></li>
-                                <li class="pull-right"><i class="fa fa-check-circle fa-lg"></i>Supported</li>
-                            </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="popular">
+            @foreach($petitions as $petition)
+                <div class="panel panel-default">
+                    <div class="panel-body no-padding no-margin">
+                        <div class="row  no-padding no-margin">
+                            <div class="col-xs-12 col-sm-5  no-padding no-margin">
+                                <img src="{{$petition->image_thumb}}" width="100%">
+                            </div>
+                            <div class="col-xs-12 col-sm-7 no-padding no-margin">
+                                <div class="thumb petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong>
+                                </div>
+                                <h2 class="thumb petition-heading"><a href="petition/{{$petition->slug}}">
+                                @if (strlen($petition->heading)>65)
+                                            {{substr($petition->heading,0,65)}}...
                                 @else
-                                <div class="support-request">
-                                    <a class="pull-right" href="#">Support this Petition</a>
-                                </div>
+                                        {{$petition->heading}}
                                 @endif
+                                </a></h2>
+                                <!--
+                                <div class="thumb petition-from"><img class="profileimagexs rounded-x"
+                                                                     src="{{$petition->user->avatar}}">{{$petition->user->name}}</div>
+                                -->
+                                <div class="thumb petition-from"><span class="verylight">By</span> {{$petition->user->name}}</div>
+                                <div class="petpanel">
+                                @if(Auth::guest())
+                                        <ul class="share-request list-inline">
+
+                                            <li class="pull-left verylight">{{count($petition->supportedby)}}
+                                                supporters
+                                            </li>
+                                            <li class="pull-right"><a href="{{url('/auth/login')}}">Sign this
+                                                    Petition</a></li>
+                                        </ul>
+                                    @elseif($petition->supportedby->contains(Auth::user()))
+                                        <ul class="share-request list-inline">
+
+                                            <li class="pull-left verylight">{{count($petition->supportedby)}} supporters
+                                            </li>
+                                            <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
+                                            </li>
+
+                                            <li class="pull-right"><a href="#"><i
+                                                            class="fa fa-facebook-square fa-lg"></i></a>
+                                            </li>
+                                            <li class="pull-right"><a href="#"><i
+                                                            class="fa fa-twitter-square fa-lg"></i></a>
+                                            </li>
+                                            <li class="pull-right"><a href="#"><i
+                                                            class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                            <li class="pull-right verylight">Share</li>
+
+                                        </ul>
+                                    @else
+                                        <ul class="share-request list-inline">
+                                            <li class="pull-left verylight">{{count($petition->supportedby)}} supporters
+                                            </li>
+                                            <li class="pull-right"><a href="petition/{{$petition->slug}}">Sign this
+                                                    Petition</a></li>
+                                        </ul>
+                                @endif
+                                </div>
+                            </div>
                         </div>
-
-
-
-                        <!--
-                        <ul class="my-small-icon my-social-icons icon-rounded icon-zoom list-unstyled list-inline">
-                            <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                        </ul>
-
-                        <div class="row">
-                            <div class="my col-xs-4">
-                                <div class="my service-block service-block-u">
-                                    A:
-                                </div>
-                            </div>
-                            <div class="my col-xs-4">
-                                <div class="my service-block service-block-blue">
-                                    B:
-                                </div>
-                            </div>
-                            <div class="my col-xs-4">
-                                <div class="my service-block service-block-red">
-                                    C:
-                                </div>
-                            </div>
-
-                        </div>
-                        -->
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-    @endforeach
+        <div role="tabpanel" class="tab-pane" id="latest">
+            @foreach($latest as $petition)
+                <div class="panel panel-default">
+                    <div class="panel-body no-padding no-margin">
+                        <div class="row  no-padding no-margin">
+                            <div class="col-xs-12 col-sm-5  no-padding no-margin">
+                                <img src="{{$petition->image_thumb}}" width="100%">
+                            </div>
+                            <div class="col-xs-12 col-sm-7 no-padding no-margin">
+                                <div class="thumb petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong>
+                                </div>
+                                <h2 class="thumb petition-heading"><a href="petition/{{$petition->slug}}">
+                                        @if (strlen($petition->heading)>65)
+                                            {{substr($petition->heading,0,65)}}...
+                                        @else
+                                            {{$petition->heading}}
+                                        @endif
+                                    </a></h2>
+                                <!--
+                                <div class="thumb petition-from"><img class="profileimagexs rounded-x"
+                                                                     src="{{$petition->user->avatar}}">{{$petition->user->name}}</div>
+                                -->
+                                <div class="thumb petition-from"><span class="verylight">By</span> {{$petition->user->name}}</div>
+                                <div class="petpanel">
+                                    @if(Auth::guest())
+                                        <ul class="share-request list-inline">
+
+                                            <li class="pull-left verylight">{{count($petition->supportedby)}}
+                                                supporters
+                                            </li>
+                                            <li class="pull-right"><a href="{{url('/auth/login')}}">Sign this
+                                                    Petition</a></li>
+                                        </ul>
+                                    @elseif($petition->supportedby->contains(Auth::user()))
+                                        <ul class="share-request list-inline">
+
+                                            <li class="pull-left verylight">{{count($petition->supportedby)}} supporters
+                                            </li>
+                                            <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
+                                            </li>
+
+                                            <li class="pull-right"><a href="#"><i
+                                                            class="fa fa-facebook-square fa-lg"></i></a>
+                                            </li>
+                                            <li class="pull-right"><a href="#"><i
+                                                            class="fa fa-twitter-square fa-lg"></i></a>
+                                            </li>
+                                            <li class="pull-right"><a href="#"><i
+                                                            class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                            <li class="pull-right verylight">Share</li>
+
+                                        </ul>
+                                    @else
+                                        <ul class="share-request list-inline">
+                                            <li class="pull-left verylight">{{count($petition->supportedby)}} supporters
+                                            </li>
+                                            <li class="pull-right"><a href="petition/{{$petition->slug}}">Sign this
+                                                    Petition</a></li>
+                                        </ul>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 @stop
