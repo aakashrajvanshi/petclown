@@ -54,8 +54,10 @@ class LoginController extends Controller
         $user->getNickname();
         $name = $user->getName();
         $email = $user->getEmail();
-        $avatar = $user->getAvatar();
-
+        if($provider=="google")
+            $avatar = $user->getAvatar()."&sz=250";
+        else
+            $avatar = $user->getAvatar();
         $this->user = User::updateOrCreate([
             'email' => $email,
         ], ['name' => $name, 'remember_token' => $token, 'verified'=>true, 'avatar' => $avatar]);

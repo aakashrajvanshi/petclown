@@ -25,6 +25,7 @@ class EditProfileRequest extends Request
     {
         return [
             'name' => 'required|min:3',
+            'image'=>'sometimes|required|image|mimes:jpeg,jpg,bmp,png,gif'
         ];
     }
 }

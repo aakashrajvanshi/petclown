@@ -93,7 +93,6 @@ class PetitionController extends Controller {
 
             $image->fit(320, 180)->save(user_photo_path() . $thumbnail);
             $petition->image_thumb = user_photo_path('db') . $thumbnail;
-
         }
         $petition->save();
         $comment = new Comment;

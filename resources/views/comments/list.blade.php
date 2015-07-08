@@ -6,7 +6,7 @@
         <div class="panel-body margin-bottom-50">
             @foreach ($comments as $comment)
                 <div class="media media-v2">
-                    <a class="pull-left" href="#">
+                    <a class="pull-left" href="/profile/{{$comment->user->id}}">
                         <img class="media-object rounded-x" src="{{$comment->user->avatar}}"
                              alt="{{$comment->user->name}}">
                     </a>
@@ -17,16 +17,16 @@
                                 @if($comment->anon)
                                     Anonymous
                                 @else
-                                    <a href="#">{{$comment->user->name}}</a>
+                                    <a href="/profile/{{$comment->user->id}}">{{$comment->user->name}}</a>
                                 @endif
                             </strong>
                             <small>{{$comment->created_at->diffForHumans()}}</small>
                         </h4>
                         <p>{{$comment->comment}}</p>
-                        <ul class="list-inline results-list pull-left">
+                        <ul class="list-inline pull-left">
                             <li id="likecount-{{$comment->id}}">{{count($comment->likedby)}} Likes</li>
                         </ul>
-                        <ul class="list-inline pull-right">
+                        <ul class="list-inline pull-right bmargin-10">
                             @if($comment->likedby->contains(Auth::user()))
                                 <li class="like" id="comment-{{$comment->id}}"><a href="/unlike/{{$comment->id}}"><i
                                                 class="expand-list rounded-x fa fa-heart icon-color-red"></i></a>
