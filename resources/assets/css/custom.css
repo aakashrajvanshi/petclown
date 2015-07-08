@@ -13,7 +13,7 @@
     text-align: center;
     font-size: 36px;
     font-weight: 500;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 .thumb.petition-heading {
     font-size: 24px;
@@ -186,8 +186,6 @@ select#gender {
 /* Password Change Styles */
 
 
-
-
 @media (min-width: 768px) {
     .form-horizontal .control-label {
         padding-top: 7px;
@@ -308,7 +306,7 @@ ul.activity-list li.share-on {
     padding: 3px 10px;
 }
 
-
+/*******************************END OF PROFILE PAGE STYLES**************************/
 
 /*******************************Browse Petitions Page Styles*********************************************/
 
@@ -327,10 +325,93 @@ ul.activity-list li.share-on {
     margin-bottom: 5px;
 }
 
-.petition-from ul.share-request {
-    margin-top: 15px;
-    margin-bottom: 5px;
+.share-request li i.fa.fa-check-circle.fa-lg {
+    padding-right: 5px;
+    color: #72c02c;
 }
+
+/************************************END OF PETITION PAGE STYLES**********************************/
+
+
+/*************************************  HOME PAGE STYLES *******************************************/
+
+
+div.home-jumbotron {
+    height: 200px;
+    background-image: url('http://www.timelinecoverbanner.com/wp-content/uploads/2011/12/Ibanez-guitar-rocker.jpg');
+    margin-bottom: 30px;
+}
+
+div.home-petitions hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+div.new-petitions hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.col-md-12.new-petitions {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.col-md-8.popular-petitions {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    margin-bottom: 50px;
+}
+
+.col-md-12.home-image.home-jumbotron {
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+    width: 98.7%
+}
+
+.thumbnail-style div.thumbnail-body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.thumbnails.thumbnail-style {
+    height: 284px;
+}
+
+.thumbnail-style a img.img-responsive {
+    width: 200px;
+    height: 125px;
+}
+
+div.new-petitionList ul.list-inline.comment-list {
+    padding-top: 5px;
+    margin-bottom: 0px;
+    height: 25px;
+}
+
+.popular-petitions button.btn.btn-u.pull-right {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.thumbnail-body a.petition-link {
+    color: #555;
+}
+
+.new-petitionList a.petition-link {
+    color: #555;
+}
+
+.thumbnail-body a.petition-link:hover {
+    color: #72c02c;
+}
+
+.new-petitionList a.petition-link:hover {
+    color: #72c02c;
+}
+
+
+
+
 
 
 /*
