@@ -53,14 +53,16 @@
             message = "<a href=\"/like/" + commentid + "\"><i class=\"expand-list rounded-x fa fa-heart\"></i></a>";
             count--;
         }
+        document.getElementById("comment-"+commentid).innerHTML = message;
+        document.getElementById("likecount-"+commentid).innerHTML = count+" likes";
         $.ajax(
             {
                 url: myurl,
                 type: "get",
                 datatype: "html",
                 success: function(){
-                    document.getElementById("comment-"+commentid).innerHTML = message;
-                    document.getElementById("likecount-"+commentid).innerHTML = count+" likes";
+                    //document.getElementById("comment-"+commentid).innerHTML = message;
+                    //document.getElementById("likecount-"+commentid).innerHTML = count+" likes";
                 },
                 error: function(res){
                     if(res.responseText=="Unauthorized.")

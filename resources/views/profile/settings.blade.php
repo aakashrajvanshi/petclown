@@ -12,8 +12,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-2 profile-pic">
-                <img class="hidden-xs hidden-sm img-responsive img-margin-bottom img-thumbnail" alt="" src="https://yt3.ggpht.com/-M1lV1KfpjVs/AAAAAAAAAAI/AAAAAAAAAAA/8Prmck3pnfA/s100-c-k-no/photo.jpg" width="100%">
-
+                <img class="hidden-sm hidden-xs img-responsive img-margin-bottom img-thumbnail" alt="{{$user->name}}"
+                     src="{{$user->avatar}}"
+                     width="100%">
                 <!--side navigation bar-->
 
                 <ul class="list-group sidebar-nav">
@@ -24,21 +25,19 @@
                         <a href="profile/activities"><i class="fa fa-pencil fa-fw"></i> Activities</a>
                     </li>
                     <li class="list-group-item active">
-                        <a href="profile/about"><i class="fa fa-cog"></i> Settings</a>
+                        <a href="profile/edit"><i class="fa fa-cog"></i> Settings</a>
                     </li>
                 </ul>
             </div>
             <div class="col-md-9">
-
                 <!--Navigation in profile -->
                 <ul class="nav nav-tabs">
-                    <li><a href="profile/about">Edit Profile</a></li>
+                    <li><a href="profile/edit">Edit Profile</a></li>
                     <li class="active"><a href="profile/settings">Change Password</a></li>
                     <li><a href="profile/privacy">Privacy Settings</a></li>
                 </ul>
 
                 <!--Security Settings-->
-
                 <div class="security-settings">
                     <h1>Change Your Settings</h1>
                     <form class="form-horizontal email-form" role="form">

@@ -6,16 +6,14 @@
 
 @section('content')
 
-
-
     <!--profile Pic-->
 
 
     <div class="container">
         <div class="row">
             <div class="col-md-3 profile-pic">
-                <img class="hidden-sm hidden-xs img-responsive img-margin-bottom img-thumbnail" alt=""
-                     src=""
+                <img class="hidden-sm hidden-xs img-responsive img-margin-bottom img-thumbnail" alt="{{$user->name}}"
+                     src="{{$user->avatar}}"
                      width="100%">
 
                 <!--side navigation bar-->
@@ -43,7 +41,7 @@
 
 
 
-                <div class="panel-group">
+                <div class="panel-group pan">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <ul class="list-inline activity-list">

@@ -10,33 +10,37 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 profile-pic">
-                <img class="hidden-sm hidden-xs img-responsive img-margin-bottom img-thumbnail" alt="{{$user->name}}"
-                     src="{{$user->avatar}}"
-                     width="100%">
-
+                <div class="row">
+                    <div class="col-md-12 col-xs-6">
+                        <img class="img-responsive img-margin-bottom img-thumbnail" alt="{{$user->name}}"
+                        src="{{$user->avatar}}" width="100%">
+                    </div>
                 <!--side navigation bar-->
-
-                <ul class="list-group sidebar-nav">
-                    <li class="list-group-item active">
-                        <a href="profile"><i class="fa fa-user"></i> Profile</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="profile/activities"><i class="fa fa-pencil fa-fw"></i> Activities</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="profile/about"><i class="fa fa-cog"></i> Settings</a>
-                    </li>
-                </ul>
+                    <div class="col-md-12 col-xs-6">
+                        <ul class="list-group sidebar-nav">
+                            <li class="list-group-item active">
+                                <a href="profile"><i class="fa fa-user"></i> Profile</a>
+                            </li>
+                            <!--
+                            <li class="list-group-item">
+                                <a href="profile/activities"><i class="fa fa-pencil"></i> Activities</a>
+                            </li>
+                            -->
+                            <li class="list-group-item">
+                                <a href="profile/edit"><i class="fa fa-cog"></i> Edit Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <!--Profile Information-->
             <div class="col-md-9 col-sm-12">
 
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="profile/about">About</a></li>
+                    <li class="active"><a href="profile">Profile</a></li>
                 </ul>
 
                 <div class="profile-info">
-                    <h2>Profile</h2>
                     <dl class="dl-horizontal">
                         <dt><strong>Name </strong></dt>
                         <dd>
@@ -45,7 +49,7 @@
                         <hr>
                         <dt><strong>Gender</strong></dt>
                         <dd>
-                            {{is_null($user->ismale)?'Not Set':($user->ismale?'male':'female')}}
+                            {{is_null($user->ismale)?'Not Set':($user->ismale?'Male':'Female')}}
                         </dd>
                         <hr>
                         <dt><strong>City</strong></dt>
@@ -66,6 +70,11 @@
                         <dt><strong>Alternate Email</strong></dt>
                         <dd>
                             {{is_null($user->alternate_email)?'Not Set':$user->alternate_email}}
+                        </dd>
+                        <hr>
+                        <dt><strong>Profile Privacy</strong></dt>
+                        <dd>
+                            {{($user->private)?'Private':'Public'}}
                         </dd>
                         <hr>
                     </dl>

@@ -13,8 +13,8 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-            <div class="petition-from"><img class="profileimagexs rounded-x"
-                                            src="{{$petition->user->avatar}}">{{$petition->user->name}}</div>
+            <div class="petition-from"><a href="/profile/{{$petition->user->id}}"><img class="profileimagexs rounded-x"
+                                            src="{{$petition->user->avatar}}">{{$petition->user->name}}</a></div>
         </div>
     </div>
 @stop

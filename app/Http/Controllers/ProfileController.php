@@ -8,6 +8,9 @@ use App\Http\Requests;
 use App\Http\Requests\EditProfileRequest;
 use App\Http\Controllers\Controller;
 use Auth;
+use Carbon\Carbon;
+use Image;
+use App\Models\User;
 
 class ProfileController extends Controller {
 
@@ -55,7 +58,17 @@ class ProfileController extends Controller {
         $user->alternate_email = $data['email'];
         $user->city = $data['city'];
         $user->country = $data['country'];
+        if (!empty($data['image'])) {
+            $mytime = Carbon::now()->toTimeString();
+            $fileName = $data['image']->getClientOriginalName();
+            $fileName = $mytime . "-" . $fileName;
 
+            $image = Image::make($data['image']->getRealPath());
+            \File::exists(user_photo_path()) or \File::makeDirectory(user_photo_path());
+
+            $image->fit(250, 250)->save(user_photo_path() . $fileName);
+            $user->avatar = user_photo_path('db') . $fileName;
+        }
         $user->save();
         return redirect('profile');
     }
@@ -68,30 +81,56 @@ class ProfileController extends Controller {
      */
     public function show($id)
     {
-        if($id=="edit") {
-            $user = Auth::user();
-            return view('profile.about', compact('user'));
+        if (is_numeric($id)) {
+            $user = User::findorFail($id);
+        } else {
+            $user = User::where('slug', '=', $id)->firstorFail();
         }
-        else if($id=="settings"){
-            return view('profile.settings');
-        }
-        elseif($id=="activities"){
-            return view('profile.activities');
-        }
-        elseif($id=="privacy"){
-            return view('profile.privacy');
-        }
+        return view('profile.show',compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit()
     {
+        $user = Auth::user();
+        return view('profile.edit', compact('user'));
+    }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @return Response
+     */
+    public function privacy()
+    {
+        $user = Auth::user();
+        return view('profile.privacy', compact('user'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function update_privacy(Request $request)
+    {
+        $data = $request->all();
+        $user = Auth::user();
+        if(!empty($data['private']))
+        {
+            $user->private = true;
+            $user->save();
+        }
+        if(!empty($data['public']))
+        {
+            $user->private = false;
+            $user->save();
+        }
+        return redirect('profile');
     }
 
     /**
