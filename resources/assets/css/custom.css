@@ -9,6 +9,10 @@
 .thumb.petition-to{
     margin: 10px 5px 5px 5px;
 }
+.thumbnail-body .petition-to{
+    font-size: 14px;
+    margin: 5px 5px 5px 5px;
+}
 .petition-heading{
     text-align: center;
     font-size: 36px;
@@ -103,6 +107,9 @@ hr.mymargin{
     display: inline-block;
     padding-right: 5px;
     padding-left: 5px;
+}
+.myinline{
+    display: inline-block;
 }
 .bmargin-10{
     margin-bottom: 10px;
@@ -352,18 +359,9 @@ div.home-jumbotron {
     margin-bottom: 0px;
 }
 
-.featured-petitions span.featured-header {
+span.dotted-header {
     border-bottom: 2px solid #72c02c;
 }
-
-.popular-petitions span.popular-header {
-    border-bottom: 2px solid #72c02c;
-}
-
-.new-petitions span.latest-header {
-    border-bottom: 2px solid #72c02c;
-}
-
 
 div.home-petitions hr {
     margin-top: 0px;
@@ -384,10 +382,6 @@ div.new-petitions hr {
     margin-bottom: 5px;
 }
 
-.col-md-12.featured-petitions {
-    margin-bottom: 10px;
-}
-
 .col-md-12.home-image.home-jumbotron {
     width: 98.7%
 }
@@ -399,11 +393,6 @@ div.new-petitions hr {
 
 .thumbnails.thumbnail-style {
     margin-bottom: 0px;
-}
-
-.thumbnail-style a img.img-responsive {
-    width: 200px;
-    height: 125px;
 }
 
 div.new-petitionList ul.list-inline.comment-list {
@@ -419,33 +408,31 @@ div.new-petitionList ul.list-inline.comment-list {
 }
 
 a.pull-right.petition-browse {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 15px;
     margin-right: 20px;
 }
 
-.thumbnail-body a.petition-link {
-    color: #555;
+.thumbnail-body .petition-link a{
+    color: #555 !important;
+}
+.thumbnail-body .petition-link {
+    font-size: 16px;
+    text-align: center;
+}
+.new-petitionList .petition-link {
+    color: #555 !important;
+    font-size: 16px;
+    text-align: center;
 }
 
-.new-petitionList a.petition-link {
-    color: #555;
+.thumbnail-body .petition-link a:hover{
+    color: #72c02c !important;
 }
 
-.thumbnail-body a.petition-link:hover {
+.new-petitionList .petition-link:hover {
     color: #72c02c;
 }
-
-.new-petitionList a.petition-link:hover {
-    color: #72c02c;
-}
-
-a.petition-link {
-    font-size: larger;
-}
-
-
-
 
 
 /*

@@ -43,7 +43,7 @@ return [
 
     'facebook' => [
         'client_id' => '391650077697225',
-        'client_secret' => '543a265d31c0f935239ebfb20a917e14',
+        'client_secret' => '7da3f0515f58520b9dc316d30eada8a2',
         'redirect' => 'http://petclown.com/callback/facebook',
     ],
 
