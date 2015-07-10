@@ -20,6 +20,7 @@ elixir(function(mix) {
         "app.css",
         "style.css",
         "custom.css",
+        "custom2.css",
         "headers/header-v6.css",
         "footers/footer-default.css",
         "../plugins/animate.css",
