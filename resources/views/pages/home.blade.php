@@ -25,7 +25,7 @@
 
                     <h2 class="myinline"><span class="dotted-header">Popular Petitions</span></h2>
                     <a href="petitions#popular" class="pull-right petition-browse">Browse All</a>
-                    <hr/>
+                    <hr class="notopmargin"/>
                     @foreach($petitions as $petition)
                     <div class="col-md-4 col">
                         <div class="thumbnails thumbnail-style">
@@ -63,7 +63,7 @@
                 <div class="row">
                     <h2 class="myinline"><span class="dotted-header">Latest Petitions</span></h2>
                     <a href="petitions#latest" class="pull-right petition-browse">Browse All</a>
-                    <hr/>
+                    <hr class="notopmargin"/>
                     @foreach($latest as $petition)
                         <div class="col-md-4 col">
                             <div class="thumbnails thumbnail-style">
@@ -100,7 +100,7 @@
                 <div class="row">
                     <h2 class="myinline"><span class="dotted-header">Trending this week</span></h2>
                     <a href="petitions#trending" class="pull-right petition-browse">Browse All</a>
-                    <hr/>
+                    <hr class="notopmargin"/>
                     @foreach($trending as $petition)
                         <div class="col-md-4 col">
                             <div class="thumbnails thumbnail-style">
@@ -135,25 +135,26 @@
 
         <!---====== HomePage Right Container =====------>
         <div class="col-md-4">
-            <div class="col-md-12 new-petitions">
+            <div class="col-md-12">
                 <h2><span class="dotted-header">Latest Activity</span></h2>
-                <hr/>
+                <hr class="notopmargin"/>
                 @foreach($activity as $act)
                 <div class="latest-comment">
+                    <div class="supporter">
                     <a class="pull-left" href="/profile/{{$act->id}}">
                     <img class="rounded-x" src="{{$act->avatar}}" alt="{{$act->name}}">
                     </a>
-                    <h6><strong>{{$act->name}}</strong> has supported<small class="pull-right">{{$act->created_at->diffForHumans()}}</small></h6>
-                    <p>
-                        <a href="petition/{{$act->slug}}">
-                            @if (strlen($act->heading)>45)
-                                {{substr($act->heading,0,45)}}...
+                    <strong>{{$act->name}}</strong> has supported petition to <strong>{{$act->petition_to}}</strong></div><br>
+                    <a href="petition/{{$act->slug}}" class="activitysize">
+                            @if (strlen($act->heading)>65)
+                                {{substr($act->heading,0,65)}}...
                             @else
                                 {{$act->heading}}
                             @endif
-                        </a></p>
+                    </a>
+                    <small class="pull-right">{{$act->created_at}}</small><br>
                 </div>
-                <hr/>
+                <hr class="marginhr"/>
                 @endforeach
             </div>
         </div>

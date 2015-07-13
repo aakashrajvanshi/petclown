@@ -46,7 +46,7 @@ class PetitionController extends Controller {
             ->join('users', 'user_support_petition.user_id', '=', 'users.id')
             ->join('petitions', 'user_support_petition.petition_id', '=', 'petitions.id')
             ->orderBy('user_support_petition.created_at','desc')
-            ->select('users.id','users.name', 'users.avatar', 'petitions.heading', 'petitions.slug','user_support_petition.created_at')
+            ->select('users.id','users.name', 'users.avatar','petitions.petition_to', 'petitions.heading', 'petitions.slug','user_support_petition.created_at')
             ->take(10)->get();
         return view('petition.index', compact('petitions_all','latest_all','trending_all','activity'));
     }
