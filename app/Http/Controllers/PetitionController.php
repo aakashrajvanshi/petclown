@@ -34,13 +34,14 @@ class PetitionController extends Controller {
      */
     public function index()
     {
-        $petitions = Petition::with('supportedby')->get()->sortByDesc(function($item){ return $item->supportedby->count();});
-        $latest = Petition::all()->sortByDesc('created_at');
+        $petitions_all = Petition::with('supportedby')->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(15);
+        $latest_all = Petition::orderBy('created_at','desc')->paginate(3);
 
-        $trending = Petition::with(['supportedby' => function($query){
-                    $query->where('user_support_petition.created_at', '>=', Carbon::now()->subWeeks(1));
-                    }])->get()->sortByDesc(function($item){ return $item->supportedby->count();});
-        return view('petition.index', compact('petitions','latest','trending'));
+        $trending_all = Petition::with(['supportedby' => function($query){
+                    $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(3));
+                    }])->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(15);
+
+        return view('petition.index', compact('petitions_all','latest_all','trending_all'));
     }
 
     /**
@@ -152,7 +153,7 @@ class PetitionController extends Controller {
         } else {
             $petition = Petition::where('slug', '=', $id)->firstorFail();
         }
-        $comments = $petition->comment()->latest()->paginate(15);
+        $comments = $petition->comment()->latest()->paginate(4);
         $comments->load('likedBy', 'user');
 
         $tags = $petition->tags()->get();

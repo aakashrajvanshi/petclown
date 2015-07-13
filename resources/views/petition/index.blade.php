@@ -21,7 +21,7 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="popular">
-            @foreach($petitions as $petition)
+            @foreach($petitions_all as $petition)
                 <div class="panel panel-default">
                     <div class="panel-body no-padding no-margin">
                         <div class="row  no-padding no-margin">
@@ -86,9 +86,11 @@
                     </div>
                 </div>
             @endforeach
+
         </div>
+
         <div role="tabpanel" class="tab-pane" id="latest">
-            @foreach($latest as $petition)
+            @foreach($latest_all as $petition)
                 <div class="panel panel-default">
                     <div class="panel-body no-padding no-margin">
                         <div class="row  no-padding no-margin">
@@ -153,10 +155,11 @@
                     </div>
                 </div>
             @endforeach
+                {!! $latest_all->render() !!}
         </div>
 
         <div role="tabpanel" class="tab-pane" id="trending">
-            @foreach($trending as $petition)
+            @foreach($trending_all as $petition)
                 <div class="panel panel-default">
                     <div class="panel-body no-padding no-margin">
                         <div class="row  no-padding no-margin">
@@ -221,6 +224,7 @@
                     </div>
                 </div>
             @endforeach
+
         </div>
 
     </div>

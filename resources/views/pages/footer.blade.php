@@ -26,25 +26,21 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- Popular Petitions -->
                     <div class="posts">
-                        <div class="headline"><h2>Popular Petitions</h2></div>
+                        <div class="headline"><h2>Trending Petitions</h2></div>
+                        @foreach($trending->slice(0, 3) as $petition)
                         <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="http://petclown.com/images/Aakash%20Rajvanshi/11:44:20-rahul-gandhi.jpg" alt="" /></a></dt>
+                            <dt><a href="petition/{{$petition->slug}}"><img src="{{$petition->image_thumb}}" alt="{{$petition->petition_to}}"/></a></dt>
                             <dd>
-                                <p><a href="#"><h5 class="no-margin">To: Rahul Gandhi</h5>Rahulji, please have another interview with Arnab Goswami</a></p>
+                                <p><h5 class="footer-to">To: {{$petition->petition_to}}</h5><a href="petition/{{$petition->slug}}">
+                                    @if (strlen($petition->heading)>58)
+                                        {{substr($petition->heading,0,58)}}...
+                                    @else
+                                        {{$petition->heading}}
+                                    @endif
+                                    </a></p>
                             </dd>
                         </dl>
-                        <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="http://petclown.com/images/Aakash%20Rajvanshi/10:38:55-beach.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#"><h5 class="no-margin">To: Admin</h5>Another Petition with a long heading to see if the three line petition will look okay on user</a></p>
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="http://petclown.com/images/Aakash%20Rajvanshi/06:38:00-The_Lost_World_Jurassic_Park.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#"><h5 class="no-margin">To: Admin</h5>New Petition for testing the listing of petition</a></p>
-                            </dd>
-                        </dl>
+                        @endforeach
                     </div>
                     <!-- End Popular Petitions -->
                 </div><!--/col-md-4-->
@@ -54,24 +50,20 @@
                     <!-- Latest Petitions -->
                     <div class="posts">
                         <div class="headline"><h2>Latest Petitions</h2></div>
-                        <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#"><h5 class="no-margin">To: Admin</h5>Rahulji, please have another interview with Arnab Goswami</a></p>
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#"><h5 class="no-margin">To: Admin</h5>New Petition for testing the listing of petition</a></p>
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                            <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
-                            <dd>
-                                <p><a href="#"><h5 class="no-margin">To: Admin</h5>Another Funny Petition for Testing Purpose</a></p>
-                            </dd>
-                        </dl>
+                        @foreach($latest->slice(0, 3) as $petition)
+                            <dl class="dl-horizontal">
+                                <dt><a href="petition/{{$petition->slug}}"><img src="{{$petition->image_thumb}}" alt="{{$petition->petition_to}}"/></a></dt>
+                                <dd>
+                                    <p><h5 class="footer-to">To: {{$petition->petition_to}}</h5><a href="petition/{{$petition->slug}}">
+                                        @if (strlen($petition->heading)>58)
+                                            {{substr($petition->heading,0,58)}}...
+                                        @else
+                                            {{$petition->heading}}
+                                        @endif
+                                    </a></p>
+                                </dd>
+                            </dl>
+                        @endforeach
                     </div>
                     <!-- End Recent Blogs -->
                 </div><!--/col-md-4-->

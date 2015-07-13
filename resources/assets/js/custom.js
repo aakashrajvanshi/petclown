@@ -1,4 +1,5 @@
 /* Write here your custom javascript codes */
+
 (function(){
     $('form[data-remote]').on('submit', function(e){
         var form = $(this);
@@ -15,7 +16,7 @@
         e.preventDefault();
     });
 
-    $(document).on('click', '.pagination a', function(e){
+    $(document).on('click', '.comment-body .pagination a', function(e){
         var myurl = $(this).attr('href');
         $.ajax(
             {
@@ -77,4 +78,19 @@
 })();
 
 $('div.alert').not('.alert-important').delay(2500).slideUp();
+
+$(function(){
+    var hash = window.location.hash;
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+    $('.nav-tabs a').click(function (e) {
+        $(this).tab('show');
+        var scrollmem = $('body').scrollTop();
+        window.location.hash = this.hash;
+        $('html,body').scrollTop(scrollmem);
+    });
+});
+
+
+
 

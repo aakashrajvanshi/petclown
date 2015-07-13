@@ -32,7 +32,7 @@
                             <a href="petition/{{$petition->slug}}">
                                 <img class="img-responsive"
                                      src="{{$petition->image_thumb}}"
-                                     alt="">
+                                     alt="{{$petition->petition_to}}">
                             </a>
 
                             <div class="thumbnail-body">
@@ -70,7 +70,7 @@
                                 <a href="petition/{{$petition->slug}}">
                                     <img class="img-responsive"
                                          src="{{$petition->image_thumb}}"
-                                         alt="">
+                                         alt="{{$petition->petition_to}}">
                                 </a>
 
                                 <div class="thumbnail-body">
@@ -107,7 +107,7 @@
                                 <a href="petition/{{$petition->slug}}">
                                     <img class="img-responsive"
                                          src="{{$petition->image_thumb}}"
-                                         alt="">
+                                         alt="{{$petition->petition_to}}">
                                 </a>
 
                                 <div class="thumbnail-body">
@@ -136,7 +136,7 @@
         <!---====== HomePage Right Container =====------>
         <div class="col-md-4">
             <div class="col-md-12 new-petitions">
-                <h2><span class="dotted-header">Latest Petitions</span></h2>
+                <h2><span class="dotted-header">Latest Activity</span></h2>
                 <hr/>
                 <div class="new-petitionList">
                     <div class="overflow-h">

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Petition;
 use Carbon\Carbon;
+use DB;
 
 
 class PagesController extends Controller {
@@ -19,12 +20,15 @@ class PagesController extends Controller {
      */
     public function home()
     {
-        //$petitions = Petition::all()->sortByDesc(function ($item){ return $item->supportedby()->count();})->take(3);
-        $petitions = Petition::with('supportedby')->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
-        $latest = Petition::all()->sortByDesc('created_at')->take(3);
-        $trending = Petition::with(['supportedby' => function($query){
-            $query->where('user_support_petition.created_at', '>=', Carbon::now()->subWeeks(1));
-            }])->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
-        return view('pages.home', compact('petitions','latest','trending'));
+        /* moved to AppServiceProvider.php*/
+
+        $activity = DB::table('user_support_petition')
+            ->join('users', 'user_support_petition.user_id', '=', 'users.id')
+            ->join('petitions', 'user_support_petition.petition_id', '=', 'petitions.id')
+            ->orderBy('user_support_petition.created_at','desc')
+            ->select('users.id','users.name', 'users.avatar', 'petitions.heading', 'petitions.slug','user_support_petition.created_at')
+            ->take(10)->get();
+        dd($activity);
+        return view('pages.home',compact('activity'));
     }
 }

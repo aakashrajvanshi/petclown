@@ -1,4 +1,4 @@
-<div class="profile profile-body">
+<div class="profile profile-body comment-body">
     <div class="panel panel-profile">
         <div class="panel-heading overflow-h">
             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-comments"></i>Reasons for Signing</h2>
