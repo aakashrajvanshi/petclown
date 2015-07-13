@@ -1,1 +1,21 @@
 /*Another file to avoid merge conflicts*/
+
+/***********Home Page Styles ****************/
+
+/************ Latest Activity Styles **********/
+
+
+.latest-comment a img.rounded-x {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.latest-comment p a {
+    color: #555;
+}
+
+.latest-comment p a:hover {
+    color: #72c02c;
+}
+

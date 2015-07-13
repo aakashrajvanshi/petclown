@@ -24,7 +24,7 @@
                 <div class="row">
 
                     <h2 class="myinline"><span class="dotted-header">Popular Petitions</span></h2>
-                    <a href="#" class="pull-right petition-browse">Browse All</a>
+                    <a href="petitions#popular" class="pull-right petition-browse">Browse All</a>
                     <hr/>
                     @foreach($petitions as $petition)
                     <div class="col-md-4 col">
@@ -62,7 +62,7 @@
             <div class="col-md-12 popular-petitions">
                 <div class="row">
                     <h2 class="myinline"><span class="dotted-header">Latest Petitions</span></h2>
-                    <a href="#" class="pull-right petition-browse">Browse All</a>
+                    <a href="petitions#latest" class="pull-right petition-browse">Browse All</a>
                     <hr/>
                     @foreach($latest as $petition)
                         <div class="col-md-4 col">
@@ -99,7 +99,7 @@
             <div class="col-md-12 popular-petitions">
                 <div class="row">
                     <h2 class="myinline"><span class="dotted-header">Trending this week</span></h2>
-                    <a href="#" class="pull-right petition-browse">Browse All</a>
+                    <a href="petitions#trending" class="pull-right petition-browse">Browse All</a>
                     <hr/>
                     @foreach($trending as $petition)
                         <div class="col-md-4 col">
@@ -138,66 +138,23 @@
             <div class="col-md-12 new-petitions">
                 <h2><span class="dotted-header">Latest Activity</span></h2>
                 <hr/>
-                <div class="new-petitionList">
-                    <div class="overflow-h">
-                        <a class="petition-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                        <ul class="list-inline comment-list">
-                            <li><i class="fa fa-heart"></i> <a href="#">23</a></li>
-                            <li><i class="fa fa-comments"></i> <a href="#">5</a></li>
-                        </ul>
-                    </div>
+                @foreach($activity as $act)
+                <div class="latest-comment">
+                    <a class="pull-left" href="/profile/{{$act->id}}">
+                    <img class="rounded-x" src="{{$act->avatar}}" alt="{{$act->name}}">
+                    </a>
+                    <h6><strong>{{$act->name}}</strong> has supported<small class="pull-right">{{$act->created_at->diffForHumans()}}</small></h6>
+                    <p>
+                        <a href="petition/{{$act->slug}}">
+                            @if (strlen($act->heading)>45)
+                                {{substr($act->heading,0,45)}}...
+                            @else
+                                {{$act->heading}}
+                            @endif
+                        </a></p>
                 </div>
                 <hr/>
-                <div class="new-petitionList">
-                    <div class="overflow-h">
-                        <a class="petition-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                        <ul class="list-inline comment-list">
-                            <li><i class="fa fa-heart"></i> <a href="#">23</a></li>
-                            <li><i class="fa fa-comments"></i> <a href="#">5</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr/>
-                <div class="new-petitionList">
-                    <div class="overflow-h">
-                        <a class="petition-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                        <ul class="list-inline comment-list">
-                            <li><i class="fa fa-heart"></i> <a href="#">23</a></li>
-                            <li><i class="fa fa-comments"></i> <a href="#">5</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr/>
-                <div class="new-petitionList">
-                    <div class="overflow-h">
-                        <a class="petition-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                        <ul class="list-inline comment-list">
-                            <li><i class="fa fa-heart"></i> <a href="#">23</a></li>
-                            <li><i class="fa fa-comments"></i> <a href="#">5</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr/>
-                <div class="new-petitionList">
-                    <div class="overflow-h">
-                        <a class="petition-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                        <ul class="list-inline comment-list">
-                            <li><i class="fa fa-heart"></i> <a href="#">23</a></li>
-                            <li><i class="fa fa-comments"></i> <a href="#">5</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr/>
-                <div class="new-petitionList">
-                    <div class="overflow-h">
-                        <a class="petition-link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                        <ul class="list-inline comment-list">
-                            <li><i class="fa fa-heart"></i> <a href="#">23</a></li>
-                            <li><i class="fa fa-comments"></i> <a href="#">5</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr/>
+                @endforeach
             </div>
         </div>
 
