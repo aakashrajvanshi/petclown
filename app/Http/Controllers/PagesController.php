@@ -29,6 +29,11 @@ class PagesController extends Controller {
             ->select('users.id','users.name', 'users.avatar', 'petitions.petition_to','petitions.heading', 'petitions.slug','user_support_petition.created_at')
             ->take(10)->get();
 
+        foreach($activity as $act)
+        {
+            $act->created_at = Carbon::parse($act->created_at);
+        }
+
         return view('pages.home',compact('activity'));
     }
 }
