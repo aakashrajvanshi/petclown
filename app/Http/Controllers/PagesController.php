@@ -28,7 +28,7 @@ class PagesController extends Controller {
             ->orderBy('user_support_petition.created_at','desc')
             ->select('users.id','users.name', 'users.avatar', 'petitions.heading', 'petitions.slug','user_support_petition.created_at')
             ->take(10)->get();
-        dd($activity);
+        
         return view('pages.home',compact('activity'));
     }
 }
