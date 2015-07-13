@@ -16,6 +16,7 @@ use App\Models\Petition;
 use App\Models\Comment;
 use App\Models\Tag;
 use App\Models\Category;
+use DB;
 
 class PetitionController extends Controller {
 
@@ -34,14 +35,20 @@ class PetitionController extends Controller {
      */
     public function index()
     {
-        $petitions_all = Petition::with('supportedby')->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(15);
-        $latest_all = Petition::orderBy('created_at','desc')->paginate(3);
-
+        $petitions_all = Petition::with('supportedby')->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(12);
+        $latest_all = Petition::orderBy('created_at','desc')->paginate(12);
         $trending_all = Petition::with(['supportedby' => function($query){
                     $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(3));
-                    }])->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(15);
+                    }])->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(12);
 
-        return view('petition.index', compact('petitions_all','latest_all','trending_all'));
+        $trending_all->load('supportedby');
+        $activity = DB::table('user_support_petition')
+            ->join('users', 'user_support_petition.user_id', '=', 'users.id')
+            ->join('petitions', 'user_support_petition.petition_id', '=', 'petitions.id')
+            ->orderBy('user_support_petition.created_at','desc')
+            ->select('users.id','users.name', 'users.avatar', 'petitions.heading', 'petitions.slug','user_support_petition.created_at')
+            ->take(10)->get();
+        return view('petition.index', compact('petitions_all','latest_all','trending_all','activity'));
     }
 
     /**
