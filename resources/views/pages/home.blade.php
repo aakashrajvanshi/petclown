@@ -139,21 +139,30 @@
                 <h2><span class="dotted-header">Latest Activity</span></h2>
                 <hr class="notopmargin"/>
                 @foreach($activity as $act)
-                <div class="latest-comment">
-                    <div class="supporter">
-                    <a class="pull-left" href="/profile/{{$act->id}}">
-                    <img class="rounded-x" src="{{$act->avatar}}" alt="{{$act->name}}">
-                    </a>
-                    <strong>{{$act->name}}</strong> has supported petition to <strong>{{$act->petition_to}}</strong></div><br>
-                    <a href="petition/{{$act->slug}}" class="activitysize">
-                            @if (strlen($act->heading)>65)
-                                {{substr($act->heading,0,65)}}...
-                            @else
-                                {{$act->heading}}
-                            @endif
-                    </a>
-                    <small class="pull-right">{{$act->created_at}}</small><br>
-                </div>
+                    <div class="media media-v2">
+                        <a class="pull-left" href="/profile/{{$act->id}}">
+                            <img class="rounded-x" src="{{$act->avatar}}" alt="{{$act->name}}">
+                        </a>
+
+                        <div class="media-body">
+                            <span class="media-heading">
+                                {{$act->name}}  <span class="verylight">supported</span>
+                                <small class="pull-right">{{$act->created_at->diffForHumans()}}</small>
+                            </span>
+                            <p>
+                                <a href="petition/{{$act->slug}}">
+                                @if (strlen($act->heading)>58)
+                                    {{substr($act->heading,0,58)}}...
+                                @else
+                                    {{$act->heading}}
+                                @endif
+                                </a>
+                                <span class="verylight">(To: </span>{{$act->petition_to}})
+                            </p>
+                        </div>
+                    </div>
+
+
                 <hr class="marginhr"/>
                 @endforeach
             </div>

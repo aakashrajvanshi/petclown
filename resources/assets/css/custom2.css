@@ -5,17 +5,30 @@
 /************ Latest Activity Styles **********/
 
 
-.latest-comment a img.rounded-x {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
+.media a img.rounded-x {
+    width: 50px;
+    height: 50px;
+    cursor: hand;
 }
 
-.latest-comment p a {
+.media p a {
     color: #555;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.latest-comment p a:hover {
+.media p a:hover {
     color: #72c02c;
+    cursor: pointer;
 }
+
+span.media-heading {
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.media-body p {
+    margin-top: 5px;
+}
+
 
