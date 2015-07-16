@@ -7,7 +7,7 @@
     @section('content')
 
             <!--Profile Pic and Sidebar-->
-    <div class="container">
+
         <div class="row">
             @if($user->private)
                 <br/><br/><br>
@@ -53,5 +53,4 @@
             </div>
             @endif
         </div>
-    </div>
 @stop

@@ -7,7 +7,7 @@
 @section('content')
 
     <!--Profile Pic and Sidebar-->
-    <div class="container">
+
         <div class="row">
             <div class="col-md-3 profile-pic">
                 <div class="row">
@@ -16,6 +16,7 @@
                         src="{{$user->avatar}}" width="100%">
                     </div>
                 <!--side navigation bar-->
+
                     <div class="col-md-12 col-xs-6">
                         <ul class="list-group sidebar-nav">
                             <li class="list-group-item active">
@@ -86,6 +87,5 @@
 
             </div>
         </div>
-    </div>
 
 @stop

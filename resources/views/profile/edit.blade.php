@@ -7,7 +7,6 @@
     @section('content')
             <!--Profile Pic and Sidebar-->
 
-    <div class="container">
         <div class="row">
             <div class="col-md-3 profile-pic">
                 <div class="row">
@@ -129,5 +128,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @stop

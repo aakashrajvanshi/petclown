@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <base href="http://petclown.com/">
+    <base href="http://surya.com/">
     @yield('title')
 
     <!-- Favicon -->
@@ -89,24 +89,9 @@
                 {{Session::get('flash_message')}}
             </div>
         @endif
-        @yield('heading')
-        <div class="row">
-            <div class="col-md-8 col">
-                @yield('content')
-            </div>
-            <div class=col-md-4 col">
-            @yield('sidebar')
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-8 col">
-                @yield('comments')
-            </div>
-            <div class="col-md-4 col">
+            @yield('content')
 
-            </div>
-        </div>
     </div>
 </div>
 <!--=== End Content ===-->

@@ -22,61 +22,68 @@
 @stop
 
 @section('content')
-    <h1 class="page-heading">Create a Funny Petition</h1>
 
-    @if($errors->any())
-        <ul class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endif
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class="page-heading">Create a Funny Petition</h1>
 
-    {!! Form::Open(['action' => 'PetitionController@store', 'files'=>'true']) !!}
+            @if($errors->any())
+                <ul class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                @endif
 
-    <!-- Petition Title -->
-    <div class="form-group">
-        {!! Form::label('heading','Write the title for your petition') !!}
-        {!! Form::text('heading',null,['class' => 'form-control']) !!}
+                {!! Form::Open(['action' => 'PetitionController@store', 'files'=>'true']) !!}
+
+                        <!-- Petition Title -->
+                <div class="form-group">
+                    {!! Form::label('heading','Write the title for your petition') !!}
+                    {!! Form::text('heading',null,['class' => 'form-control']) !!}
+                </div>
+
+                <!-- 'Petition To' Form Input -->
+                <div class="form-group">
+                    {!! Form::label('petition_to','This petition is directed towards (name of the person or organization)') !!}
+                    {!! Form::text('petition_to',null,['data-role' => 'tagsinput', 'class' => 'form-control']) !!}
+                </div>
+
+                <!-- File Input -->
+                <div class="form-group">
+                    {!! Form::label('image','Upload an image') !!}
+                    {!! Form::file('image') !!}
+                </div>
+
+                <!-- Content Form Input -->
+                <div class="form-group">
+                    {!! Form::label('content','Description of the appeals') !!}
+                    {!! Form::textarea('content',null,['class' => 'form-control']) !!}
+                </div>
+
+                <!-- 'Categories Select' Form Input -->
+
+                <div class="form-group">
+                    {!! Form::label('category','Category:') !!}
+                    {!! Form::select('category[]',$category,null,['id'=>'cat_list','class' => 'form-control', 'multiple']) !!}
+                </div>
+
+                <!-- 'Tags Select' Form Input -->
+                <div class="form-group">
+                    {!! Form::label('tags','Tags:') !!}
+                    {!! Form::select('tags[]',$tags,null,['id'=>'tag_list','class' => 'form-control', 'multiple']) !!}
+                </div>
+
+                <!--Petition Submit Button-->
+                <div class="form-group">
+                    {!! Form::submit('Submit Petition',['class' => 'btn btn-primary form-control']) !!}
+                </div>
+
+                {!! Form::Close() !!}
+
+        </div>
+        <div class="col-md-4"></div>
     </div>
-
-    <!-- 'Petition To' Form Input -->
-    <div class="form-group">
-        {!! Form::label('petition_to','This petition is directed towards (name of the person or organization)') !!}
-        {!! Form::text('petition_to',null,['data-role' => 'tagsinput', 'class' => 'form-control']) !!}
-    </div>
-
-    <!-- File Input -->
-    <div class="form-group">
-        {!! Form::label('image','Upload an image') !!}
-        {!! Form::file('image') !!}
-    </div>
-
-    <!-- Content Form Input -->
-    <div class="form-group">
-        {!! Form::label('content','Description of the appeals') !!}
-        {!! Form::textarea('content',null,['class' => 'form-control']) !!}
-    </div>
-
-    <!-- 'Categories Select' Form Input -->
-
-    <div class="form-group">
-        {!! Form::label('category','Category:') !!}
-        {!! Form::select('category[]',$category,null,['id'=>'cat_list','class' => 'form-control', 'multiple']) !!}
-    </div>
-
-    <!-- 'Tags Select' Form Input -->
-    <div class="form-group">
-        {!! Form::label('tags','Tags:') !!}
-        {!! Form::select('tags[]',$tags,null,['id'=>'tag_list','class' => 'form-control', 'multiple']) !!}
-    </div>
-
-    <!--Petition Submit Button-->
-    <div class="form-group">
-        {!! Form::submit('Submit Petition',['class' => 'btn btn-primary form-control']) !!}
-    </div>
-
-    {!! Form::Close() !!}
 
 @stop
 @section('footer')
