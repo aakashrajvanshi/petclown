@@ -40,7 +40,7 @@
                     <!-- Navbar Brand -->
                     <div class="navbar-brand">
                         <a href="{{ url('/') }}">
-                            <img class="shrink-logo" src="assets/img/logo1-default.png" alt="Logo">
+                            <img class="shrink-logo" src="images/petclown1.png" alt="Logo">
                         </a>
                     </div>
                     <!-- ENd Navbar Brand -->

@@ -27,7 +27,7 @@ class PagesController extends Controller {
             ->join('petitions', 'user_support_petition.petition_id', '=', 'petitions.id')
             ->orderBy('user_support_petition.created_at','desc')
             ->select('users.id','users.name', 'users.avatar', 'petitions.petition_to','petitions.heading', 'petitions.slug','user_support_petition.created_at')
-            ->take(10)->get();
+            ->take(9)->get();
 
         foreach($activity as $act)
         {

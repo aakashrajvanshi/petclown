@@ -164,6 +164,7 @@ class PetitionController extends Controller {
         } else {
             $petition = Petition::where('slug', '=', $id)->firstorFail();
         }
+        $petition->load('user','supportedby');
         $comments = $petition->comment()->latest()->paginate(4);
         $comments->load('likedBy', 'user');
 

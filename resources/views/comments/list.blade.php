@@ -24,10 +24,10 @@
                         </h4>
                         <p>{{$comment->comment}}</p>
                         <ul class="list-inline pull-left">
-                            <li id="likecount-{{$comment->id}}">{{count($comment->likedby)}} Likes</li>
+                            <li id="likecount-{{$comment->id}}">{{$comment->likedBy->count()}} Likes</li>
                         </ul>
                         <ul class="list-inline pull-right bmargin-10">
-                            @if($comment->likedby->contains(Auth::user()))
+                            @if($comment->likedBy->contains(Auth::user()))
                                 <li class="like" id="comment-{{$comment->id}}"><a href="/unlike/{{$comment->id}}"><i
                                                 class="expand-list rounded-x fa fa-heart icon-color-red"></i></a>
                                 </li>
