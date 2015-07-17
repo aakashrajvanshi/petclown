@@ -8,42 +8,35 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3">
+            <ul class="list-group sidebar-nav">
+                <li class="list-group-item active">
+                    <a href="admin/comments">Comments</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="admin/petitionlist">Petitions</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="admin/blockedusers">Blocked Users</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="admin/comments">Comments</a></li>
-                <li><a href="admin/petitionlist">Petitions</a></li>
-                <li><a href="admin/blockedusers">Blocked Users</a></li>
+                <li class="active"><a href="admin/comments">Latest Comments</a></li>
+                <li><a href="admin/spamcomments">Spam</a></li>
+                <li><a href="admin/flaggedcomments">Flagged Comments</a></li>
+                <li><a href="admin/deletedcomments">Deleted Comments</a></li>
             </ul>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p>Comment on petition<a class="padding10" href="#">By user</a></p>
-                    <ul class="list-inline">
-                        <li><button class="btn btn-default btn-success btn-sm"><a href="admin/editcomments">Edit</a></button></li>
-                        <li><button class="btn btn-default btn-danger btn-sm">Delete</button></li>
-                        <li><button class="btn btn-default btn-info btn-sm">Mark as Spam</button></li>
-                        <li><button class="btn btn-default btn-primary btn-sm">Flag comment</button></li>
-                        <li><button class="btn btn-default btn-warning btn-sm">Block User</button></li>
-                    </ul>
+                    <p>Comment on petition<a class="padding10" href="#">By user</a><a class="pull-right" href="admin/editcomments"><i class="fa fa-pencil"></i></a></p>
                 </div>
                 <div class="panel-body">
-                    <p>Comment on petition<a class="padding10" href="#">By user</a></p>
-                    <ul class="list-inline">
-                        <li><button class="btn btn-default btn-success btn-sm"><a href="admin/editcomments">Edit</a></button></li>
-                        <li><button class="btn btn-default btn-danger btn-sm">Delete</button></li>
-                        <li><button class="btn btn-default btn-info btn-sm">Mark as Spam</button></li>
-                        <li><button class="btn btn-default btn-primary btn-sm">Flag comment</button></li>
-                        <li><button class="btn btn-default btn-warning btn-sm">Block User</button></li>
-                    </ul>
+                    <p>Comment on petition<a class="padding10" href="#">By user</a><a class="pull-right" href="admin/editcomments"><i class="fa fa-pencil"></i></a></p>
                 </div>
                 <div class="panel-body">
-                    <p>Comment on petition<a class="padding10" href="#">By user</a></p>
-                    <ul class="list-inline">
-                        <li><button class="btn btn-default btn-success btn-sm"><a href="admin/editcomments">Edit</a></button></li>
-                        <li><button class="btn btn-default btn-danger btn-sm">Delete</button></li>
-                        <li><button class="btn btn-default btn-info btn-sm">Mark as Spam</button></li>
-                        <li><button class="btn btn-default btn-primary btn-sm">Flag comment</button></li>
-                        <li><button class="btn btn-default btn-warning btn-sm">Block User</button></li>
-                    </ul>
+                    <p>Comment on petition<a class="padding10" href="#">By user</a><a class="pull-right" href="admin/editcomments"><i class="fa fa-pencil"></i></a></p>
                 </div>
             </div>
             <ul class="pagination">

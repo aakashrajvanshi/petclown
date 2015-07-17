@@ -10,10 +10,21 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3">
+            <ul class="list-group sidebar-nav">
+                <li class="list-group-item">
+                    <a href="admin/comments">Comments</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="admin/petitionlist">Petitions</a>
+                </li>
+                <li class="list-group-item active">
+                    <a href="admin/blockedusers">Blocked Users</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li><a href="admin/comments">Comments</a></li>
-                <li><a href="admin/petitionlist">Petitions</a></li>
                 <li class="active"><a href="admin/blockedusers">Blocked Users</a></li>
             </ul>
             <div class="panel panel-default">

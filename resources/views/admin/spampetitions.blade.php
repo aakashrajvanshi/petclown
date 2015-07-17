@@ -1,8 +1,8 @@
 @extends ('app')
 
 @section('title')
-    <title>Petition List</title>
-    <meta name="description" content="Petition List">
+    <title>Spam Petitions</title>
+    <meta name="description" content="Spam Petitions">
 @stop
 
 @section('content')
@@ -23,8 +23,8 @@
         </div>
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="admin/petitionlist">Latest Petitions</a></li>
-                <li><a href="admin/spampetitions">Spam</a></li>
+                <li><a href="admin/petitionlist">Latest Petitions</a></li>
+                <li class="active"><a href="admin/spampetitions">Spam</a></li>
                 <li><a href="admin/flaggedpetitions">Flagged Petitions</a></li>
                 <li><a href="admin/deletedpetitions">Deleted Petitions</a></li>
             </ul>
