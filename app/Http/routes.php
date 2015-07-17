@@ -16,6 +16,8 @@ Route::get('/home', 'PagesController@home');
 
 Route::get('petition/create',['middleware' => 'auth', 'uses' => 'PetitionController@create']);
 Route::post('petition/create',['middleware' => 'auth', 'uses' => 'PetitionController@store']);
+Route::get('petition/edit/{id}',['middleware' => 'auth', 'uses' => 'PetitionController@edit']);
+Route::post('petition/edit/{id}',['middleware' => 'auth', 'uses' => 'PetitionController@update']);
 Route::get('petition/{id}','PetitionController@show');
 Route::get('petitions','PetitionController@index');
 

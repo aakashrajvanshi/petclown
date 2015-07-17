@@ -3,6 +3,7 @@
 @section('title')
     <title>Petition List</title>
     <meta name="description" content="Petition List">
+
 @stop
 
 @section('content')

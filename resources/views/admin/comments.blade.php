@@ -1,5 +1,6 @@
 @extends ('app')
 
+
 @section('title')
     <title>Admin Comments</title>
     <meta name="description" content="Admin Comments">

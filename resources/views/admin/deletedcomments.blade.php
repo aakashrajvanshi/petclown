@@ -5,6 +5,7 @@
     <meta name="description" content="Deleted Comments">
 @stop
 
+
 @section('content')
 
     <div class="row">

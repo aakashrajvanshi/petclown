@@ -15,14 +15,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $petitions = Petition::with('supportedby')->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
+        $petitions = Petition::with('supportedby')->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
         $petitions->load('comment');
-        $latest = Petition::all()->sortByDesc('created_at')->take(3);
+        $latest = Petition::orderBy('created_at','desc')->published()->get()->take(3);
         $latest->load('comment','supportedby');
 
         $trending = Petition::with(['supportedby' => function($query){
             $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(3));
-        }])->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
+        }])->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
 
         $trending->load('comment');
 

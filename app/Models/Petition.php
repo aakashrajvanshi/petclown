@@ -10,7 +10,7 @@ class Petition extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['user_id', 'petition_to', 'heading', 'content','image','image_thumb','slug'];
+    protected $fillable = ['user_id', 'petition_to', 'heading', 'content','image','image_thumb','slug','published'];
 
     public function user()
     {
@@ -37,4 +37,7 @@ class Petition extends Model
         return $this->belongsToMany('App\Models\Tag');
     }
 
+    public function scopePublished($query){
+        $query->where('published','=',true);
+    }
 }

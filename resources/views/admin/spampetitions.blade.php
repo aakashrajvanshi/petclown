@@ -5,6 +5,7 @@
     <meta name="description" content="Spam Petitions">
 @stop
 
+
 @section('content')
 
     <div class="row">

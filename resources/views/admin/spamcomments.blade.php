@@ -3,6 +3,7 @@
 @section('title')
     <title>Spam Comments</title>
     <meta name="description" content="Spam Comments">
+
 @stop
 
 @section('content')

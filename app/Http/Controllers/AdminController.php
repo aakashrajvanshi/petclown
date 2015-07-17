@@ -68,6 +68,30 @@ class AdminController extends Controller
         {
             return view('admin.editcomments');
         }
+        else if($id=="spamcomments")
+        {
+            return view('admin.spamcomments');
+        }
+        elseif($id=="flaggedcomments")
+        {
+            return view('admin.flaggedcomments');
+        }
+        elseif($id=="deletedcomments")
+        {
+            return view('admin.deletedcomments');
+        }
+        else if($id=="spampetitions")
+        {
+            return view('admin.spampetitions');
+        }
+        elseif($id=="flaggedpetitions")
+        {
+            return view('admin.flaggedpetitions');
+        }
+        elseif($id=="deletedpetitions")
+        {
+            return view('admin.deletedpetitions');
+        }
 
         /** Completed*/
     }

@@ -5,6 +5,7 @@
     <meta name="description" content="Flagged Comments">
 @stop
 
+
 @section('content')
 
     <div class="row">
