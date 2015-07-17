@@ -52,70 +52,23 @@ class AdminController extends Controller
         {
             return view('admin.editpetitions');
         }
-        else if($id=="mostviewed")
+        else if($id=="petitionlist")
         {
-            return view('admin.mostviewed');
+            return view('admin.petitionlist');
         }
-        else if($id=="mostsupport")
+        else if($id=="comments")
         {
-            return view('admin.mostsupport');
+            return view('admin.comments');
         }
-        else if($id=="settings")
+        else if($id=="blockedusers")
         {
-            return view('admin.settings');
+            return view('admin.blockedusers');
         }
-        else if($id=="changepassword")
+        else if($id=="editcomments")
         {
-            return view('admin.changepassword');
+            return view('admin.editcomments');
         }
-        else if($id=="practice")
-        {
-            return view('admin.practice');
-        }
-        else if($id=="adminprofilepage")
-        {
-            return view('admin.adminprofilepage');
-        }
-        else if($id=="addadmin")
-        {
-            return view('admin.addadmin');
-        }
-        else if($id=="adminmessages")
-        {
-            return view('admin.adminmessages');
-        }
-        else if($id=="admincomments")
-        {
-            return view('admin.admincomments');
-        }
-        else if($id=="adminapprovecomments")
-        {
-            return view('admin.adminapprovecomments');
-        }
-        else if($id=="admindeletecomments")
-        {
-            return view('admin.admindeletecomments');
-        }
-        else if($id=="adminspam")
-        {
-            return view('admin.adminspam');
-        }
-        else if($id=='adminflaggedcomments')
-        {
-            return view('admin.adminflaggedcomments');
-        }
-        else if($id=="useradmin")
-        {
-            return view('admin.useradmin');
-        }
-        else if($id=="searchuser")
-        {
-            return view('admin.searchuser');
-        }
-        else if($id=="blockuser")
-        {
-            return view('admin.blockuser');
-        }
+
         /** Completed*/
     }
 

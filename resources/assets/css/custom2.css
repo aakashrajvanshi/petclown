@@ -37,4 +37,23 @@ h2.dotted-header {
     margin-bottom: 0px;
 }
 
+/*********** End of petition page styles *************/
+
+/******************************** Admin Page styles *************************/
+
+.panel-body a.padding10 {
+    padding: 10px;
+}
+
+.col-md-8.editpetitions {
+    padding-bottom: 15px;
+}
+
+li button.btn-success a {
+    color: white;
+}
+
+.panel-body p a {
+    color: #555;
+}
 
