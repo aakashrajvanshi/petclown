@@ -35,11 +35,11 @@ class PetitionController extends Controller {
      */
     public function index()
     {
-        $petitions_all = Petition::with('supportedby')->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(12);
-        $latest_all = Petition::orderBy('created_at','desc')->paginate(12);
+        $petitions_all = Petition::with('supportedby')->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(12);
+        $latest_all = Petition::orderBy('created_at','desc')->published()->paginate(12);
         $trending_all = Petition::with(['supportedby' => function($query){
                     $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(3));
-                    }])->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(12);
+                    }])->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(12);
 
         $trending_all->load('supportedby');
         $activity = DB::table('user_support_petition')
@@ -83,6 +83,13 @@ class PetitionController extends Controller {
         $petition->petition_to = $data['petition_to'];
         $petition->content = $data['content'];
         $petition->slug = str_slug($petition->heading, "-");
+
+        if (isset($data['publish'])) {
+            $petition->published = true;
+        }
+        else{
+            $petition->published = false;
+        }
 
         if (!empty($data['image'])) {
             $mytime = Carbon::now()->toTimeString();
@@ -186,7 +193,21 @@ class PetitionController extends Controller {
      */
     public function edit($id)
     {
-        //
+        if (is_numeric($id)) {
+            $petition = Petition::findorFail($id);
+        } else {
+            $petition = Petition::where('slug', '=', $id)->firstorFail();
+        }
+
+        $tags = Tag::lists('tag', 'id');
+        $category = Category::lists('category', 'id');
+
+        $mytags = $petition->tags()->lists('id')->toArray();
+
+        $mycats = $petition->category()->lists('id')->toArray();
+
+
+        return view('petition.edit', array('petition' => $petition, 'mytags' => $mytags, 'mycats' => $mycats,'tags'=>$tags,'category'=>$category));
     }
 
     /**
@@ -195,9 +216,97 @@ class PetitionController extends Controller {
      * @param  int $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
-        //
+        $data = $request->all();
+
+        if (is_numeric($id)) {
+            $petition = Petition::findorFail($id);
+        } else {
+            $petition = Petition::where('slug', '=', $id)->firstorFail();
+        }
+        $petition->heading = $data['heading'];
+        $petition->petition_to = $data['petition_to'];
+        $petition->content = $data['content'];
+
+        if (isset($data['publish'])) {
+            $petition->published = 1;
+        }
+        else{
+            $petition->published = 0;
+        }
+        if (isset($data['keepurl'])) {
+            //do nothing. Retain the old url
+        }
+        else{
+            $petition->slug = str_slug($petition->heading, "-");
+        }
+
+        if (!empty($data['image'])) {
+            $mytime = Carbon::now()->toTimeString();
+            $fileName = $data['image']->getClientOriginalName();
+            $fileName = $mytime . "-" . $fileName;
+            $thumbnail = "thumb_" . $fileName;
+
+            $image = Image::make($data['image']->getRealPath());
+
+            \File::exists(user_photo_path()) or \File::makeDirectory(user_photo_path());
+
+            if ($image->width() > 960) {
+                $image->resize(960, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+            if ($image->height() > 600) {
+                $image->resize(null, 600, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+            $image->save(user_photo_path() . $fileName);
+            $petition->image = user_photo_path('db') . $fileName;
+
+            $image->fit(320, 180)->save(user_photo_path() . $thumbnail);
+            $petition->image_thumb = user_photo_path('db') . $thumbnail;
+        }
+
+        $petition->save();
+
+        //remove all preexisting tags and categories
+        $petition->tags()->detach();
+        $petition->category()->detach();
+
+        foreach($data['tags'] as $tag)
+        {
+            $alltags = Tag::lists('id');
+            if($alltags->contains($tag)){
+                $petition->tags()->attach($tag);
+            }
+            else
+            {
+                $newtag = new Tag;
+                $newtag->tag = $tag;
+                $newtag->save();
+                $petition->tags()->attach($newtag->id);
+            }
+        }
+        foreach($data['category'] as $cat)
+        {
+            $allcats = Category::lists('id');
+            if($alltags->contains($cat)){
+                $petition->category()->attach($cat);
+            }
+            else
+            {
+                $newcat = new Category;
+                $newcat->category = $cat;
+                $newcat->save();
+                $petition->category()->attach($newcat->id);
+            }
+        }
+
+        Session::flash('flash_message', 'Your petition has been updated!');
+
+        return redirect('petitions');
     }
 
     /**

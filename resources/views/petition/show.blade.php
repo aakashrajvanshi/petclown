@@ -186,7 +186,9 @@
                                <!-- Content Form Input -->
                                <!--
                         <div class="form-group">
+                            {{---
                             {!! Form::checkbox('anon',1, false) !!} Do not show my name (show Anonymous)
+                            --}}
                         </div>
                         -->
                                <!--Petition Submit Button-->
