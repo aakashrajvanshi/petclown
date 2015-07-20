@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 
 class AdminController extends Controller
 {
@@ -58,7 +59,8 @@ class AdminController extends Controller
         }
         else if($id=="comments")
         {
-            return view('admin.comments');
+            $comments = Comment::orderBy('created_at','DESC')->paginate(15);
+            return view('admin.comments',compact('comments'));
         }
         else if($id=="blockedusers")
         {

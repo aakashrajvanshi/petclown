@@ -61,7 +61,7 @@ class CommentController extends Controller {
         }
 
         if (!empty($data['comment'])) {
-            Session::flash('flash_message', 'Thanks! Your comments has been posted!');
+            Session::flash('flash_message', 'Thanks! Your comment has been posted!');
         }
         else{
             Session::flash('flash_message', 'Thanks for supporting the petition!');
