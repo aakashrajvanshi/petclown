@@ -59,13 +59,19 @@ class AdminController extends Controller
         }
         else if($id=="comments")
         {
-            $comments = Comment::orderBy('created_at','DESC')->Notblocked()->paginate(15);
+            $comments = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
             $comments->load('petition','user');
             return view('admin.comments',compact('comments'));
         }
         else if($id=="blockedusers")
         {
             return view('admin.blockedusers');
+        }
+        else if($id=="approvedcomments")
+        {
+            $comments = Comment::orderBy('created_at','DESC')->Approved()->paginate(15);
+            $comments->load('petition','user');
+            return view('admin.approvedcomments',compact('comments'));
         }
         else if($id=="editcomments")
         {
@@ -81,7 +87,9 @@ class AdminController extends Controller
         }
         elseif($id=="deletedcomments")
         {
-            return view('admin.deletedcomments');
+            $comments = Comment::orderBy('created_at','DESC')->Disapproved()->paginate(15);
+            $comments->load('petition','user');
+            return view('admin.deletedcomments',compact('comments'));
         }
         else if($id=="spampetitions")
         {

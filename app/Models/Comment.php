@@ -28,8 +28,14 @@ class Comment extends Model
         return $this->belongsToMany('App\Models\User','user_like_comment')->withTimestamps();
     }
 
-    public function scopeNotblocked($query){
-        $query->where('approved','!=',FALSE);
+    public function scopeNotReviewed($query){
+        $query->whereNull('approved');
+    }
+    public function scopeApproved($query){
+        $query->where('approved','=',TRUE);
+    }
+    public function scopeDisapproved($query){
+        $query->where('approved','=',FALSE);
     }
 
 }
