@@ -20,6 +20,9 @@ class AddPrivacyUsers extends Migration
         Schema::table('petitions', function ($table) {
             $table->boolean('published')->default(false);
         });
+        Schema::table('comments', function ($table) {
+            $table->boolean('approved')->nullable();
+        });
     }
     /**
      * Reverse the migrations.
@@ -33,6 +36,9 @@ class AddPrivacyUsers extends Migration
         });
         Schema::table('petitions', function ($table) {
             $table->dropColumn('published');
+        });
+        Schema::table('comments', function ($table) {
+            $table->dropColumn('approved');
         });
     }
 }

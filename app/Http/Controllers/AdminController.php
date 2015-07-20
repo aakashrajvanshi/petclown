@@ -60,6 +60,7 @@ class AdminController extends Controller
         else if($id=="comments")
         {
             $comments = Comment::orderBy('created_at','DESC')->paginate(15);
+            $comments->load('petition','user');
             return view('admin.comments',compact('comments'));
         }
         else if($id=="blockedusers")
