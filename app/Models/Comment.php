@@ -11,7 +11,7 @@ class Comment extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['petition_id', 'user_id', 'comment', 'anon'];
+    protected $fillable = ['petition_id', 'user_id', 'comment', 'anon','approved'];
 
     public function petition()
     {
@@ -27,4 +27,9 @@ class Comment extends Model
     {
         return $this->belongsToMany('App\Models\User','user_like_comment')->withTimestamps();
     }
+
+    public function scopeNotblocked($query){
+        $query->where('approved','!=',FALSE);
+    }
+
 }

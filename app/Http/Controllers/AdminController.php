@@ -59,7 +59,7 @@ class AdminController extends Controller
         }
         else if($id=="comments")
         {
-            $comments = Comment::orderBy('created_at','DESC')->paginate(15);
+            $comments = Comment::orderBy('created_at','DESC')->Notblocked()->paginate(15);
             $comments->load('petition','user');
             return view('admin.comments',compact('comments'));
         }
@@ -131,4 +131,25 @@ class AdminController extends Controller
     {
         //
     }
+
+    /*
+     * Approve a comment
+     */
+    public function approve($id){
+        $comment = Comment::findorFail($id);
+        $comment->approved = 1;
+        $comment->save();
+        return back();
+    }
+
+    /*
+     * Disapprove a comment
+     */
+    public function disapprove($id){
+        $comment = Comment::findorFail($id);
+        $comment->approved = 0;
+        $comment->save();
+        return back();
+    }
+
 }

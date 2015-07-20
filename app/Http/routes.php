@@ -23,6 +23,8 @@ Route::get('petitions','PetitionController@index');
 
 Route::post('comment',['middleware' => 'auth', 'uses' => 'CommentController@store']);
 
+Route::get('admin/approve/{id}','AdminController@approve');
+Route::get('admin/disapprove/{id}','AdminController@disapprove');
 //Route::resource('admin', 'AdminController');
 Route::resource('admin', 'AdminController');
 
