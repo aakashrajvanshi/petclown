@@ -8,6 +8,8 @@
 
 @section('content')
 
+        <!-- Side Nav Bar --->
+
     <div class="row">
         <div class="col-md-3">
             <ul class="list-group sidebar-nav">
@@ -22,6 +24,9 @@
                 </li>
             </ul>
         </div>
+
+        <!-- Content -->
+
         <div class="col-md-9">
             <ul class="nav nav-tabs">
                 <li><a href="admin/comments">Latest Comments</a></li>
@@ -31,14 +36,59 @@
             </ul>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <p>Comment on petition<a class="padding10" href="#">By user</a><a class="pull-right" href="admin/editcomments"><i class="fa fa-pencil"></i></a></p>
+                    <p><a href="#" class="padding10">petition link</a>Comment on petition<a class="padding10" href="#">By user</a><small class="pull-right">2 min ago</small></p>
+                    <ul class="list-inline pull-right">
+                        <li>
+                            <a href="#"><i class="fa fa-check-circle fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="admin/editcomments"><i class="fa fa-pencil fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-ban fa-lg"></i></a>
+                        </li>
+                    </ul>
                 </div>
+                <hr class="nomargin"/>
                 <div class="panel-body">
-                    <p>Comment on petition<a class="padding10" href="#">By user</a><a class="pull-right" href="admin/editcomments"><i class="fa fa-pencil"></i></a></p>
+                    <p><a href="#" class="padding10">petition link</a>Comment on petition<a class="padding10" href="#">By user</a><small class="pull-right">2 hours ago</small></p>
+                    <ul class="list-inline pull-right">
+                        <li>
+                            <a href="#"><i class="fa fa-check-circle fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="admin/editcomments"><i class="fa fa-pencil fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-ban fa-lg"></i></a>
+                        </li>
+                    </ul>
                 </div>
+                <hr class="nomargin"/>
                 <div class="panel-body">
-                    <p>Comment on petition<a class="padding10" href="#">By user</a><a class="pull-right" href="admin/editcomments"><i class="fa fa-pencil"></i></a></p>
+                    <p><a href="#" class="padding10">petition link</a>Comment on petition<a class="padding10" href="#">By user</a><small class="pull-right">5 hours ago</small></p>
+                    <ul class="list-inline pull-right">
+                        <li>
+                            <a href="#"><i class="fa fa-check-circle fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="admin/editcomments"><i class="fa fa-pencil fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-ban fa-lg"></i></a>
+                        </li>
+                    </ul>
                 </div>
+                <hr class="nomargin"/>
             </div>
             <ul class="pagination">
                 <li class="disabled"><span><i class="fa fa-angle-double-left"></i></span></li>

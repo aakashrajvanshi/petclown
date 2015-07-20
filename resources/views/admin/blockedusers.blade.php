@@ -10,6 +10,8 @@
 
 @section('content')
 
+        <!-- Side Nav Bar --->
+
     <div class="row">
         <div class="col-md-3">
             <ul class="list-group sidebar-nav">
@@ -24,6 +26,9 @@
                 </li>
             </ul>
         </div>
+
+        <!-- Content -->
+
         <div class="col-md-9">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="admin/blockedusers">Blocked Users</a></li>
@@ -41,7 +46,7 @@
                             <label><input type="checkbox" value="">User 3</label>
                         </div>
                     </form>
-                    <button type="submit" class="btn btn-u pull-right">Block</button>
+                    <button type="submit" class="btn btn-u pull-right">Unblock</button>
                 </div>
             </div>
             <ul class="pagination">

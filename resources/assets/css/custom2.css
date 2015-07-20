@@ -57,3 +57,6 @@ li button.btn-success a {
     color: #555;
 }
 
+.panel hr.nomargin {
+    margin: 0px;
+}
