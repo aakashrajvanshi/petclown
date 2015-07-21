@@ -41,8 +41,9 @@ h2.dotted-header {
 
 /******************************** Admin Page styles *************************/
 
-.panel-body a.padding10 {
-    padding: 10px;
+.panel-body a.padding5 {
+    padding: 5px;
+    color: #72c02c;
 }
 
 .col-md-8.editpetitions {

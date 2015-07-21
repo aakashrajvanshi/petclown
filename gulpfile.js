@@ -44,6 +44,7 @@ elixir(function(mix) {
         "../plugins/smoothScroll.js",
         "../plugins/jquery.parallax.js",
         "app.js",
-        "custom.js"
+        "custom.js",
+        "custom2.js"
     ], "public/assets/js");
 });

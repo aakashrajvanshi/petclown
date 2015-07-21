@@ -402,19 +402,16 @@ class AdminController extends Controller
     }
 
     public function delpet($id){
-        $petition = Petition::findorFail($id);
-        $petition->destroy();
+
+        Petition::destroy($id);
+
         return back();
     }
 
     public function undelpet($id){
-        $petition = Petition::withTrashed()
-                    ->where('id', $id)
-                    ->get();
-        if ($petition->trashed())
-        {
-            $petition->restore();
-        }
+
+        Petition::onlyTrashed()->where('id', '=', $id)->restore();
+
         return back();
     }
 
