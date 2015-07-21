@@ -1,14 +1,14 @@
 @extends ('app')
 
 @section('title')
-    <title>Deleted Comments</title>
-    <meta name="description" content="Deleted Comments">
-@stop
+    <title>Approved Comments</title>
+    <meta name="description" content="Approved Comments">
+    @stop
 
 
-@section('content')
+    @section('content')
 
-    <!-- Side Nav Bar -->
+            <!-- Side Nav Bar -->
 
     <div class="row">
         <div class="col-md-3">
@@ -33,8 +33,8 @@
         <div class="col-md-9">
             <ul class="nav nav-tabs">
                 <li><a href="admin/comments">Latest</a></li>
-                <li><a href="admin/approvedcomments">Approved</a></li>
-                <li class="active"><a href="admin/deletedcomments">Deleted</a></li>
+                <li class="active"><a href="admin/approvedcomments">Approved</a></li>
+                <li><a href="admin/deletedcomments">Deleted</a></li>
                 <li><a href="admin/spamcomments">Spam</a></li>
                 <li><a href="admin/flaggedcomments">Flagged</a></li>
             </ul>
@@ -50,10 +50,10 @@
                             {{$comment->comment}}
                             <ul class="list-inline pull-right">
                                 <li>
-                                    <a href="/admin/approve/{{$comment->id}}" title="Approve"><i class="fa fa-check-circle fa-lg"></i></a>
+                                    <a href="admin/editcomments" title="Edit"><i class="fa fa-pencil fa-lg"></i></a>
                                 </li>
                                 <li>
-                                    <a href="admin/editcomments" title="Edit"><i class="fa fa-pencil fa-lg"></i></a>
+                                    <a href="/admin/disapprove/{{$comment->id}}" title="Delete" id="delete"><i class="fa fa-trash-o fa-lg"></i></a>
                                 </li>
                                 <li>
                                     <a href="#" title="Block" id="block"><i class="fa fa-ban fa-lg"></i></a>

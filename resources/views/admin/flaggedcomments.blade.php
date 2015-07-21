@@ -13,11 +13,14 @@
     <div class="row">
         <div class="col-md-3">
             <ul class="list-group sidebar-nav">
-                <li class="list-group-item active">
-                    <a href="admin/comments">Comments</a>
+                <li class="list-group-item">
+                    <a href="admin/createpetition">Create Petition</a>
                 </li>
                 <li class="list-group-item">
                     <a href="admin/petitionlist">Petitions</a>
+                </li>
+                <li class="list-group-item active">
+                    <a href="admin/comments">Comments</a>
                 </li>
                 <li class="list-group-item">
                     <a href="admin/blockedusers">Blocked Users</a>
@@ -29,10 +32,11 @@
 
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li><a href="admin/comments">Latest Comments</a></li>
+                <li><a href="admin/comments">Latest</a></li>
+                <li><a href="admin/approvedcomments">Approved</a></li>
+                <li><a href="admin/deletedcomments">Deleted</a></li>
                 <li><a href="admin/spamcomments">Spam</a></li>
-                <li class="active"><a href="admin/flaggedcomments">Flagged Comments</a></li>
-                <li><a href="admin/deletedcomments">Deleted Comments</a></li>
+                <li class="active"><a href="admin/flaggedcomments">Flagged</a></li>
             </ul>
             <div class="panel panel-default">
                 <div class="panel-body">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\CreatePetitionRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
@@ -24,7 +25,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.comments');
+        $comments = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
+        $comments->load('petition','user');
+        return view('admin.comments',compact('comments'));
     }
 
     /**
@@ -66,11 +69,13 @@ class AdminController extends Controller
             $petitions = Petition::onlyTrashed()->paginate(15);
             return view('admin.deletedpetitions',compact('petitions'));
         }
-        else if($id=="comments")
+        else if($id=="commentslist")
         {
-            $comments = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
-            $comments->load('petition','user');
-            return view('admin.comments',compact('comments'));
+            //$comments = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
+            $comments1 = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
+            $comments1->load('petition','user');
+
+            return view('admin.commentslist',compact('comments1'));
         }
         else if($id=="blockedusers")
         {
@@ -98,6 +103,7 @@ class AdminController extends Controller
         {
             $comments = Comment::orderBy('created_at','DESC')->Disapproved()->paginate(15);
             $comments->load('petition','user');
+
             return view('admin.deletedcomments',compact('comments'));
         }
         else if($id=="spampetitions")
@@ -181,7 +187,7 @@ class AdminController extends Controller
     {
         $tags = Tag::lists('tag', 'id');
         $category = Category::lists('category', 'id');
-        return view('petition.create', compact('tags','category'));
+        return view('admin.createpetition', compact('tags','category'));
     }
 
     /**
@@ -299,7 +305,7 @@ class AdminController extends Controller
         $mycats = $petition->category()->lists('id')->toArray();
 
 
-        return view('petition.edit', array('petition' => $petition, 'mytags' => $mytags, 'mycats' => $mycats,'tags'=>$tags,'category'=>$category));
+        return view('admin.editpetition', array('petition' => $petition, 'mytags' => $mytags, 'mycats' => $mycats,'tags'=>$tags,'category'=>$category));
     }
 
     /**
