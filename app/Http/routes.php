@@ -23,6 +23,13 @@ Route::get('petitions','PetitionController@index');
 
 Route::post('comment',['middleware' => 'auth', 'uses' => 'CommentController@store']);
 
+Route::get('admin/createpetition',['middleware' => 'auth', 'uses' => 'AdminController@createpet']);
+Route::post('admin/createpetition',['middleware' => 'auth', 'uses' => 'AdminController@storepet']);
+Route::get('admin/editpetition/{id}',['middleware' => 'auth', 'uses' => 'AdminController@editpet']);
+Route::post('admin/editpetition/{id}',['middleware' => 'auth', 'uses' => 'AdminController@updatepet']);
+Route::get('admin/delpetition/{id}',['middleware' => 'auth', 'uses' => 'AdminController@delpet']);
+Route::get('admin/undelpetition/{id}',['middleware' => 'auth', 'uses' => 'AdminController@undelpet']);
+
 Route::get('admin/approve/{id}','AdminController@approve');
 Route::get('admin/disapprove/{id}','AdminController@disapprove');
 //Route::resource('admin', 'AdminController');
