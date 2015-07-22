@@ -17,8 +17,7 @@ use Image;
 use Auth;
 use DB;
 
-class AdminController extends Controller
-{
+class AdminController extends Controller {
     /**
      * Display a listing of the resource.
      *
@@ -26,163 +25,109 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $comments = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
-        $comments->load('petition','user');
-        return view('admin.comments',compact('comments'));
-    }
+        $petitions = Petition::orderBy('created_at', 'desc')->paginate(15);
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
-    {
-        //
+        return view('admin.petitionlist', compact('petitions'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
     {
-        /** My Work*/
-        if($id=="petitionlist")
-        {
-            $petitions = Petition::orderBy('created_at','desc')->paginate(15);
-            return view('admin.petitionlist',compact('petitions'));
+        if ($id == "petitionlist") {
+            $petitions = Petition::orderBy('created_at', 'desc')->paginate(15);
+
+            return view('admin.petitionlist', compact('petitions'));
         }
-        else if($id=="deletedpetitions")
-        {
+        else if ($id == "deletedpetitions") {
             $petitions = Petition::onlyTrashed()->paginate(15);
-            return view('admin.deletedpetitions',compact('petitions'));
+            return view('admin.deletedpetitions', compact('petitions'));
         }
-        else if($id=="comments")
-        {
-
+        else if ($id == "comments") {
             $comments = DB::table('comments')
-            ->join('users', 'comments.user_id', '=', 'users.id')
-            ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
-            ->whereNull('comments.approved')
-            ->orderBy('comments.created_at','desc')
-            ->select('users.id as uid','users.name', 'users.avatar','petitions.petition_to', 'petitions.heading', 'petitions.slug','comments.comment', 'comments.created_at', 'comments.id')
-            ->paginate(10);
+                ->join('users', 'comments.user_id', '=', 'users.id')
+                ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
+                ->whereNull('comments.approved')
+                ->orderBy('comments.created_at', 'desc')
+                ->select('users.id as uid', 'users.name', 'users.avatar', 'petitions.petition_to', 'petitions.heading', 'petitions.slug', 'comments.comment', 'comments.created_at', 'comments.id')
+                ->paginate(10);
 
-            return view('admin.comments',compact('comments'));
+            return view('admin.comments', compact('comments'));
         }
-        else if($id=="blockedusers")
-        {
+        else if ($id == "blockedusers") {
+
             return view('admin.blockedusers');
         }
-        else if($id=="approvedcomments")
-        {
-            $comments = Comment::orderBy('created_at','DESC')->Approved()->paginate(15);
-            $comments->load('petition','user');
-            return view('admin.approvedcomments',compact('comments'));
+        else if ($id == "approvedcomments") {
+            //$comments = Comment::orderBy('created_at', 'DESC')->Approved()->paginate(15);
+            $comments = DB::table('comments')
+                ->join('users', 'comments.user_id', '=', 'users.id')
+                ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
+                ->where('comments.approved',1)
+                ->orderBy('comments.created_at', 'desc')
+                ->select('users.id as uid', 'users.name', 'users.avatar', 'petitions.petition_to', 'petitions.heading', 'petitions.slug', 'comments.comment', 'comments.created_at', 'comments.id')
+                ->paginate(10);
+
+            return view('admin.approvedcomments', compact('comments'));
         }
-        else if($id=="editcomments")
-        {
+        else if ($id == "editcomments") {
+
             return view('admin.editcomments');
         }
-        else if($id=="spamcomments")
-        {
+        else if ($id == "spamcomments") {
+
             return view('admin.spamcomments');
         }
-        elseif($id=="flaggedcomments")
-        {
+        else if ($id == "flaggedcomments") {
+
             return view('admin.flaggedcomments');
         }
-        elseif($id=="deletedcomments")
-        {
-            $comments = Comment::orderBy('created_at','DESC')->Disapproved()->paginate(15);
-            $comments->load('petition','user');
+        else if ($id == "deletedcomments") {
 
-            return view('admin.deletedcomments',compact('comments'));
+            $comments = DB::table('comments')
+                ->join('users', 'comments.user_id', '=', 'users.id')
+                ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
+                ->where('comments.approved',0)
+                ->orderBy('comments.created_at', 'desc')
+                ->select('users.id as uid', 'users.name', 'users.avatar', 'petitions.petition_to', 'petitions.heading', 'petitions.slug', 'comments.comment', 'comments.created_at', 'comments.id')
+                ->paginate(10);
+            return view('admin.deletedcomments', compact('comments'));
         }
-        else if($id=="spampetitions")
-        {
+        else if ($id == "spampetitions") {
             return view('admin.spampetitions');
         }
-        elseif($id=="flaggedpetitions")
-        {
+        else if ($id == "flaggedpetitions") {
             return view('admin.flaggedpetitions');
         }
-        elseif($id=="deletedpetitions")
-        {
-            return view('admin.deletedpetitions');
-        }
-
-        /** Completed*/
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
     /*
      * Approve a comment
      */
-    public function approve($id){
+    public function approve($id)
+    {
         $comment = Comment::findorFail($id);
         $comment->approved = 1;
         $comment->save();
+
         return back();
     }
 
     /*
      * Disapprove a comment
      */
-    public function disapprove($id){
+    public function disapprove($id)
+    {
         $comment = Comment::findorFail($id);
         $comment->approved = 0;
         $comment->save();
+
         return back();
     }
-
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -193,7 +138,8 @@ class AdminController extends Controller
     {
         $tags = Tag::lists('tag', 'id');
         $category = Category::lists('category', 'id');
-        return view('admin.createpetition', compact('tags','category'));
+
+        return view('admin.createpetition', compact('tags', 'category'));
     }
 
     /**
@@ -215,8 +161,7 @@ class AdminController extends Controller
 
         if (isset($data['publish'])) {
             $petition->published = true;
-        }
-        else{
+        } else {
             $petition->published = false;
         }
 
@@ -253,28 +198,22 @@ class AdminController extends Controller
         $comment->comment = "I have just created this petition. If you like it, please support it!";
         $comment->save();
 
-        foreach($data['tags'] as $tag)
-        {
+        foreach ($data['tags'] as $tag) {
             $alltags = Tag::lists('id');
-            if($alltags->contains($tag)){
+            if ($alltags->contains($tag)) {
                 $petition->tags()->attach($tag);
-            }
-            else
-            {
+            } else {
                 $newtag = new Tag;
                 $newtag->tag = $tag;
                 $newtag->save();
                 $petition->tags()->attach($newtag->id);
             }
         }
-        foreach($data['category'] as $cat)
-        {
+        foreach ($data['category'] as $cat) {
             $allcats = Category::lists('id');
-            if($alltags->contains($cat)){
+            if ($alltags->contains($cat)) {
                 $petition->category()->attach($cat);
-            }
-            else
-            {
+            } else {
                 $newcat = new Category;
                 $newcat->category = $cat;
                 $newcat->save();
@@ -286,8 +225,6 @@ class AdminController extends Controller
 
         return redirect('petitions');
     }
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -310,8 +247,7 @@ class AdminController extends Controller
 
         $mycats = $petition->category()->lists('id')->toArray();
 
-
-        return view('admin.editpetition', array('petition' => $petition, 'mytags' => $mytags, 'mycats' => $mycats,'tags'=>$tags,'category'=>$category));
+        return view('admin.editpetition', array('petition' => $petition, 'mytags' => $mytags, 'mycats' => $mycats, 'tags' => $tags, 'category' => $category));
     }
 
     /**
@@ -335,14 +271,12 @@ class AdminController extends Controller
 
         if (isset($data['publish'])) {
             $petition->published = 1;
-        }
-        else{
+        } else {
             $petition->published = 0;
         }
         if (isset($data['keepurl'])) {
             //do nothing. Retain the old url
-        }
-        else{
+        } else {
             $petition->slug = str_slug($petition->heading, "-");
         }
 
@@ -379,28 +313,22 @@ class AdminController extends Controller
         $petition->tags()->detach();
         $petition->category()->detach();
 
-        foreach($data['tags'] as $tag)
-        {
+        foreach ($data['tags'] as $tag) {
             $alltags = Tag::lists('id');
-            if($alltags->contains($tag)){
+            if ($alltags->contains($tag)) {
                 $petition->tags()->attach($tag);
-            }
-            else
-            {
+            } else {
                 $newtag = new Tag;
                 $newtag->tag = $tag;
                 $newtag->save();
                 $petition->tags()->attach($newtag->id);
             }
         }
-        foreach($data['category'] as $cat)
-        {
+        foreach ($data['category'] as $cat) {
             $allcats = Category::lists('id');
-            if($alltags->contains($cat)){
+            if ($alltags->contains($cat)) {
                 $petition->category()->attach($cat);
-            }
-            else
-            {
+            } else {
                 $newcat = new Category;
                 $newcat->category = $cat;
                 $newcat->save();
@@ -413,14 +341,16 @@ class AdminController extends Controller
         return redirect('petitions');
     }
 
-    public function delpet($id){
+    public function delpet($id)
+    {
 
         Petition::destroy($id);
 
         return back();
     }
 
-    public function undelpet($id){
+    public function undelpet($id)
+    {
 
         Petition::onlyTrashed()->where('id', '=', $id)->restore();
 

@@ -42,8 +42,8 @@
                 @foreach($comments as $comment)
                     <div class="panel-body">
                         <p>
-                            <strong><a href="/profile/{{$comment->id}}">{{$comment->user->name}}</a></strong>
-                            <a href="/petition/{{$comment->slug}}" class="padding5">{{$comment->petition->heading}}</a>
+                            <strong><a href="/profile/{{$comment->uid}}">{{$comment->name}}</a></strong>
+                            <a href="/petition/{{$comment->slug}}" class="padding5">{{$comment->heading}}</a>
                             <small class="pull-right">{{$comment->created_at}}</small>
                         </p>
                         <div>

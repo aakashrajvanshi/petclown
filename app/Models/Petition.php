@@ -38,6 +38,6 @@ class Petition extends Model
     }
 
     public function scopePublished($query){
-        $query->where('published','=',true);
+        return $query->where('published','=',true);
     }
 }
