@@ -33,7 +33,7 @@
 
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li><a href="admin/petitionlist">Published</a></li>
+                <li><a href="admin/petitionlist">Latest</a></li>
                 <li class="active"><a href="admin/deletedpetitions">Deleted</a></li>
             </ul>
             <div class="panel panel-default">
