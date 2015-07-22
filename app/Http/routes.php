@@ -14,6 +14,7 @@
 Route::get('/', 'PagesController@home');
 Route::get('/home', 'PagesController@home');
 
+
 Route::get('petition/create',['middleware' => 'auth', 'uses' => 'PetitionController@create']);
 Route::post('petition/create',['middleware' => 'auth', 'uses' => 'PetitionController@store']);
 Route::get('petition/edit/{id}',['middleware' => 'auth', 'uses' => 'PetitionController@edit']);
@@ -58,6 +59,14 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+
+/*
+ * Static Pages
+ */
+Route::get('/contact', function(){
+    return view('pages.contact');
+});
+
 
 // Display all SQL executed in Eloquent
 /*
