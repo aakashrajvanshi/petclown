@@ -19,6 +19,9 @@
                 <li class="list-group-item">
                     <a href="admin/petitionlist">Petitions</a>
                 </li>
+                <li class="list-group-item">
+                    <a href="admin/ideas">Ideas</a>
+                </li>
                 <li class="list-group-item active">
                     <a href="admin/comments">Comments</a>
                 </li>

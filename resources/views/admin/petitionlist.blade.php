@@ -20,6 +20,9 @@
                     <a href="admin/petitionlist">Petitions</a>
                 </li>
                 <li class="list-group-item">
+                    <a href="admin/ideas">Ideas</a>
+                </li>
+                <li class="list-group-item">
                     <a href="admin/comments">Comments</a>
                 </li>
                 <li class="list-group-item">
@@ -33,7 +36,7 @@
 
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="admin/petitionlist">Published</a></li>
+                <li class="active"><a href="admin/petitionlist">Latest</a></li>
                 <li><a href="admin/deletedpetitions">Deleted</a></li>
             </ul>
             <div class="panel panel-default">
@@ -45,24 +48,21 @@
                             <small class="pull-right">{{$petition->created_at}}</small>
                         </p>
                         <div>
-                            <a href="/petition/{{$petition->slug}}">{{$petition->heading}}</a>
                             @if($petition->published)
+                                <span class="label label-info">Published</span>
+                                <a href="/petition/{{$petition->slug}}">{{$petition->heading}}</a>
                                 <ul class="list-inline pull-right">
                                     <li>
-                                        <button type="button" class="btn btn-info btn-sm">Published</button>
-                                    </li>
-                                    <li>
-                                        <a href="admin/editpetition/{{$petition->id}}" title="Edit"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a href="admin/editpetition/{{$petition->slug}}" title="Edit"><i class="fa fa-pencil fa-lg"></i></a>
                                     </li>
                                     <li>
                                         <a href="/admin/delpetition/{{$petition->id}}" title="Delete" id="delete"><i class="fa fa-trash-o fa-lg"></i></a>
                                     </li>
                                 </ul>
                             @else
+                                <span class="label label-warning">Draft</span>
+                                <a href="/petition/{{$petition->slug}}">{{$petition->heading}}</a>
                                 <ul class="list-inline pull-right">
-                                    <li>
-                                        <button type="button" class="btn btn-warning btn-sm">Draft</button>
-                                    </li>
                                     <li>
                                         <a href="admin/editpetition/{{$petition->id}}" title="Edit"><i class="fa fa-pencil fa-lg"></i></a>
                                     </li>

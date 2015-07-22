@@ -1,23 +1,23 @@
 @extends('app')
 
 @section('title')
-    <title>Contact Us</title>
-    <meta name="description" content="Contact Us">
+    <title>Privacy Policy</title>
+    <meta name="description" content="Privacy Policy">
 
-    @stop
+@stop
 
 @section('content')
 
     <div class="row">
         <div class="col-md-3">
             <ul class="list-group sidebar-nav">
-                <li class="list-group-item active">
+                <li class="list-group-item">
                     <a href="contact">Contact Us</a>
                 </li>
                 <li class="list-group-item">
                     <a href="faq">FAQs</a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item active">
                     <a href="privacypolicy">Privacy Policy</a>
                 </li>
                 <li class="list-group-item">
@@ -38,4 +38,4 @@
         </div>
     </div>
 
-    @stop
+@stop

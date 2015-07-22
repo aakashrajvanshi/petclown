@@ -24,7 +24,27 @@
 @section('content')
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-3">
+            <ul class="list-group sidebar-nav">
+                <li class="list-group-item">
+                    <a href="admin/createpetition">Create Petition</a>
+                </li>
+                <li class="list-group-item active">
+                    <a href="admin/petitionlist">Petitions</a>
+                </li>
+                <li class="list-group-item active">
+                    <a href="admin/ideas">Ideas</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="admin/comments">Comments</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="admin/blockedusers">Blocked Users</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
             <h1 class="page-heading">Update your Petition</h1>
 
             @if($errors->any())
