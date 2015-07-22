@@ -29,8 +29,9 @@ class Comment extends Model
     }
 
     public function scopeNotReviewed($query){
-        $query->whereNull('approved');
+        $query->whereNull('approved')->where('approved','!=',TRUE);
     }
+
     public function scopeApproved($query){
         $query->where('approved','=',TRUE);
     }

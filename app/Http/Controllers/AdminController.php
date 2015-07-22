@@ -15,6 +15,7 @@ use Carbon\Carbon;
 use Session;
 use Image;
 use Auth;
+use DB;
 
 class AdminController extends Controller
 {
@@ -69,13 +70,18 @@ class AdminController extends Controller
             $petitions = Petition::onlyTrashed()->paginate(15);
             return view('admin.deletedpetitions',compact('petitions'));
         }
-        else if($id=="commentslist")
+        else if($id=="comments")
         {
-            //$comments = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
-            $comments1 = Comment::orderBy('created_at','DESC')->NotReviewed()->paginate(15);
-            $comments1->load('petition','user');
 
-            return view('admin.commentslist',compact('comments1'));
+            $comments = DB::table('comments')
+            ->join('users', 'comments.user_id', '=', 'users.id')
+            ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
+            ->whereNull('comments.approved')
+            ->orderBy('comments.created_at','desc')
+            ->select('users.id as uid','users.name', 'users.avatar','petitions.petition_to', 'petitions.heading', 'petitions.slug','comments.comment', 'comments.created_at', 'comments.id')
+            ->paginate(10);
+
+            return view('admin.comments',compact('comments'));
         }
         else if($id=="blockedusers")
         {
