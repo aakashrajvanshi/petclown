@@ -171,6 +171,12 @@ class IdeasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Ideas::findorFail($id)->where('user_id',$request->user()->id)->delete();
     }
+
+    public function restore($id, Request $request)
+    {
+        Ideas::onlyTrashed()->where('user_id',$request->user()->id)->where('id', $id)->restore();
+    }
+
 }

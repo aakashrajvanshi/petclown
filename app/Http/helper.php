@@ -6,3 +6,5 @@ function user_photo_path($id='notdb'){
     }
     return public_path() . '/images/' . Auth::user()->name . '/' ;
 }
+
+

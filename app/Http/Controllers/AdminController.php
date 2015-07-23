@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Petition;
 use App\Models\Tag;
+use App\Models\Ideas;
 use App\Models\Category;
 use Carbon\Carbon;
 use Session;
@@ -53,7 +54,7 @@ class AdminController extends Controller {
             return view('admin.deletedpetitions', ['petitions' => $petitions]);
         }
         else if ($id == "deletedideas") {
-            $petitions = Petition::onlyTrashed()->paginate(15);
+            $ideas = Ideas::onlyTrashed()->paginate(15);
             return view('admin.deletedideas', ['ideas' => $ideas]);
         }
         else if ($id == "comments") {
@@ -366,6 +367,16 @@ class AdminController extends Controller {
         Petition::onlyTrashed()->where('id', $id)->restore();
         Comment::onlyTrashed()->where('petition_id', $id)->restore();
         return back();
+    }
+
+    public function delidea($id)
+    {
+        Ideas::findorFail($id)->delete();
+    }
+
+    public function undelidea($id)
+    {
+        Ideas::onlyTrashed()->where('id', $id)->restore();
     }
 
 }

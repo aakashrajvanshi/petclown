@@ -37,9 +37,13 @@ Route::get('admin/delpetition/{id}',['middleware' => 'admin', 'uses' => 'AdminCo
 Route::get('admin/undelpetition/{id}',['middleware' => 'admin', 'uses' => 'AdminController@undelpet']);
 Route::get('admin/approve/{id}',['middleware' => 'admin', 'uses' => 'AdminController@approve']);
 Route::get('admin/disapprove/{id}',['middleware' => 'admin', 'uses' => 'AdminController@disapprove']);
+Route::get('admin/delidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@delidea']);
+Route::get('admin/undelidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@undelidea']);
 
 Route::get('admin/{id}',['middleware' => 'admin', 'uses' => 'AdminController@show']);
 
+Route::get('ideas/delete/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@destroy']);
+Route::get('ideas/restore/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@restore']);
 
 //profile
 Route::get('profile', ['middleware' => 'auth', 'uses' => 'ProfileController@index']);
