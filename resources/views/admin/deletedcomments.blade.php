@@ -61,12 +61,11 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                     <hr class="nomargin"/>
                 @endforeach
             </div>
-            {!! $comments->render() !!}
+    {!! $comments->render() !!}
         </div>
     </div>
 

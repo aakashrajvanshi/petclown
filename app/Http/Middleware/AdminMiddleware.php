@@ -15,9 +15,14 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()->email!="aakash@careerty.com" &&  $request->user()->email!="suryasteja59@gmail.com")
-        {
-            return ('Unauthorised Access! Only admin can access this page!');
+        if($request->user()){
+            if($request->user()->email!="aakash@careerty.com" &&  $request->user()->email!="suryasteja59@gmail.com")
+            {
+                return ('Unauthorised Access! Only admin can access this page!');
+            }
+        }
+        else{
+            return redirect()->guest('auth/login');
         }
         return $next($request);
     }

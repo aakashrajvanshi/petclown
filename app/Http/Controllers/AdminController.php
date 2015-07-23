@@ -41,22 +41,32 @@ class AdminController extends Controller {
         if ($id == "petitionlist") {
             $petitions = Petition::orderBy('created_at', 'desc')->paginate(15);
 
-            return view('admin.petitionlist', compact('petitions'));
+            return view('admin.petitionlist', ['petitions' => $petitions]));
+        }
+        if ($id == "idealist") {
+            $ideas = Ideas::orderBy('created_at', 'desc')->paginate(15);
+
+            return view('admin.idealist', ['ideas' => $ideas]);
         }
         else if ($id == "deletedpetitions") {
             $petitions = Petition::onlyTrashed()->paginate(15);
-            return view('admin.deletedpetitions', compact('petitions'));
+            return view('admin.deletedpetitions', ['petitions' => $petitions]);
+        }
+        else if ($id == "deletedideas") {
+            $petitions = Petition::onlyTrashed()->paginate(15);
+            return view('admin.deletedideas', ['ideas' => $ideas]);
         }
         else if ($id == "comments") {
             $comments = DB::table('comments')
                 ->join('users', 'comments.user_id', '=', 'users.id')
                 ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
                 ->whereNull('comments.approved')
+                ->whereNull('comments.deleted_at')
                 ->orderBy('comments.created_at', 'desc')
                 ->select('users.id as uid', 'users.name', 'users.avatar', 'petitions.petition_to', 'petitions.heading', 'petitions.slug', 'comments.comment', 'comments.created_at', 'comments.id')
                 ->paginate(10);
 
-            return view('admin.comments', compact('comments'));
+            return view('admin.comments', ['comments' => $comments]);
         }
         else if ($id == "blockedusers") {
 
@@ -68,11 +78,12 @@ class AdminController extends Controller {
                 ->join('users', 'comments.user_id', '=', 'users.id')
                 ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
                 ->where('comments.approved',1)
+                ->whereNull('comments.deleted_at')
                 ->orderBy('comments.created_at', 'desc')
                 ->select('users.id as uid', 'users.name', 'users.avatar', 'petitions.petition_to', 'petitions.heading', 'petitions.slug', 'comments.comment', 'comments.created_at', 'comments.id')
                 ->paginate(10);
 
-            return view('admin.approvedcomments', compact('comments'));
+            return view('admin.approvedcomments', ['comments' => $comments]);
         }
         else if ($id == "editcomments") {
 
@@ -92,10 +103,12 @@ class AdminController extends Controller {
                 ->join('users', 'comments.user_id', '=', 'users.id')
                 ->join('petitions', 'comments.petition_id', '=', 'petitions.id')
                 ->where('comments.approved',0)
+                ->whereNull('comments.deleted_at')
                 ->orderBy('comments.created_at', 'desc')
                 ->select('users.id as uid', 'users.name', 'users.avatar', 'petitions.petition_to', 'petitions.heading', 'petitions.slug', 'comments.comment', 'comments.created_at', 'comments.id')
                 ->paginate(10);
-            return view('admin.deletedcomments', compact('comments'));
+
+            return view('admin.deletedcomments', ['comments' => $comments]);
         }
         else if ($id == "spampetitions") {
             return view('admin.spampetitions');
@@ -343,17 +356,15 @@ class AdminController extends Controller {
 
     public function delpet($id)
     {
-
-        Petition::destroy($id);
-
+        Petition::findorFail($id)->delete();
+        Comment::where('petition_id',$id)->delete();
         return back();
     }
 
     public function undelpet($id)
     {
-
-        Petition::onlyTrashed()->where('id', '=', $id)->restore();
-
+        Petition::onlyTrashed()->where('id', $id)->restore();
+        Comment::onlyTrashed()->where('petition_id', $id)->restore();
         return back();
     }
 
