@@ -107,7 +107,7 @@ class IdeasController extends Controller
         } else {
             $petition = Ideas::where('slug', '=', $id)->firstorFail();
         }
-        return view('ideas.edit', compact('petition'));
+        return view('ideas.edit', ['petition' => $petition]);
     }
 
     /**

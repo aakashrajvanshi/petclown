@@ -52,7 +52,7 @@ class PetitionController extends Controller {
         {
             $act->created_at = Carbon::parse($act->created_at);
         }
-        return view('petition.index', compact('petitions_all','latest_all','trending_all','activity'));
+        return view('petition.index', ['petitions_all'=>$petitions_all,'latest_all'=>$latest_all,'trending_all'=>$trending_all,'activity'=>$activity]);
     }
 
 
@@ -77,9 +77,9 @@ class PetitionController extends Controller {
         $categories = $petition->category()->get();
 
         if ($request->ajax()) {
-            return view('comments.list', array('petition' => $petition, 'comments' => $comments))->render();
+            return view('comments.list', ['petition' => $petition, 'comments' => $comments])->render();
         } else {
-            return view('petition.show', array('petition' => $petition, 'comments' => $comments, 'tags' => $tags, 'categories' => $categories));
+            return view('petition.show', ['petition' => $petition, 'comments' => $comments, 'tags' => $tags, 'categories' => $categories]);
         }
     }
 

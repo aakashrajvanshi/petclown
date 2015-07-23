@@ -34,6 +34,6 @@ class PagesController extends Controller {
             $act->created_at = Carbon::parse($act->created_at);
         }
 
-        return view('pages.home',compact('activity'));
+        return view('pages.home',['activity' => $activity]);
     }
 }

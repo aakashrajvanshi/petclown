@@ -27,7 +27,7 @@ class AdminController extends Controller {
     {
         $petitions = Petition::orderBy('created_at', 'desc')->paginate(15);
 
-        return view('admin.petitionlist', compact('petitions'));
+        return view('admin.petitionlist', ['petitions' => $petitions]);
     }
 
     /**
@@ -41,7 +41,7 @@ class AdminController extends Controller {
         if ($id == "petitionlist") {
             $petitions = Petition::orderBy('created_at', 'desc')->paginate(15);
 
-            return view('admin.petitionlist', ['petitions' => $petitions]));
+            return view('admin.petitionlist', ['petitions' => $petitions]);
         }
         if ($id == "idealist") {
             $ideas = Ideas::orderBy('created_at', 'desc')->paginate(15);
@@ -152,7 +152,7 @@ class AdminController extends Controller {
         $tags = Tag::lists('tag', 'id');
         $category = Category::lists('category', 'id');
 
-        return view('admin.createpetition', compact('tags', 'category'));
+        return view('admin.createpetition', ['tags' => $tags, 'category' => $category]);
     }
 
     /**
@@ -260,7 +260,7 @@ class AdminController extends Controller {
 
         $mycats = $petition->category()->lists('id')->toArray();
 
-        return view('admin.editpetition', array('petition' => $petition, 'mytags' => $mytags, 'mycats' => $mycats, 'tags' => $tags, 'category' => $category));
+        return view('admin.editpetition', ['petition' => $petition, 'mytags' => $mytags, 'mycats' => $mycats, 'tags' => $tags, 'category' => $category]);
     }
 
     /**

@@ -30,7 +30,7 @@ class ProfileController extends Controller {
     public function index()
     {
         $user = Auth::user();
-        return view('profile.index',compact('user'));
+        return view('profile.index',['user' => $user]);
     }
 
     /**
@@ -86,7 +86,7 @@ class ProfileController extends Controller {
         } else {
             $user = User::where('slug', '=', $id)->firstorFail();
         }
-        return view('profile.show',compact('user'));
+        return view('profile.show',['user' => $user]);
     }
 
     /**
@@ -97,7 +97,7 @@ class ProfileController extends Controller {
     public function edit()
     {
         $user = Auth::user();
-        return view('profile.edit', compact('user'));
+        return view('profile.edit', ['user' => $user]);
     }
 
     /**
@@ -108,7 +108,7 @@ class ProfileController extends Controller {
     public function privacy()
     {
         $user = Auth::user();
-        return view('profile.privacy', compact('user'));
+        return view('profile.privacy', ['user' => $user]);
     }
 
     /**
