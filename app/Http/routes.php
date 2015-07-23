@@ -51,6 +51,8 @@ Route::post('profile', ['middleware' => 'auth', 'uses' => 'ProfileController@sto
 Route::get('profile/edit', ['middleware' => 'auth', 'uses' => 'ProfileController@edit']);
 Route::get('profile/privacy', ['middleware' => 'auth', 'uses' => 'ProfileController@privacy']);
 Route::post('profile/privacy', ['middleware' => 'auth', 'uses' => 'ProfileController@update_privacy']);
+Route::get('profile/ideas', ['middleware' => 'auth', 'uses' => 'ProfileController@ideas']);
+Route::get('profile/delideas', ['middleware' => 'auth', 'uses' => 'ProfileController@delideas']);
 Route::get('profile/{id}', ['middleware' => 'auth', 'uses' => 'ProfileController@show']);
 
 //like unlike comments

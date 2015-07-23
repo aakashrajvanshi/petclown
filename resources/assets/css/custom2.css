@@ -2,6 +2,16 @@
 
 /***********Home Page Styles ****************/
 
+.row.popular-petitions {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-bottom: 20px;
+}
+
+.col-md-4.home-petitions {
+    padding-left: 30px;
+}
+
 /************ Latest Activity Styles **********/
 
 

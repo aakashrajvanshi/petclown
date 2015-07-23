@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <base href="http://petclown.com/">
+    <base href="http://surya.com/">
     @yield('title')
 
     <!-- Favicon -->
@@ -51,7 +51,7 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <div class="menu-container">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{ url('/petition/create') }}">Create Petition</a></li>
+                            <li><a href="{{ url('/ideas/create') }}">Create an Idea</a></li>
                             <li><a href="{{ url('/petitions') }}">Browse Petitions</a></li>
                             @if (Auth::guest())
                                 <li><a href="{{ url('/auth/login') }}"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>

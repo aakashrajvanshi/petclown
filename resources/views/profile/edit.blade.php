@@ -1,7 +1,7 @@
 @extends('app')
 @section('title')
     <title>Edit Profile for {{$user->name}}</title>
-    <meta name="description" content="Profile of a funny guy or gal">
+    <meta name="description" content="Edit Profile">
     @stop
 
     @section('content')
@@ -20,11 +20,9 @@
                             <li class="list-group-item">
                                 <a href="profile"><i class="fa fa-user"></i> Profile</a>
                             </li>
-                            <!--
                             <li class="list-group-item">
-                                <a href="profile/activities"><i class="fa fa-pencil"></i> Activities</a>
+                                <a href="profile/ideas"><i class="fa fa-pencil"></i> My Ideas</a>
                             </li>
-                            -->
                             <li class="list-group-item active">
                                 <a href="profile/edit"><i class="fa fa-cog"></i> Edit Profile</a>
                             </li>

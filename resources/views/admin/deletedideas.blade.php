@@ -1,14 +1,14 @@
 @extends ('app')
 
 @section('title')
-    <title>Deleted Petitions</title>
-    <meta name="description" content="Deleted Petitions">
-@stop
+    <title>Deleted Ideas</title>
+    <meta name="description" content="Deleted Ideas">
 
+    @stop
 
-@section('content')
+    @section('content')
 
-        <!-- Side Nav Bar --->
+            <!-- Side Nav Bar --->
 
     <div class="row">
         <div class="col-md-3">
@@ -16,10 +16,10 @@
                 <li class="list-group-item">
                     <a href="admin/createpetition">Create Petition</a>
                 </li>
-                <li class="list-group-item active">
+                <li class="list-group-item">
                     <a href="admin/petitionlist">Petitions</a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item active">
                     <a href="admin/idealist">Ideas</a>
                 </li>
                 <li class="list-group-item">
@@ -31,30 +31,27 @@
             </ul>
         </div>
 
-        <!-- content -->
+        <!-- Content -->
 
 
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li><a href="admin/petitionlist">Latest</a></li>
-                <li class="active"><a href="admin/deletedpetitions">Deleted</a></li>
+                <li><a href="admin/idealist">Latest</a></li>
+                <li class="active"><a href="admin/deletedideas">Deleted</a></li>
             </ul>
             <div class="panel panel-default">
-                @foreach($petitions as $petition)
+                @foreach($ideas as $idea)
                     <div class="panel-body">
                         <p>
-                            <strong><a href="/profile/{{$petition->id}}">{{$petition->user->name}}</a></strong>
-                            petitioning: {{$petition->petition_to}}
-                            <small class="pull-right">{{$petition->created_at}}</small>
+                            <strong><a href="/profile/{{$idea->id}}">{{$idea->user->name}}</a></strong>
+                            petitioning: {{$idea->petition_to}}
+                            <small class="pull-right">{{$idea->created_at}}</small>
                         </p>
                         <div>
-                            <a href="/petition/{{$petition->slug}}">{{$petition->heading}}</a>
+                            <a href="/idea/{{$idea->slug}}">{{$idea->heading}}</a>
                             <ul class="list-inline pull-right">
                                 <li>
-                                    <a href="/admin/undelpetition/{{$petition->id}}" title="Approve"><i class="fa fa-check-circle fa-lg"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Block" id="block"><i class="fa fa-ban fa-lg"></i></a>
+                                    <a href="/admin/undelidea/{{$idea->id}}" title="Approve"><i class="fa fa-check-circle fa-lg"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -63,8 +60,7 @@
                     <hr class="nomargin"/>
                 @endforeach
             </div>
-            {!! $petitions->render() !!}
-
+            {!! $ideas->render() !!}
         </div>
     </div>
 

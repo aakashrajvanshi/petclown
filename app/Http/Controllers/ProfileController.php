@@ -11,6 +11,7 @@ use Auth;
 use Carbon\Carbon;
 use Image;
 use App\Models\User;
+use App\Models\Ideas;
 
 class ProfileController extends Controller {
 
@@ -153,6 +154,25 @@ class ProfileController extends Controller {
     public function destroy($id)
     {
         //
+    }
+
+    public function ideas(){
+
+        $user = Auth::user();
+
+        $ideas = Ideas::where('user_id',$user->id)->paginate(10);
+
+        return view('profile.ideas',['ideas'=>$ideas, 'user'=>$user]);
+
+    }
+    public function delideas(){
+
+        $user = Auth::user();
+
+        $ideas = Ideas::onlyTrashed()->where('user_id',$user->id)->paginate(10);
+
+        return view('profile.delideas',['ideas'=>$ideas, 'user'=>$user]);
+
     }
 
 }

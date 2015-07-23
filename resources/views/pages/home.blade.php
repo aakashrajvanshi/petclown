@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-md-8 home-petitions">
 
-            <div class="popular-petitions">
+            <div class="row popular-petitions">
                 <h2 class="myinline"><span class="dotted-header">Popular Petitions</span></h2>
                 <a href="petitions#popular" class="pull-right petition-browse">Browse All</a>
                 <hr class="notopmargin"/>
@@ -69,7 +69,7 @@
 
             <!-----====== Featured Petition Container =====------>
 
-            <div class="popular-petitions">
+            <div class="row popular-petitions">
                 <h2 class="myinline"><span class="dotted-header">Latest Petitions</span></h2>
                 <a href="petitions#latest" class="pull-right petition-browse">Browse All</a>
                 <hr class="notopmargin"/>
@@ -104,7 +104,7 @@
 
             <!-----====== Trending Petition Container =====------>
 
-            <div class="popular-petitions">
+            <div class="row popular-petitions">
                 <h2 class="myinline"><span class="dotted-header">Trending this week</span></h2>
                 <a href="petitions#trending" class="pull-right petition-browse">Browse All</a>
                 <hr class="notopmargin"/>
@@ -141,9 +141,8 @@
 
         <!---====== HomePage Right Container =====------>
 
-        <div class="col-md-4">
 
-            <div class="home-petitions">
+            <div class="col-md-4 home-petitions">
                 <h2><span class="dotted-header">Latest Activity</span></h2>
                 <hr class="notopmargin"/>
                 @foreach($activity as $act)
@@ -174,7 +173,6 @@
                     <hr class="marginhr"/>
                 @endforeach
             </div>
-        </div>
 
 
     </div>

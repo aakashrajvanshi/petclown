@@ -27,7 +27,7 @@ class AdminController extends Controller {
     public function index()
     {
         $petitions = Petition::orderBy('created_at', 'desc')->paginate(15);
-
+        $petitions->load('user');
         return view('admin.petitionlist', ['petitions' => $petitions]);
     }
 
@@ -41,20 +41,22 @@ class AdminController extends Controller {
     {
         if ($id == "petitionlist") {
             $petitions = Petition::orderBy('created_at', 'desc')->paginate(15);
-
+            $petitions->load('user');
             return view('admin.petitionlist', ['petitions' => $petitions]);
         }
-        if ($id == "idealist") {
+        else if ($id == "idealist") {
             $ideas = Ideas::orderBy('created_at', 'desc')->paginate(15);
-
+            $ideas->load('user');
             return view('admin.idealist', ['ideas' => $ideas]);
         }
         else if ($id == "deletedpetitions") {
             $petitions = Petition::onlyTrashed()->paginate(15);
+            $petitions->load('user');
             return view('admin.deletedpetitions', ['petitions' => $petitions]);
         }
         else if ($id == "deletedideas") {
             $ideas = Ideas::onlyTrashed()->paginate(15);
+            $ideas->load('user');
             return view('admin.deletedideas', ['ideas' => $ideas]);
         }
         else if ($id == "comments") {
@@ -372,11 +374,13 @@ class AdminController extends Controller {
     public function delidea($id)
     {
         Ideas::findorFail($id)->delete();
+        return back();
     }
 
     public function undelidea($id)
     {
         Ideas::onlyTrashed()->where('id', $id)->restore();
+        return back();
     }
 
 }

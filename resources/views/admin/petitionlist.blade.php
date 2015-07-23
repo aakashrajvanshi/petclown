@@ -20,7 +20,7 @@
                     <a href="admin/petitionlist">Petitions</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="admin/ideas">Ideas</a>
+                    <a href="admin/idealist">Ideas</a>
                 </li>
                 <li class="list-group-item">
                     <a href="admin/comments">Comments</a>
