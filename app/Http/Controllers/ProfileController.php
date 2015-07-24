@@ -175,4 +175,12 @@ class ProfileController extends Controller {
 
     }
 
+    public function editideas($id){
+
+        $user = Auth::user();
+        $Idea = Ideas::where('user_id',$user->id)->where('id',$id)->get();
+        return view('profile.editidead',['idea'=>$idea, 'user'=>$user]);
+    }
+
+
 }

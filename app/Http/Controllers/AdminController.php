@@ -45,7 +45,7 @@ class AdminController extends Controller {
             return view('admin.petitionlist', ['petitions' => $petitions]);
         }
         else if ($id == "idealist") {
-            $ideas = Ideas::orderBy('created_at', 'desc')->paginate(15);
+            $ideas = Ideas::whereNull('review_comment')->orderBy('created_at', 'desc')->paginate(15);
             $ideas->load('user');
             return view('admin.idealist', ['ideas' => $ideas]);
         }
@@ -54,8 +54,8 @@ class AdminController extends Controller {
             $petitions->load('user');
             return view('admin.deletedpetitions', ['petitions' => $petitions]);
         }
-        else if ($id == "deletedideas") {
-            $ideas = Ideas::onlyTrashed()->paginate(15);
+        else if ($id == "reviewedideas") {
+            $ideas = Ideas::whereNotNull('review_comment')->paginate(15);
             $ideas->load('user');
             return view('admin.deletedideas', ['ideas' => $ideas]);
         }
@@ -370,7 +370,7 @@ class AdminController extends Controller {
         Comment::onlyTrashed()->where('petition_id', $id)->restore();
         return back();
     }
-
+    /*
     public function delidea($id)
     {
         Ideas::findorFail($id)->delete();
@@ -381,6 +381,30 @@ class AdminController extends Controller {
     {
         Ideas::onlyTrashed()->where('id', $id)->restore();
         return back();
+    }
+    */
+    public function reviewidea($id)
+    {
+        $idea = Ideas::findorFail($id);
+        return view('admin.reviewidea',['idea' => $idea]);
+    }
+    public function storereview($id, Request $request)
+    {
+        $idea = Ideas::findorFail($id);
+        $data = $request->all();
+
+        if(!empty($data['review_comment']))
+        $idea->review_comment = $data['review_comment'];
+        if(!empty($data['publish_comment']))
+        $idea->publish_comment = $data['publish_comment'];
+
+        if (isset($data['allow_editing'])) {
+            $idea->allow_editing = 1;
+        } else {
+            $idea->allow_editing = 0;
+        }
+        $idea->save();
+        return redirect('admin/idealist');
     }
 
 }

@@ -350,9 +350,9 @@ ul.activity-list li.share-on {
 
 
 div.home-jumbotron {
-    height: 200px;
-    background-image: url('http://petclown.com/images/banner.png');
-    margin-bottom: 30px;
+    /*height: 200px;
+    background-image: url('http://petclown.com/images/banner.png');*/
+    margin-bottom: 20px;
 }
 
 .home-petitions h2 {
@@ -387,11 +387,6 @@ hr.notopmargin{
     margin-bottom: 5px;
 }
 
-
-
-.col-md-12.home-image.home-jumbotron {
-    width: 98.7%
-}
 
 .thumbnail-style div.thumbnail-body {
     padding-top: 10px;

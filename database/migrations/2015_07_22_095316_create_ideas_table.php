@@ -22,6 +22,9 @@ class CreateIdeasTable extends Migration
             $table->string('image')->nullable();
             $table->string('image_thumb')->nullable();
             $table->string('slug');
+            $table->string('review_comment')->nullable();
+            $table->string('publish_comment')->nullable();
+            $table->boolean('allow_editing')->default(TRUE);
             $table->timestamps();
             $table->softDeletes();
         });

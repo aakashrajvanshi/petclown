@@ -10,8 +10,9 @@
 
             <!---====== HomePage Jumbotron =====---->
         <div class="row">
-            <div class="col-md-12">
-                <div class="home-image home-jumbotron"></div>
+            <div class="col-md-12 home-jumbotron">
+                <img src="http://petclown.com/images/banner.png" width="100%">
+                <!--<div class="home-image home-jumbotron"></div>-->
             </div>
         </div>
 

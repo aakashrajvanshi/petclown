@@ -80,7 +80,7 @@ class IdeasController extends Controller
         }
         $petition->save();
         Session::flash('flash_message', 'Your petition idea has been submitted. Thanks!');
-        return redirect('petitions');
+        return redirect('profile/ideas');
     }
 
     /**
@@ -91,7 +91,24 @@ class IdeasController extends Controller
      */
     public function show($id)
     {
-        //
+        if(user_is_admin())
+        {
+            if (is_numeric($id)) {
+                $petition = Ideas::findorFail($id);
+            } else {
+                $petition = Ideas::where('slug', '=', $id)->firstorFail();
+            }
+        }
+        else
+        {
+            $user = Auth::user();
+            if (is_numeric($id)) {
+                $petition = Ideas::where('user_id',$user->id)->findorFail($id);
+            } else {
+                $petition = Ideas::where('user_id',$user->id)->where('slug', '=', $id)->firstorFail();
+            }
+        }
+        return view('ideas.edit', ['petition' => $petition]);
     }
 
     /**
@@ -102,10 +119,11 @@ class IdeasController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
         if (is_numeric($id)) {
-            $petition = Ideas::findorFail($id);
+            $petition = Ideas::where('user_id',$user->id)->findorFail($id);
         } else {
-            $petition = Ideas::where('slug', '=', $id)->firstorFail();
+            $petition = Ideas::where('user_id',$user->id)->where('slug', '=', $id)->firstorFail();
         }
         return view('ideas.edit', ['petition' => $petition]);
     }
@@ -121,12 +139,12 @@ class IdeasController extends Controller
         $data = $request->all();
 
         if (is_numeric($id)) {
-            $petition = Ideas::findorFail($id);
+            $petition = Ideas::where('user_id',$request->user()->id)->findorFail($id);
         } else {
-            $petition = Ideas::where('slug', '=', $id)->firstorFail();
+            $petition = Ideas::where('user_id',$request->user()->id)->where('slug', '=', $id)->firstorFail();
         }
 
-        $petition->user_id = Auth::user()->id;
+        $petition->user_id = $request->user()->id;
         $petition->heading = $data['heading'];
         $petition->petition_to = $data['petition_to'];
         $petition->content = $data['content'];
@@ -160,7 +178,7 @@ class IdeasController extends Controller
         }
         $petition->save();
         Session::flash('flash_message', 'Your petition idea has been submitted. Thanks!');
-        return redirect('petitions');
+        return redirect('profile/ideas');
     }
 
     /**

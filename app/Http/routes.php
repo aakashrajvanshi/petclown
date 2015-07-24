@@ -18,11 +18,13 @@ Route::get('petition/{id}','PetitionController@show');
 Route::get('petitions','PetitionController@index');
 
 /*Change middleware to admin*/
-Route::get('ideas/create',['middleware' => 'admin', 'uses' => 'IdeasController@create']);
-Route::post('ideas/create',['middleware' => 'admin', 'uses' => 'IdeasController@store']);
-Route::get('ideas/edit/{id}',['middleware' => 'admin', 'uses' => 'IdeasController@edit']);
-Route::post('ideas/edit/{id}',['middleware' => 'admin', 'uses' => 'IdeasController@update']);
-Route::get('ideas/{id}',['middleware' => 'admin', 'uses' => 'IdeasController@show']);
+Route::get('ideas/create',['middleware' => 'auth', 'uses' => 'IdeasController@create']);
+Route::post('ideas/create',['middleware' => 'auth', 'uses' => 'IdeasController@store']);
+Route::get('ideas/edit/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@edit']);
+Route::post('ideas/edit/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@update']);
+Route::get('ideas/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@show']);
+Route::get('ideas/delete/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@destroy']);
+Route::get('ideas/restore/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@restore']);
 
 Route::post('comment',['middleware' => 'auth', 'uses' => 'CommentController@store']);
 
@@ -37,13 +39,12 @@ Route::get('admin/delpetition/{id}',['middleware' => 'admin', 'uses' => 'AdminCo
 Route::get('admin/undelpetition/{id}',['middleware' => 'admin', 'uses' => 'AdminController@undelpet']);
 Route::get('admin/approve/{id}',['middleware' => 'admin', 'uses' => 'AdminController@approve']);
 Route::get('admin/disapprove/{id}',['middleware' => 'admin', 'uses' => 'AdminController@disapprove']);
-Route::get('admin/delidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@delidea']);
-Route::get('admin/undelidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@undelidea']);
+Route::get('admin/reviewidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@reviewidea']);
+Route::post('admin/reviewidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@storereview']);
 
 Route::get('admin/{id}',['middleware' => 'admin', 'uses' => 'AdminController@show']);
 
-Route::get('ideas/delete/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@destroy']);
-Route::get('ideas/restore/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@restore']);
+
 
 //profile
 Route::get('profile', ['middleware' => 'auth', 'uses' => 'ProfileController@index']);

@@ -8,3 +8,12 @@ function user_photo_path($id='notdb'){
 }
 
 
+function user_is_admin(){
+    $user = Auth::user();
+    if($user->email=="aakash@careerty.com" ||  $user->email=="suryasteja59@gmail.com")
+    {
+        return 1;
+    }
+    else
+        return 0;
+}

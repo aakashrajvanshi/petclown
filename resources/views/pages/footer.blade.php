@@ -83,9 +83,11 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <a href="index.html">
-                        <img class="pull-right" id="logo-footer" src="assets/img/logo2-default.png" alt="">
+                    <!--
+					<a href="index.html">
+                        <img class="pull-right" id="logo-footer" src="images/petclown1.png" alt="">
                     </a>
+					-->
                 </div>
             </div>
         </div>
