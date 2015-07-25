@@ -36,8 +36,8 @@
 
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="admin/idealist">Latest</a></li>
-                <li><a href="admin/deletedideas">Deleted</a></li>
+                <li class="active"><a href="admin/idealist">Not Reviewed</a></li>
+                <li><a href="admin/reviewedideas">Reviewed</a></li>
             </ul>
             <div class="panel panel-default">
                 @foreach($ideas as $idea)
@@ -48,10 +48,10 @@
                             <small class="pull-right">{{$idea->created_at}}</small>
                         </p>
                         <div>
-                            <a href="/idea/{{$idea->slug}}">{{$idea->heading}}</a>
+                            <a href="/ideas/{{$idea->slug}}">{{$idea->heading}}</a>
                             <ul class="list-inline pull-right">
                                 <li>
-                                    <a href="/admin/delidea/{{$idea->id}}" title="Delete" id="delete"><i class="fa fa-trash-o fa-lg"></i></a>
+                                    <a href="/admin/reviewidea/{{$idea->id}}" title="Review"><i class="fa fa-pencil fa-lg"></i></a>
                                 </li>
                             </ul>
                         </div>

@@ -1,8 +1,8 @@
 @extends ('app')
 
 @section('title')
-    <title>Deleted Ideas</title>
-    <meta name="description" content="Deleted Ideas">
+    <title>Reviewed Ideas</title>
+    <meta name="description" content="Reviewed Ideas">
 
     @stop
 
@@ -36,8 +36,8 @@
 
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li><a href="admin/idealist">Latest</a></li>
-                <li class="active"><a href="admin/deletedideas">Deleted</a></li>
+                <li><a href="admin/idealist">Not Reviewed</a></li>
+                <li class="active"><a href="admin/reviewedideas">Reviewed</a></li>
             </ul>
             <div class="panel panel-default">
                 @foreach($ideas as $idea)

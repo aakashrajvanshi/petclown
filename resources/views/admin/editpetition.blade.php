@@ -32,7 +32,7 @@
                 <li class="list-group-item active">
                     <a href="admin/petitionlist">Petitions</a>
                 </li>
-                <li class="list-group-item active">
+                <li class="list-group-item">
                     <a href="admin/idealist">Ideas</a>
                 </li>
                 <li class="list-group-item">

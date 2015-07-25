@@ -189,7 +189,7 @@ class IdeasController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        Ideas::findorFail($id)->where('user_id',$request->user()->id)->delete();
+        Ideas::where('user_id',$request->user()->id)->findorFail($id)->delete();
         return back();
     }
 

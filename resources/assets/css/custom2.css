@@ -71,3 +71,23 @@ li button.btn-success a {
 .panel hr.nomargin {
     margin: 0px;
 }
+
+/*******************************Profile Page Styles *********************************/
+
+table thead tr th.width50 {
+    width: 50%;
+}
+
+table thead tr th.width10 {
+    width: 10%;
+}
+
+table thead tr th.width40 {
+    width: 40%;
+}
+
+div h2.empty {
+    text-align: center;
+}
+
+
