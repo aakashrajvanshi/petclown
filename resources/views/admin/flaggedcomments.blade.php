@@ -41,6 +41,7 @@
                 <li><a href="admin/spamcomments">Spam</a></li>
                 <li class="active"><a href="admin/flaggedcomments">Flagged</a></li>
             </ul>
+            <br/>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <p><a href="#" class="padding10">petition link</a>Comment on petition<a class="padding10" href="#">By user</a><small class="pull-right">2 min ago</small></p>

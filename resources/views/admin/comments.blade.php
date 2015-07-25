@@ -41,6 +41,7 @@
                 <li><a href="admin/spamcomments">Spam</a></li>
                 <li><a href="admin/flaggedcomments">Flagged</a></li>
             </ul>
+            <br/>
             <div class="panel panel-default">
                 @foreach($comments as $comment1)
                     <div class="panel-body">

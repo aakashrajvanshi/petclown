@@ -39,6 +39,7 @@
                 <li><a href="admin/petitionlist">Latest</a></li>
                 <li class="active"><a href="admin/deletedpetitions">Deleted</a></li>
             </ul>
+            <br/>
             <div class="panel panel-default">
                 @foreach($petitions as $petition)
                     <div class="panel-body">

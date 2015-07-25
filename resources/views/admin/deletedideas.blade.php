@@ -39,6 +39,7 @@
                 <li><a href="admin/idealist">Not Reviewed</a></li>
                 <li class="active"><a href="admin/reviewedideas">Reviewed</a></li>
             </ul>
+            <br/>
             <div class="panel panel-default">
                 @foreach($ideas as $idea)
                     <div class="panel-body">

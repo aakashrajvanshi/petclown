@@ -35,66 +35,62 @@
         <!--Profile Information-->
         <div class="col-md-9 col-sm-12">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="profile/ideas">Latest</a></li>
+                <li class="active"><a href="profile/ideas">My Ideas</a></li>
             </ul>
             <br/>
 
 
             @if(count($ideas))
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th class="width50">Ideas</th>
-                        <th class="width10">Status</th>
-                        <th class="width40">Comments</th>
-                    </tr>
-                    </thead>
+                <div class="panel panel-default">
                     @foreach($ideas as $idea)
-                        <tbody>
-                        <tr>
-                            <td>
-                                <div>
-                                    <p>
-                                        Petitioning: {{$idea->petition_to}}
-                                        <small class="pull-right">{{$idea->created_at->diffForHumans()}}</small>
-                                    </p>
-                                    <div>
-                                        {{$idea->heading}}
-                                        @if($idea->allow_editing)
-                                        <ul class="list-inline pull-right">
-                                            <li>
-                                                <a href="/ideas/edit/{{$idea->id}}" title="Edit"><i class="fa fa-pencil fa-lg"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="/ideas/delete/{{$idea->id}}" title="Delete" id="delete"><i class="fa fa-trash-o fa-lg"></i></a>
-                                            </li>
-                                        </ul>
-                                        @endif
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
+                        <div class="panel-body">
+                            <p>
+                                <strong>{{$idea->heading}}</strong>
+                                <span class="verylight">(To: {{$idea->petition_to}})</span>
+                                <small class="pull-right">{{$idea->created_at->diffForHumans()}}</small>
+                            </p>
+                            <ul class="list-inline">
                                 @if($idea->review_comment)
-                                    Reviewed
+                                    <li>
+                                        Status: Reviewed
+                                    </li>
                                 @elseif($idea->publish_comment)
-                                    Published
+                                    <li>
+                                        Status: Published
+                                    </li>
                                 @else
-                                    Under Review
+                                    <li>
+                                        Status: Under Review
+                                    </li>
                                 @endif
-                            </td>
-                            <td>
+                                @if($idea->allow_editing)
+                                        <li class="pull-right">
+                                            <a href="/ideas/delete/{{$idea->id}}" title="Delete" id="delete"><i class="fa fa-trash-o fa-lg"></i></a>
+                                        </li>
+                                        <li class="pull-right">
+                                            <a href="/ideas/edit/{{$idea->id}}" title="Edit"><i class="fa fa-pencil fa-lg"></i></a>
+                                        </li>
+                                    @else
+                                        <li class="pull-right">
+                                            <a href="/ideas/delete/{{$idea->id}}" title="Delete" id="delete"><i class="fa fa-trash-o fa-lg"></i></a>
+                                        </li>
+                                    @endif
+                            </ul>
+                            <p class="margintop10">
                                 @if($idea->review_comment)
-                                    {{$idea->review_comment}}
+                                    Message from Admin: {{$idea->review_comment}}
                                 @elseif($idea->publish_comment)
-                                    {{$idea->publish_comment}}
+                                    Message from Admin:{{$idea->publish_comment}}
                                 @else
-                                    No Comments
+                                    Message from Admin: Thanks for Submitting your Idea
                                 @endif
-                            </td>
-                        </tr>
-                        </tbody>
+                            </p>
+
+                        </div>
+                        <hr class="nomargin"/>
+
                     @endforeach
-                </table>
+                </div>
             @else
                 <div class="empty">
                     <h2>
