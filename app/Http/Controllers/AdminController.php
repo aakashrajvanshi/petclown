@@ -55,7 +55,7 @@ class AdminController extends Controller {
             return view('admin.deletedpetitions', ['petitions' => $petitions]);
         }
         else if ($id == "reviewedideas") {
-            $ideas = Ideas::whereNotNull('review_comment')->paginate(15);
+            $ideas = Ideas::withTrashed()->whereNotNull('review_comment')->paginate(15);
             $ideas->load('user');
             return view('admin.deletedideas', ['ideas' => $ideas]);
         }
@@ -370,27 +370,15 @@ class AdminController extends Controller {
         Comment::onlyTrashed()->where('petition_id', $id)->restore();
         return back();
     }
-    /*
-    public function delidea($id)
-    {
-        Ideas::findorFail($id)->delete();
-        return back();
-    }
 
-    public function undelidea($id)
-    {
-        Ideas::onlyTrashed()->where('id', $id)->restore();
-        return back();
-    }
-    */
     public function reviewidea($id)
     {
-        $idea = Ideas::findorFail($id);
+        $idea = Ideas::withTrashed()->findorFail($id);
         return view('admin.reviewidea',['idea' => $idea]);
     }
     public function storereview($id, Request $request)
     {
-        $idea = Ideas::findorFail($id);
+        $idea = Ideas::withTrashed()->findorFail($id);
         $data = $request->all();
 
         if(!empty($data['review_comment']))
