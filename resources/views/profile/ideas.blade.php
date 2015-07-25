@@ -38,16 +38,9 @@
                 <li class="active"><a href="profile/ideas">Latest</a></li>
             </ul>
             <br/>
-            <?php
-                $value = 0;
-                if(!empty($ideas))
-                    $value = 1;
-            ?>
-            @if($value == 0)
-                <h2 class="empty">
-                    No Ideas to display
-                </h2>
-            @else
+
+
+            @if(count($ideas))
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -102,6 +95,16 @@
                         </tbody>
                     @endforeach
                 </table>
+            @else
+                <div class="empty">
+                    <h2>
+                        Your Idea list is empty
+                    </h2>
+                    <button type="button" class="btn btn-u">
+                        <a href="{{ url('/ideas/create') }}">Create A New Idea</a>
+                    </button>
+                </div>
+
             @endif
 
 

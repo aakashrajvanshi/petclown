@@ -86,8 +86,12 @@ table thead tr th.width40 {
     width: 40%;
 }
 
-div h2.empty {
+div.empty {
     text-align: center;
+}
+
+div.empty button a {
+    color: White;
 }
 
 
