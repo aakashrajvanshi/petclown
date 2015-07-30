@@ -69,7 +69,8 @@
        </div>
 
        <div class="col-md-4">
-           <div class="sidebar" data-spy="affix" data-offset-top="100" data-offset-bottom="350">
+
+           <div class="sidebar hidden-sm hidden-xs visible-lg visible-md" data-spy="affix" data-offset-top="100" data-offset-bottom="350">
                <strong>
                    {{$support = count($petition->supportedby)}} Supporters
                    @if($support<=50)
@@ -201,10 +202,57 @@
                    </div>
                </div>
            </div>
-
-
-
        </div>
+
+
+           <!--- Mobile footer --->
+
+           <footer class="navbar-default navbar-fixed-bottom hidden-lg hidden-md visible-xs visible-sm">
+               <div class="mobile-footer">
+                   @if(Auth::guest())
+                       <ul class="share-request list-inline">
+
+                           <li class="pull-left">{{count($petition->supportedby)}}
+                               supporters
+                           </li>
+                           <li class="pull-right"><a href="{{url('/auth/login')}}">Sign this
+                                   Petition</a></li>
+                       </ul>
+                   @elseif($petition->supportedby->contains(Auth::user()))
+                       <ul class="share-request list-inline">
+
+                           <li class="pull-left">{{count($petition->supportedby)}} supporters
+                           </li>
+                           <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
+                           </li>
+
+                           <li class="pull-right"><a href="#"><i
+                                           class="fa fa-facebook-square fa-lg"></i></a>
+                           </li>
+                           <li class="pull-right"><a href="#"><i
+                                           class="fa fa-twitter-square fa-lg"></i></a>
+                           </li>
+                           <li class="pull-right"><a href="#"><i
+                                           class="fa fa-google-plus-square fa-lg"></i></a></li>
+                           <li class="pull-right">Share</li>
+
+                       </ul>
+                   @else
+                       <ul class="share-request list-inline">
+                           <li class="pull-left">{{count($petition->supportedby)}} supporters
+                           </li>
+                           <li class="pull-right"><a href="petition/{{$petition->slug}}">Sign this
+                                   Petition</a></li>
+                       </ul>
+                   @endif
+               </div>
+           </footer>
+
+
+
+
+
+
 
 
 
