@@ -102,31 +102,38 @@ p.margintop10 {
 
 footer.navbar-default.navbar-fixed-bottom
 {
-    background-color: #585f69;
-    color: #dadada;
-    padding: 0.8em 0;
+    background-color: white;
+    padding: 1em 0;
 }
 footer.navbar-default.navbar-fixed-bottom p
 {
     margin:0;
 }
 
-.mobile-footer ul li.pull-left {
-    color: #dadada;
-
+.mobile-footer ul li {
+    font-size: larger;
 }
 
-.mobile-footer ul li.pull-right a {
-    color: #dadada;
+.mobile-footer ul li.pull-left {
+    padding-top: 5px;
 }
 
 .mobile-footer ul li.pull-right {
-    color: #dadada;
+    padding-top: 5px;
+}
+
+.mobile-footer ul li span.verylight {
+    margin-left: 40px;
+}
+
+.mobile-footer ul li i.fa.fa-check-circle {
+    color: #72c02c;
 }
 
 .mobile-footer ul {
     padding-right: 15px;
     padding-left: 15px;
 }
+
 
 

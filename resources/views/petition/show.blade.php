@@ -212,37 +212,41 @@
                    @if(Auth::guest())
                        <ul class="share-request list-inline">
 
-                           <li class="pull-left">{{count($petition->supportedby)}}
-                               supporters
+                           <li class="pull-left">
+                               <span class="badge">{{count($petition->supportedby)}}</span> supporters
                            </li>
-                           <li class="pull-right"><a href="{{url('/auth/login')}}">Sign this
-                                   Petition</a></li>
+                           <li class="pull-right">
+                               <a href="{{url('/auth/login')}}">
+                                   <button class="btn btn-u">Sign this Petition</button>
+                               </a>
+                           </li>
                        </ul>
                    @elseif($petition->supportedby->contains(Auth::user()))
                        <ul class="share-request list-inline">
 
-                           <li class="pull-left">{{count($petition->supportedby)}} supporters
-                           </li>
-                           <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
+                           <li class="pull-left"><i class="fa fa-check-circle fa-2x"></i>
                            </li>
 
-                           <li class="pull-right"><a href="#"><i
-                                           class="fa fa-facebook-square fa-lg"></i></a>
+                           <li class="pull-left"><span class="verylight">Share</span></li>
+                           <li class="pull-left"><a href="#"><i
+                                           class="fa fa-facebook-square fa-2x"></i></a>
                            </li>
-                           <li class="pull-right"><a href="#"><i
-                                           class="fa fa-twitter-square fa-lg"></i></a>
+                           <li class="pull-left"><a href="#"><i
+                                           class="fa fa-twitter-square fa-2x"></i></a>
                            </li>
-                           <li class="pull-right"><a href="#"><i
-                                           class="fa fa-google-plus-square fa-lg"></i></a></li>
-                           <li class="pull-right">Share</li>
+
+                           <li class="pull-right"><a href="addcomment/{{$petition->id}}">Add a Comment</a></li>
 
                        </ul>
                    @else
                        <ul class="share-request list-inline">
-                           <li class="pull-left">{{count($petition->supportedby)}} supporters
+                           <li class="pull-left">
+                               <span class="badge">{{count($petition->supportedby)}}</span> supporters
                            </li>
-                           <li class="pull-right"><a href="petition/{{$petition->slug}}">Sign this
-                                   Petition</a></li>
+                           <li class="pull-right">
+                               <a href="addcomment/{{$petition->slug}}">
+                                   <button class="btn btn-u">Support this Petition</button>
+                               </a></li>
                        </ul>
                    @endif
                </div>
