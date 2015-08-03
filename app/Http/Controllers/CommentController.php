@@ -112,6 +112,7 @@ class CommentController extends Controller {
         catch (\Exception $e){
             //do nothing
         }
+        Session::flash('flash_message', 'Thanks for supporting the petition. Add a comment!');
         $url = '/petition/'.$petition->slug;
         return redirect($url);
     }
@@ -167,7 +168,12 @@ class CommentController extends Controller {
         } catch (\Exception $e) {
         }
 
-        return redirect()->back();
+        $comment = Comment::findorFail($id);
+        $petition = $comment->petition()->firstorFail();
+        $slug = $petition->slug;
+
+        $url = '/petition/'.$slug;
+        return redirect($url);
     }
 
     public function userunlike($id)
@@ -177,7 +183,12 @@ class CommentController extends Controller {
         } catch (\Exception $e) {
         }
 
-        return redirect()->back();
+        $comment = Comment::findorFail($id);
+        $petition = $comment->petition()->firstorFail();
+        $slug = $petition->slug;
+
+        $url = '/petition/'.$slug;
+        return redirect($url);
     }
 
 }

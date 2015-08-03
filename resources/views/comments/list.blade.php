@@ -27,13 +27,18 @@
                             <li id="likecount-{{$comment->id}}">{{$comment->likedBy->count()}} Likes</li>
                         </ul>
                         <ul class="list-inline pull-right bmargin-10">
-                            @if($comment->likedBy->contains(Auth::user()))
-                                <li class="like" id="comment-{{$comment->id}}"><a href="/unlike/{{$comment->id}}"><i
-                                                class="expand-list rounded-x fa fa-heart icon-color-red"></i></a>
-                                </li>
-                            @else
-                                <li class ="like" id="comment-{{$comment->id}}"><a href="/like/{{$comment->id}}"><i
+                            @if(Auth::guest())
+                                <li><a href="/like/{{$comment->id}}"><i
                                                 class="expand-list rounded-x fa fa-heart"></i></a></li>
+                            @else
+                                @if($comment->likedBy->contains(Auth::user()))
+                                    <li class="like" id="comment-{{$comment->id}}"><a href="/unlike/{{$comment->id}}"><i
+                                                    class="expand-list rounded-x fa fa-heart icon-color-red"></i></a>
+                                    </li>
+                                @else
+                                    <li class ="like" id="comment-{{$comment->id}}"><a href="/like/{{$comment->id}}"><i
+                                                    class="expand-list rounded-x fa fa-heart"></i></a></li>
+                                @endif
                             @endif
                         </ul>
                     </div>

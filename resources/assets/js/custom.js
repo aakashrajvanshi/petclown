@@ -68,7 +68,7 @@
                 error: function(res){
                     if(res.responseText=="Unauthorized.")
                     {
-                        window.location.href = "http://petclown.com/auth/login";
+                        window.location.href = "not a url";
                     }
                 },
             });
