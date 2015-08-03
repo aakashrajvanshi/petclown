@@ -38,6 +38,7 @@
             <div class="form-group">
                 {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'Add a comment...', 'rows'=>'5']) !!}
                 {!! Form::hidden('post_id', $petition->id) !!}
+                {!! Form::hidden('post_slug', $petition->slug) !!}
             </div>
             <div class="form-group">
                 {!! Form::submit('Submit',['class' => 'btn btn-u form-control']) !!}

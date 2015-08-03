@@ -50,7 +50,6 @@ class CommentController extends Controller {
             if (isset($data['anon'])) {
                 $comment->anon = 1;
             }
-
             $comment->save();
         }
         try{
@@ -66,6 +65,10 @@ class CommentController extends Controller {
         }
         else{
             Session::flash('flash_message', 'Thanks for supporting the petition!');
+        }
+        if(!empty($data['post_slug'])){
+            $url = '/petition/'.$data['post_slug'];
+            return redirect($url);
         }
         return redirect()->back();
     }
