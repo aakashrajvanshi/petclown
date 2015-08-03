@@ -70,6 +70,28 @@ class CommentController extends Controller {
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function addcomment($id)
+    {
+        try{
+            Auth::user()->support()->attach($id);
+        }
+        catch (\Exception $e){
+            //do nothing
+        }
+        if (is_numeric($id)) {
+            $petition = Petition::findorFail($id);
+        } else {
+            $petition = Petition::where('slug', '=', $id)->firstorFail();
+        }
+        return view('petition.comment', ['petition'=>$petition]);
+    }
+
+
+    /**
      * Display the specified resource.
      *
      * @param  int $id

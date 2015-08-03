@@ -27,6 +27,7 @@ Route::get('ideas/delete/{id}',['middleware' => 'auth', 'uses' => 'IdeasControll
 Route::get('ideas/restore/{id}',['middleware' => 'auth', 'uses' => 'IdeasController@restore']);
 
 Route::post('comment',['middleware' => 'auth', 'uses' => 'CommentController@store']);
+Route::get('addcomment/{id}',['middleware' => 'auth', 'uses' => 'CommentController@addcomment']);
 
 
 Route::get('admin',['middleware' => 'admin', 'uses' => 'AdminController@index']);
