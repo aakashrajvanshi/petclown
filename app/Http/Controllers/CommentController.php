@@ -74,10 +74,10 @@ class CommentController extends Controller {
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
+ * Store a newly created resource in storage.
+ *
+ * @return Response
+ */
     public function addcomment($id)
     {
         if (is_numeric($id)) {
@@ -94,6 +94,27 @@ class CommentController extends Controller {
         return view('petition.comment', ['petition'=>$petition]);
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function support($id)
+    {
+        if (is_numeric($id)) {
+            $petition = Petition::findorFail($id);
+        } else {
+            $petition = Petition::where('slug', '=', $id)->firstorFail();
+        }
+        try{
+            Auth::user()->support()->attach($petition->id);
+        }
+        catch (\Exception $e){
+            //do nothing
+        }
+        $url = '/petition/'.$petition->slug;
+        return redirect($url);
+    }
 
     /**
      * Display the specified resource.
