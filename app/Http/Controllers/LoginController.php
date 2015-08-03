@@ -10,6 +10,7 @@ use Socialite;
 use App\Models\User;
 use Auth;
 use Redirect;
+use Session;
 
 class LoginController extends Controller
 {
@@ -64,6 +65,9 @@ class LoginController extends Controller
 
         Auth::login($this->user);
 
-        return Redirect::back();
+        if(!empty(Session::get('url.intended')))
+            return redirect()->intended('/');
+        else
+            return back();
     }
 }
