@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Session;
 use App\Models\Comment;
+use App\Models\Petition;
 
 class CommentController extends Controller {
 
