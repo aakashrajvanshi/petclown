@@ -77,16 +77,16 @@ class CommentController extends Controller {
      */
     public function addcomment($id)
     {
-        try{
-            Auth::user()->support()->attach($id);
-        }
-        catch (\Exception $e){
-            //do nothing
-        }
         if (is_numeric($id)) {
             $petition = Petition::findorFail($id);
         } else {
             $petition = Petition::where('slug', '=', $id)->firstorFail();
+        }
+        try{
+            Auth::user()->support()->attach($petition->id);
+        }
+        catch (\Exception $e){
+            //do nothing
         }
         return view('petition.comment', ['petition'=>$petition]);
     }
