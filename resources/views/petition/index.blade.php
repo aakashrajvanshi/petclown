@@ -56,7 +56,7 @@
                                                     <li class="pull-left verylight">{{count($petition->supportedby)}}
                                                         supporters
                                                     </li>
-                                                    <li class="pull-right"><a href="{{url('/auth/login')}}">Sign this
+                                                    <li class="pull-right"><a href="support/{{$petition->slug}}">Sign this
                                                             Petition</a></li>
                                                 </ul>
                                             @elseif($petition->supportedby->contains(Auth::user()))
@@ -82,7 +82,7 @@
                                                 <ul class="share-request list-inline">
                                                     <li class="pull-left verylight">{{count($petition->supportedby)}} supporters
                                                     </li>
-                                                    <li class="pull-right"><a href="petition/{{$petition->slug}}">Sign this
+                                                    <li class="pull-right"><a href="support/{{$petition->slug}}">Sign this
                                                             Petition</a></li>
                                                 </ul>
                                             @endif
@@ -125,7 +125,7 @@
                                                     <li class="pull-left verylight">{{count($petition->supportedby)}}
                                                         supporters
                                                     </li>
-                                                    <li class="pull-right"><a href="{{url('/auth/login')}}">Sign this
+                                                    <li class="pull-right"><a href="support/{{$petition->slug}}">Sign this
                                                             Petition</a></li>
                                                 </ul>
                                             @elseif($petition->supportedby->contains(Auth::user()))
@@ -151,7 +151,7 @@
                                                 <ul class="share-request list-inline">
                                                     <li class="pull-left verylight">{{count($petition->supportedby)}} supporters
                                                     </li>
-                                                    <li class="pull-right"><a href="petition/{{$petition->slug}}">Sign this
+                                                    <li class="pull-right"><a href="support/{{$petition->slug}}">Sign this
                                                             Petition</a></li>
                                                 </ul>
                                             @endif
@@ -194,7 +194,7 @@
                                                     <li class="pull-left verylight">{{count($petition->supportedby)}}
                                                         supporters
                                                     </li>
-                                                    <li class="pull-right"><a href="{{url('/auth/login')}}">Sign this
+                                                    <li class="pull-right"><a href="support/{{$petition->slug}}">Sign this
                                                             Petition</a></li>
                                                 </ul>
                                             @elseif($petition->supportedby->contains(Auth::user()))
@@ -220,7 +220,7 @@
                                                 <ul class="share-request list-inline">
                                                     <li class="pull-left verylight">{{count($petition->supportedby)}} supporters
                                                     </li>
-                                                    <li class="pull-right"><a href="petition/{{$petition->slug}}">Sign this
+                                                    <li class="pull-right"><a href="support/{{$petition->slug}}">Sign this
                                                             Petition</a></li>
                                                 </ul>
                                             @endif

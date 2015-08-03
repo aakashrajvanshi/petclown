@@ -103,14 +103,14 @@ p.margintop10 {
 footer.navbar-default.navbar-fixed-bottom
 {
     background-color: white;
-    padding: 1em 0;
 }
+
 footer.navbar-default.navbar-fixed-bottom p
 {
     margin:0;
 }
 
-.mobile-footer ul li {
+.mobile-footer ul li.pull-left {
     font-size: larger;
 }
 
@@ -122,10 +122,6 @@ footer.navbar-default.navbar-fixed-bottom p
     padding-top: 5px;
 }
 
-.mobile-footer ul li span.verylight {
-    margin-left: 40px;
-}
-
 .mobile-footer ul li i.fa.fa-check-circle {
     color: #72c02c;
 }
@@ -134,6 +130,7 @@ footer.navbar-default.navbar-fixed-bottom p
     padding-right: 15px;
     padding-left: 15px;
 }
+
 
 
 

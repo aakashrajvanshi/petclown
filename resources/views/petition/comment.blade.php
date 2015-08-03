@@ -28,7 +28,7 @@
 
     <div class="panel panel-u">
         <div class="panel-body">
-            <p align="center"><strong>Petitioning: {{$petition->petition_to}}</strong></p>
+            <p align="center">Petitioning: <strong>{{$petition->petition_to}}</strong></p>
             <p align="center">{{$petition->heading}}</p>
             <div class="panel panel-default petition-from">
                 <img class="profileimagexs rounded-x" src="{{Auth::user()->avatar}}">{{Auth::user()->name}}
@@ -49,4 +49,5 @@
     </div>
 
 
-    @stop
+@stop
+
