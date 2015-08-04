@@ -4,7 +4,7 @@
     <title>Contact Us</title>
     <meta name="description" content="Contact Us">
 
-    @stop
+@stop
 
 @section('content')
 
@@ -31,11 +31,34 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 
+                    @if($errors->any())
+                        <ul class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
+                    <form role="form" action="" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="msg">Message:</label>
+                            <textarea class="form-control" name="message" id="msg" cols="30" rows="10"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-u pull-right">Submit</button>
+                    </form>
                 </div>
             </div>
 
         </div>
     </div>
 
-    @stop
+
+@stop

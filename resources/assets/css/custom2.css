@@ -98,7 +98,7 @@ p.margintop10 {
     margin-top: 10px;
 }
 
-/****** Mobile footer Styles *******/
+/******************************** Mobile footer Styles ******************************/
 
 footer.navbar-default.navbar-fixed-bottom
 {
@@ -129,6 +129,13 @@ footer.navbar-default.navbar-fixed-bottom p
 .mobile-footer ul {
     padding-right: 15px;
     padding-left: 15px;
+}
+
+
+/******************** Contact Us styles **********************/
+
+textarea {
+    resize: none;
 }
 
 
