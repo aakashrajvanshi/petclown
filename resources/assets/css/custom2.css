@@ -115,11 +115,12 @@ footer.navbar-default.navbar-fixed-bottom p
 }
 
 .mobile-footer ul li.pull-left {
-    padding-top: 5px;
+    padding-top: 8px;
 }
 
 .mobile-footer ul li.pull-right {
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .mobile-footer ul li i.fa.fa-check-circle {
@@ -129,6 +130,10 @@ footer.navbar-default.navbar-fixed-bottom p
 .mobile-footer ul {
     padding-right: 15px;
     padding-left: 15px;
+}
+
+.mobile-footer ul li.col-xs-7.col-sm-9 {
+    padding-top: 5px;
 }
 
 

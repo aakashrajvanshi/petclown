@@ -236,7 +236,7 @@
                         </li>
 
 
-                        <li align="center" class="pull-right col-xs-3 col-sm-2"><a href="addcomment/{{$petition->id}}">Add Comment</a></li>
+                        <li align="center" class="pull-right col-xs-3 col-sm-2"><a href="addcomment/{{$petition->slug}}">Add Comment</a></li>
 
                     </ul>
                 @else
