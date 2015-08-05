@@ -52,6 +52,8 @@
 
                     <h1>About me</h1>
                     <form id="form1" class="form-horizontal profile-form" role="form" action="/profile" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+
+                        <!-- profile pic and avatar selector -->
                         <div class="form-group">
                             <div class="col-md-12" id="collapseAvatar">
                                     <ul class="nav nav-tabs">
@@ -65,6 +67,7 @@
                                         </li>
                                     </ul>
                                 <br/>
+
                                 <div class="tab-content">
                                     <div id="clownGroup1" class="tab-pane fade in active">
                                         <ul class="list-inline">
@@ -94,9 +97,19 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <div id="clownGroup2" class="tab-pane fade">
+
+                                    </div>
+                                    <div id="clownGroup3" class="tab-pane fade">
+
+                                    </div>
+                                    <div id="clownGroup4" class="tab-pane fade">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div id="profilePic" class="form-group">
                             <label class="control-label col-md-3">
                                 Change Profile Pic:
@@ -115,6 +128,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="control-label col-md-3" for="name">
                                 Name:
@@ -124,6 +138,7 @@
                                 <input class="form-control" type="text" name="name" value="{{$user->name}}">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="control-label col-md-3" for="gender">
                                 Gender:
@@ -157,6 +172,7 @@
                                 {!! csrf_field() !!}
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="control-label col-md-3" for="country">
                                 Country:
@@ -166,6 +182,7 @@
                                 <input class="form-control" type="text" name="country" value="{{$user->country}}">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="control-label col-md-3" for="email">
                                 Alternate email:
@@ -177,65 +194,6 @@
                         </div>
                         <button class="pull-right btn-u" type="submit">Save Changes</button>
                     </form>
-
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog">
-
-
-                                <form role="form" action="/profile" method="POST">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
-                                            <h4 id="myModalLabel1" class="modal-title">Pick an Avatar</h4>
-                                        </div>
-                                            <div class="modal-body">
-                                                <ul class="nav nav-tabs">
-                                                    <li class="active"><a data-toggle="tab" href="#clownGroup1">Funny Clown 1</a></li>
-                                                    <li><a data-toggle="tab" href="#clownGroup2">Funny Clown 2</a></li>
-                                                    <li><a data-toggle="tab" href="#clownGroup3">Funny Clown 3</a></li>
-                                                    <li><a data-toggle="tab" href="#clownGroup4">Funny Clown 4</a></li>
-                                                </ul>
-                                                <div class="tab-content">
-                                                    <div id="clownGroup1" class="tab-pane fade in active">
-                                                        <ul class="list-inline">
-                                                            <li>
-                                                                <input type="radio" name="avatar" value="funnyclown1" id="funnyclown1" />
-                                                                <label for="funnyclown1">
-                                                                    <img class="img img-responsive img-thumbnail" width="25%" src="http://www.myfreephotoshop.com/wp-content/uploads/2013/12/296.jpg" alt="Funny Clown 1">
-                                                                </label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" name="avatar" value="funnyclown2" id="funnyclown2" />
-                                                                <label for="funnyclown2">
-                                                                    <img class="img img-responsive img-thumbnail" width="25%" src="http://previews.123rf.com/images/yuliaglam/yuliaglam1305/yuliaglam130500064/20008444-illustration-of-smiling-clown-with-red-bow-Stock-Vector-clown-cartoon-face.jpg" alt="Funny Clown 2">
-                                                                </label>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div id="clownGroup2" class="tab-pane fade">
-
-                                                    </div>
-
-                                                    <div id="clownGroup3" class="tab-pane fade">
-                                                        <img src="" alt="Funny Clown 3">
-                                                    </div>
-                                                    <div id="clownGroup4" class="tab-pane fade">
-                                                        <img src="" alt="Funny clown 4">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
-                                                <button class="btn-u" type="submit" form="form1">Save changes</button>
-                                            </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-
 
 
 
