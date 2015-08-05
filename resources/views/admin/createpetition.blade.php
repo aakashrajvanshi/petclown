@@ -12,11 +12,12 @@
             height: "200",
             width: "98%",
             link_assume_external_targets: true,
-            paste_as_text: true,
+            //paste_as_text: true,
             menubar: false,
             toolbar: "bold italic | bullist numlist | link unlink",
             statusbar : false,
-            valid_elements : "a[href|target=_blank],strong/b,p,em/i,ol,ul,li,div[align],br,sup,sub,h3,h4,h5,h6,blockquote,code"
+            valid_elements : '*[*]',
+            //valid_elements : "a[href|target=_blank],strong/b,p,em/i,ol,ul,li,div[align],br,sup,sub,h3,h4,h5,h6,blockquote,code"
         });</script>
 
 @stop
