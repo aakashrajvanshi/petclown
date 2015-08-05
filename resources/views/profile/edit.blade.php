@@ -63,7 +63,7 @@
                                         <li><a data-toggle="tab" href="#clownGroup4">Funny Clown 4</a></li>
                                         <li class="pull-right">
                                             <button id="custombtn" class="btn btn-u" type="button" aria-expanded="false" aria-controls="collapseAvatar">
-                                                Back</button>
+                                                Or Upload Image</button>
                                         </li>
                                     </ul>
                                 <br/>
@@ -72,27 +72,21 @@
                                     <div id="clownGroup1" class="tab-pane fade in active">
                                         <ul class="list-inline">
                                             <li>
-                                                <input type="radio" name="image" value="funnyclown1" id="funnyclown1" />
+                                                <input type="radio" name="image1" value="profile.jpg" id="funnyclown1" />
                                                 <label for="funnyclown1">
-                                                    <img class="img-responsive" src="http://pickaface.net/includes/themes/clean/img/slide4.png" alt="">
+                                                    <img class="img-responsive" src="/images/default/profile.jpg" alt="">
                                                 </label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="image" value="funnyclown2" id="funnyclown2" />
+                                                <input type="radio" name="image1"  value="profile_old.jpg" id="funnyclown2" />
                                                 <label for="funnyclown2">
-                                                    <img class="img-responsive" src="assets/img/clients2/inspiring.png" alt="">
+                                                    <img class="img-responsive" src="images/default/profile_old.jpg" alt="">
                                                 </label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="image" value="funnyclown3" id="funnyclown3" />
+                                                <input type="radio" name="image1"  value="avatar1.png" id="funnyclown3" />
                                                 <label for="funnyclown3">
-                                                    <img class="img-responsive" src="assets/img/clients2/marianos.png" alt="">
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" name="image" value="funnyclown4" id="funnyclown4" />
-                                                <label for="funnyclown4">
-                                                    <img class="img-responsive" src="assets/img/clients2/bellfield.png" alt="">
+                                                    <img class="img-responsive" src="images/default/avatar1.png" alt="">
                                                 </label>
                                             </li>
                                         </ul>
