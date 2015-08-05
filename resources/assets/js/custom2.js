@@ -13,4 +13,17 @@ $(function(){
             return false;
         }
     });
+
+    $('#collapseAvatar').hide();
+    $('#avatarbtn').click(function(){
+        $('#profilePic').toggle('fast');
+        $('#collapseAvatar').toggle('slow');
+
+    });
+    $('#custombtn').click(function(){
+        $('#profilePic').toggle('fast');
+        $('#collapseAvatar').toggle('slow');
+    });
 });
+
+

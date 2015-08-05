@@ -40,7 +40,15 @@
             <br/>
 
 
+
             @if(count($ideas))
+                <div class="empty">
+                    <button type="button" class="btn btn-u">
+                        <a href="{{ url('/ideas/create') }}">Create A New Idea</a>
+                    </button>
+                </div>
+                <br/>
+
                 <div class="panel panel-default">
                     @foreach($ideas as $idea)
                         <div class="panel-body">

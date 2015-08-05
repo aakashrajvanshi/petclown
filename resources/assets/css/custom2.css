@@ -72,7 +72,26 @@ li button.btn-success a {
     margin: 0px;
 }
 
-/*******************************Profile Page Styles *********************************/
+/*******************************Profile Page Styles **********************************/
+
+
+
+#collapseAvatar.col-md-12 ul li label img.img-responsive {
+    width: 80px;
+    height: auto;
+}
+
+
+
+
+
+#collapseAvatar.col-md-12 input[type="radio"] {
+    display: none !important;
+}
+
+#collapseAvatar.col-md-12 input[type="radio"]:checked + label {
+    border: 2px solid #72c02c;
+}
 
 table thead tr th.width50 {
     width: 50%;
@@ -142,6 +161,10 @@ footer.navbar-default.navbar-fixed-bottom p
 textarea {
     resize: none;
 }
+
+/********************************************************/
+
+
 
 
 
