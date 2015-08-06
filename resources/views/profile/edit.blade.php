@@ -51,60 +51,80 @@
                     @endif
 
                     <h1>About me</h1>
-                    <form id="form1" class="form-horizontal profile-form" role="form" action="/profile" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+                    <form class="form-horizontal profile-form" role="form" action="/profile" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
 
                         <!-- profile pic and avatar selector -->
                         <div class="form-group">
                             <div class="col-md-12" id="collapseAvatar">
-                                    <ul class="nav nav-tabs">
-                                        <li class="active"><a data-toggle="tab" href="#clownGroup1">Funny Clown 1</a></li>
-                                        <li><a data-toggle="tab" href="#clownGroup2">Funny Clown 2</a></li>
-                                        <li><a data-toggle="tab" href="#clownGroup3">Funny Clown 3</a></li>
-                                        <li><a data-toggle="tab" href="#clownGroup4">Funny Clown 4</a></li>
-                                        <li class="pull-right">
-                                            <button id="custombtn" class="btn btn-u" type="button" aria-expanded="false" aria-controls="collapseAvatar">
-                                                Back</button>
-                                        </li>
-                                    </ul>
-                                <br/>
-
-                                <div class="tab-content">
-                                    <div id="clownGroup1" class="tab-pane fade in active">
-                                        <ul class="list-inline">
-                                            <li>
-                                                <input type="radio" name="image" value="funnyclown1" id="funnyclown1" />
-                                                <label for="funnyclown1">
-                                                    <img class="img-responsive" src="http://pickaface.net/includes/themes/clean/img/slide4.png" alt="">
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" name="image" value="funnyclown2" id="funnyclown2" />
-                                                <label for="funnyclown2">
-                                                    <img class="img-responsive" src="assets/img/clients2/inspiring.png" alt="">
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" name="image" value="funnyclown3" id="funnyclown3" />
-                                                <label for="funnyclown3">
-                                                    <img class="img-responsive" src="assets/img/clients2/marianos.png" alt="">
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" name="image" value="funnyclown4" id="funnyclown4" />
-                                                <label for="funnyclown4">
-                                                    <img class="img-responsive" src="assets/img/clients2/bellfield.png" alt="">
-                                                </label>
-                                            </li>
-                                        </ul>
+                                <button id="custombtn" class="btn btn-u pull-right" type="button" aria-expanded="false" aria-controls="collapseAvatar">
+                                    or Upload Image</button>
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Funny Clown 1
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <ul class="list-inline">
+                                                    <li>
+                                                        <input type="radio" name="image" value="funnyclown1" id="funnyclown1" />
+                                                        <label for="funnyclown1">
+                                                            <img class="img-responsive" src="http://pickaface.net/includes/themes/clean/img/slide4.png" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="image" value="funnyclown2" id="funnyclown2" />
+                                                        <label for="funnyclown2">
+                                                            <img class="img-responsive" src="assets/img/clients2/inspiring.png" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="image" value="funnyclown3" id="funnyclown3" />
+                                                        <label for="funnyclown3">
+                                                            <img class="img-responsive" src="assets/img/clients2/marianos.png" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="image" value="funnyclown4" id="funnyclown4" />
+                                                        <label for="funnyclown4">
+                                                            <img class="img-responsive" src="assets/img/clients2/bellfield.png" alt="">
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div id="clownGroup2" class="tab-pane fade">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Funny Clowns #2
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div class="panel-body">
 
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div id="clownGroup3" class="tab-pane fade">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Funny Clowns #3
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                            <div class="panel-body">
 
-                                    </div>
-                                    <div id="clownGroup4" class="tab-pane fade">
-
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +138,7 @@
                                 <ul class="list-inline">
                                     <li>
                                         <button id="avatarbtn" class="btn btn-u" type="button" aria-expanded="false" aria-controls="collapseAvatar">
-                                            Choose an Avatar
+                                            Choose Avatar
                                         </button>
                                     </li>
                                     <li>OR</li>

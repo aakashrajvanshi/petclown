@@ -16,12 +16,12 @@ $(function(){
 
     $('#collapseAvatar').hide();
     $('#avatarbtn').click(function(){
-        $('#profilePic').toggle('fast');
+        $('#profilePic').toggle('slow');
         $('#collapseAvatar').toggle('slow');
 
     });
     $('#custombtn').click(function(){
-        $('#profilePic').toggle('fast');
+        $('#profilePic').toggle('slow');
         $('#collapseAvatar').toggle('slow');
     });
 });
