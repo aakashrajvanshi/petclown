@@ -227,7 +227,8 @@
                         <li class="pull-left col-xs-2 col-sm-1">
                             <i class="fa fa-check-circle fa-2x"></i>
                         </li>
-                        <li align="center" class="col-xs-7 col-sm-9">
+                        <li class="col-xs-7 col-sm-9">
+                            <p>Please share</p>
                             <ul class="my-social-icons icon-rounded icon-zoom list-unstyled list-inline">
                                 <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li> <a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -236,7 +237,7 @@
                         </li>
 
 
-                        <li align="center" class="pull-right col-xs-3 col-sm-2"><a href="addcomment/{{$petition->slug}}">Add Comment</a></li>
+                        <li class="pull-right col-xs-3 col-sm-2"><a href="addcomment/{{$petition->slug}}">Add Comment</a></li>
 
                     </ul>
                 @else

@@ -7,6 +7,8 @@
 
 @section('content')
 
+    <h4 align="center">Thanks for supporting the Petition. Please add a comment</h4>
+
     <strong>
         {{$support = count($petition->supportedby)}} Supporters
         @if($support<=50)
@@ -36,12 +38,19 @@
             {!! Form::Open(['url' => '/comment']) !!}
                     <!-- Content Form Input -->
             <div class="form-group">
-                {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'Add a comment...', 'rows'=>'5']) !!}
+                {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'Add a comment...(optional)', 'rows'=>'5']) !!}
                 {!! Form::hidden('post_id', $petition->id) !!}
                 {!! Form::hidden('post_slug', $petition->slug) !!}
             </div>
             <div class="form-group">
-                {!! Form::submit('Submit',['class' => 'btn btn-u form-control']) !!}
+
+                <button type="button" class="btn-u btn-u-default pull-right">
+                    <a href="petition/{{$petition->slug}}">
+                    Back to Petition
+                    </a>
+                </button>
+
+                {!! Form::submit('Submit',['class' => 'btn btn-u pull-right']) !!}
             </div>
             {!! Form::Close() !!}
 
