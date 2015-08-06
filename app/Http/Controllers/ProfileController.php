@@ -59,6 +59,9 @@ class ProfileController extends Controller {
         $user->alternate_email = $data['email'];
         $user->city = $data['city'];
         $user->country = $data['country'];
+        if(!empty($data['image1'])){
+            $user->avatar = "/images/default/".$data['image1'];
+        }
         if (!empty($data['image'])) {
             $mytime = Carbon::now()->toTimeString();
             $fileName = $data['image']->getClientOriginalName();

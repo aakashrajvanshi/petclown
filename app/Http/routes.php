@@ -79,6 +79,15 @@ Route::controllers([
 Route::get('/contact', function(){
     return view('pages.contact');
 });
+Route::get('/faq', function(){
+    return view('pages.faq');
+});
+Route::get('/privacy-policy', function(){
+    return view('pages.privacypolicy');
+});
+Route::get('/terms-of-use', function(){
+    return view('pages.terms');
+});
 
 
 // Display all SQL executed in Eloquent
