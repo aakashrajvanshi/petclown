@@ -170,7 +170,11 @@
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
-                                        <li> <a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li> <a href="https://plus.google.com/share?url={https://petclown.com/petition/{{$petition->slug}}}"
+                                                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                <i class="fa fa-google-plus"></i>
+                                            </a>
+                                        </li>
                                         <li>
                                             <a class="twitter-share-button"
                                                 href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->slug}}&via=petclown">
@@ -258,7 +262,12 @@
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
-                                <li> <a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={https://petclown.com/petition/{{$petition->slug}}}"
+                                        onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
                                 <li> <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->slug}}&via=petclown"><i class="fa fa-twitter"></i></a></li>
                             </ul>
                         </li>

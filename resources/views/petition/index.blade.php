@@ -81,8 +81,12 @@
                                                             <i class="fa fa-twitter-square fa-lg"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                                    <li class="pull-right">
+                                                        <a href="https://plus.google.com/share?url={https://petclown.com/petition/{{$petition->slug}}}"
+                                                                              onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                            <i class="fa fa-google-plus-square fa-lg"></i>
+                                                        </a>
+                                                    </li>
                                                     <li class="pull-right verylight">Share</li>
 
                                                 </ul>
@@ -156,8 +160,12 @@
                                                             <i class="fa fa-twitter-square fa-lg"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                                    <li class="pull-right">
+                                                        <a href="https://plus.google.com/share?url={https://petclown.com/petition/{{$petition->slug}}}"
+                                                           onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                            <i class="fa fa-google-plus-square fa-lg"></i>
+                                                        </a>
+                                                    </li>
                                                     <li class="pull-right verylight">Share</li>
 
                                                 </ul>
@@ -233,8 +241,12 @@
                                                             <i class="fa fa-twitter-square fa-lg"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                                    <li class="pull-right">
+                                                        <a href="https://plus.google.com/share?url={https://petclown.com/petition/{{$petition->slug}}}"
+                                                           onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                                            <i class="fa fa-google-plus-square fa-lg"></i>
+                                                        </a>
+                                                    </li>
                                                     <li class="pull-right verylight">Share</li>
 
                                                 </ul>
