@@ -1,42 +1,12 @@
 @extends('app')
 @section('title')
     <title>Petitions</title>
-    <!--
-    <meta property="og:title"   content="Petition title" />
-    <meta property="og:site_name" content="petclown.com"/>
-    <meta property="og:url"     content="http://petclown.com" />
-    <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dolor lorem, sodales ut tellus ac, eleifend semper nunc. Donec pulvinar sapien eget libero varius, quis feugiat mauris faucibus. Duis aliquet nibh erat, sit amet lobortis dolor gravida nec. Nam vel sagittis lacus, sed gravida odio. In volutpat congue auctor. Morbi convallis et eros at semper. Aliquam feugiat consectetur ex nec consectetur. Etiam efficitur, diam non ultrices posuere, tellus felis rhoncus purus, ac fermentum lorem turpis sit amet ante. Nulla facilisi." />
-    <meta property="og:image"              content="http://petclown.com/images/Aakash%20Rajvanshi/thumb_12:04:38-The_Lost_World_Jurassic_Park.jpg" />
-    -->
+
 
 @stop
 
 
 @section('content')
-
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : 391650077697225,
-                status     : true,
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v2.4'
-            });
-            FB.ui({
-                method: 'share',
-                href: 'http://petclown.com'
-            }, function(response){});
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
 
 
     <div class="row">
@@ -99,13 +69,17 @@
                                                     <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
                                                     </li>
 
-                                                    <li class="pull-right"><a href="https://www.facebook.com/dialog/share?
-                                                    app_id=391650077697225&href=http://petclown.com/petition/{{$petition->slug}}
-                                                                &redirect_uri=http://petclown.com/petition/{{$petition->slug}}">
+                                                    <li class="pull-right"><a href="https://www.facebook.com/dialog/feed?app_id=391650077697225
+                                                    &link=https://petclown.com/petition/{{$petition->slug}}
+                                                                &picture=http://petclown.com/images/surya/13:52:16-avatar9.png
+                                                                &caption=Petitioning: {{$petition->petition_to}}&description={{$petition->heading}}
+                                                                &redirect_uri=https://petclown.com/petition/{{$petition->slug}}">
                                                             <i class="fa fa-facebook-square fa-lg"></i></a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-twitter-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->id}}&via=petclown">
+                                                            <i class="fa fa-twitter-square fa-lg"></i>
+                                                        </a>
                                                     </li>
                                                     <li class="pull-right"><a href="#"><i
                                                                     class="fa fa-google-plus-square fa-lg"></i></a></li>
@@ -170,13 +144,17 @@
                                                     <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
                                                     </li>
 
-                                                    <li class="pull-right"><a href="https://www.facebook.com/dialog/share?
-                                                    app_id=391650077697225&href=http://petclown.com/petition/{{$petition->slug}}
-                                                                &redirect_uri=http://petclown.com/petition/{{$petition->slug}}"><i
+                                                    <li class="pull-right"><a href="https://www.facebook.com/dialog/feed?app_id=391650077697225
+                                                    &link=https://petclown.com/petition/{{$petition->slug}}
+                                                                &picture=http://petclown.com/images/surya/13:52:16-avatar9.png
+                                                                &caption=Petitioning: {{$petition->petition_to}}&description={{$petition->heading}}
+                                                                &redirect_uri=https://petclown.com/petition/{{$petition->slug}}"><i
                                                                     class="fa fa-facebook-square fa-lg"></i></a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-twitter-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->id}}&via=petclown">
+                                                            <i class="fa fa-twitter-square fa-lg"></i>
+                                                        </a>
                                                     </li>
                                                     <li class="pull-right"><a href="#"><i
                                                                     class="fa fa-google-plus-square fa-lg"></i></a></li>
@@ -242,14 +220,18 @@
                                                     </li>
 
                                                     <li class="pull-right">
-                                                        <a href="https://www.facebook.com/dialog/share?
-                                                    app_id=391650077697225&href=http://petclown.com/petition/{{$petition->slug}}
-                                                                &redirect_uri=http://petclown.com/petition/{{$petition->slug}}">
+                                                        <a href="https://www.facebook.com/dialog/feed?app_id=391650077697225
+                                                    &link=https://petclown.com/petition/{{$petition->slug}}
+                                                                &picture=http://petclown.com/images/surya/13:52:16-avatar9.png
+                                                                &caption=Petitioning: {{$petition->petition_to}}&description={{$petition->heading}}
+                                                                &redirect_uri=https://petclown.com/petition/{{$petition->slug}}">
                                                             <i class="fa fa-facebook-square fa-lg"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-twitter-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->id}}&via=petclown">
+                                                            <i class="fa fa-twitter-square fa-lg"></i>
+                                                        </a>
                                                     </li>
                                                     <li class="pull-right"><a href="#"><i
                                                                     class="fa fa-google-plus-square fa-lg"></i></a></li>
