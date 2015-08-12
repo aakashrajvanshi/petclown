@@ -71,27 +71,45 @@
                                             <div class="panel-body">
                                                 <ul class="list-inline">
                                                     <li>
-                                                        <input type="radio" name="image" value="funnyclown1" id="funnyclown1" />
+                                                        <input type="radio" name="image1" value="avatar1.png" id="funnyclown1" />
                                                         <label for="funnyclown1">
-                                                            <img class="img-responsive" src="http://pickaface.net/includes/themes/clean/img/slide4.png" alt="">
+                                                            <img class="img-responsive" src="/images/default/avatar1.png" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="image" value="funnyclown2" id="funnyclown2" />
+                                                        <input type="radio" name="image1" value="avatar2.png" id="funnyclown2" />
                                                         <label for="funnyclown2">
-                                                            <img class="img-responsive" src="assets/img/clients2/inspiring.png" alt="">
+                                                            <img class="img-responsive" src="/images/default/avatar2.png" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="image" value="funnyclown3" id="funnyclown3" />
+                                                        <input type="radio" name="image1" value="avatar3.png" id="funnyclown3" />
                                                         <label for="funnyclown3">
-                                                            <img class="img-responsive" src="assets/img/clients2/marianos.png" alt="">
+                                                            <img class="img-responsive" src="/images/default/avatar3.png" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="image" value="funnyclown4" id="funnyclown4" />
+                                                        <input type="radio" name="image1" value="avatar4.png" id="funnyclown4" />
                                                         <label for="funnyclown4">
-                                                            <img class="img-responsive" src="assets/img/clients2/bellfield.png" alt="">
+                                                            <img class="img-responsive" src="/images/default/avatar4.png" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="image1" value="avatar5.png" id="funnyclown5" />
+                                                        <label for="funnyclown5">
+                                                            <img class="img-responsive" src="/images/default/avatar5.png" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="image1" value="avatar6.png" id="funnyclown6" />
+                                                        <label for="funnyclown6">
+                                                            <img class="img-responsive" src="/images/default/avatar6.png" alt="">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" name="image1" value="avatar7.png" id="funnyclown7" />
+                                                        <label for="funnyclown7">
+                                                            <img class="img-responsive" src="/images/default/avatar7.png" alt="">
                                                         </label>
                                                     </li>
                                                 </ul>
