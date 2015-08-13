@@ -1,8 +1,10 @@
 @extends('app')
 @section('title')
     <title>Petitions</title>
-    <meta name="description" content="Petitions listings">
+
+
 @stop
+
 
 @section('content')
 
@@ -67,14 +69,21 @@
                                                     <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
                                                     </li>
 
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-facebook-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                                            <i class="fa fa-facebook-square fa-lg"></i>
+                                                        </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-twitter-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->id}}&via=petclown">
+                                                            <i class="fa fa-twitter-square fa-lg"></i>
+                                                        </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                                    <li class="pull-right">
+                                                        <a onclick="javascript:window.open('https://plus.google.com/share?url=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                                            <i class="fa fa-google-plus-square fa-lg"></i>
+                                                        </a>
+                                                    </li>
                                                     <li class="pull-right verylight">Share</li>
 
                                                 </ul>
@@ -136,14 +145,21 @@
                                                     <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
                                                     </li>
 
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-facebook-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                                            <i class="fa fa-facebook-square fa-lg"></i>
+                                                        </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-twitter-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->id}}&via=petclown">
+                                                            <i class="fa fa-twitter-square fa-lg"></i>
+                                                        </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                                    <li class="pull-right">
+                                                        <a onclick="javascript:window.open('https://plus.google.com/share?url=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                                            <i class="fa fa-google-plus-square fa-lg"></i>
+                                                        </a>
+                                                    </li>
                                                     <li class="pull-right verylight">Share</li>
 
                                                 </ul>
@@ -205,14 +221,21 @@
                                                     <li class="pull-left"><i class="fa fa-check-circle fa-lg"></i>
                                                     </li>
 
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-facebook-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                                            <i class="fa fa-facebook-square fa-lg"></i>
+                                                        </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-twitter-square fa-lg"></i></a>
+                                                    <li class="pull-right">
+                                                        <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->id}}&via=petclown">
+                                                            <i class="fa fa-twitter-square fa-lg"></i>
+                                                        </a>
                                                     </li>
-                                                    <li class="pull-right"><a href="#"><i
-                                                                    class="fa fa-google-plus-square fa-lg"></i></a></li>
+                                                    <li class="pull-right">
+                                                        <a onclick="javascript:window.open('https://plus.google.com/share?url=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                                            <i class="fa fa-google-plus-square fa-lg"></i>
+                                                        </a>
+                                                    </li>
                                                     <li class="pull-right verylight">Share</li>
 
                                                 </ul>
@@ -272,6 +295,7 @@
 
 
                 <hr class="marginhr"/>
+
             @endforeach
 
 
