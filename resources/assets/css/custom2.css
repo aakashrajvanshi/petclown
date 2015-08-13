@@ -12,6 +12,18 @@
     padding-left: 30px;
 }
 
+@media (min-width: 768px) {
+    .col-xs-12.col-sm-5.noleftpadding {
+        padding-left: 0;
+        padding-right: 40px;
+        padding-top: 50px;
+    }
+}
+
+.carousel-v1 .carousel-arrow a i {
+    background: #72c02c;
+}
+
 /************ Latest Activity Styles **********/
 
 
