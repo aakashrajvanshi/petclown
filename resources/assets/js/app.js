@@ -8,7 +8,9 @@
 
 var App = function () {
     //Fixed Header
+
     function handleHeader() {
+    /*
          jQuery(window).scroll(function() {
             if (jQuery(window).scrollTop()>100){
                 jQuery(".header-fixed .header-sticky").addClass("header-fixed-shrink");
@@ -17,6 +19,7 @@ var App = function () {
                 jQuery(".header-fixed .header-sticky").removeClass("header-fixed-shrink");
             }
         });
+        */
     }
 
     //Header Mega Menu
