@@ -164,14 +164,12 @@
                                     <h3><i class="icon-custom icon-sm rounded-x icon-bg-u fa fa-check"></i> Thanks, please share!</h3>
                                     <ul class="my-social-icons icon-rounded icon-zoom list-unstyled list-inline">
                                         <li>
-                                            <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-                                            'facebook-share-dialog',
-                                            'width=626,height=436');return false;">
+                                            <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
-                                        <li> <a href="https://plus.google.com/share?url={https://petclown.com/petition/{{$petition->slug}}}"
-                                                onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                        <li>
+                                            <a onclick="javascript:window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
                                                 <i class="fa fa-google-plus"></i>
                                             </a>
                                         </li>
@@ -256,19 +254,21 @@
                             <p>Please share</p>
                             <ul class="my-social-icons icon-rounded icon-zoom list-unstyled list-inline">
                                 <li>
-                                    <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-                                'facebook-share-dialog',
-                                'width=626,height=436'); return false;">
+                                    <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://plus.google.com/share?url={https://petclown.com/petition/{{$petition->slug}}}"
-                                        onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                    <a onclick="javascript:window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
                                 </li>
-                                <li> <a href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->slug}}&via=petclown"><i class="fa fa-twitter"></i></a></li>
+                                <li>
+                                    <a class="twitter-share-button"
+                                       href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->slug}}&via=petclown">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -287,6 +287,7 @@
                             </a></li>
                     </ul>
                 @endif
+
             </div>
         </footer>
 
