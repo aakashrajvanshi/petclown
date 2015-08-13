@@ -78,6 +78,7 @@
     </div>
     <!--=== End Header v6 ===-->
 
+   @yield('jumbotron')
 
     <!--=== Content ===-->
     <div class="container">
