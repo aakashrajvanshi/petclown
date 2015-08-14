@@ -24,6 +24,28 @@ $(function(){
         $('#profilePic').toggle('slow');
         $('#collapseAvatar').toggle('slow');
     });
+
+
+    //Homepage Progressbar Carousel
+    var percent = 0, bar = $('.transition-timer-carousel-progress-bar'), crsl = $('#myCarousel');
+    function progressBarCarousel() {
+        bar.css({width:percent+'%'});
+        percent = percent +0.5;
+        if (percent>100) {
+            percent=0;
+            crsl.carousel('next');
+        }
+    }
+    var barInterval = setInterval(progressBarCarousel, 50);
+    crsl.hover(
+        function(){
+            clearInterval(barInterval);
+        },
+        function(){
+            barInterval = setInterval(progressBarCarousel, 50);
+        })
+
 });
+
 
 

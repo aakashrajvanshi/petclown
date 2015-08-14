@@ -6,108 +6,104 @@
 @stop
 
 
-@section('content')
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+@section('jumbotron')
 
     <!---====== HomePage Jumbotron =====---->
-    <div class="row">
-        <div class="col-md-8 home-jumbotron">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 home-jumbotron">
 
 
 
 
-            <div class="carousel slide carousel-v1 margin-bottom-40" id="myCarousel-1">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="panel panel-default">
-                            <div class="panel-body no-padding no-margin col-xs-12 col-sm-7">
-                                <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_06:50:09-game-of-thrones.jpg" width="100%" alt="">
-                            </div>
-                            <div class="col-xs-12 col-sm-5 noleftpadding">
-                                <div class="thumb petition-to">To: <strong>Rahul Gandhi</strong>
+                <div class="carousel slide carousel-v1" id="myCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="panel panel-default">
+                                <div class="panel-body no-padding no-margin col-xs-12 col-sm-6">
+                                    <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_11:44:20-rahul-gandhi.jpg" width="100%" alt="">
+                                    <div class="carousel-caption visible-xs visible-sm hidden-md hidden-lg">
+                                        <p>To: Rahul Gandhi</p>
+                                        <p>Rahulji, please have another interview with Arnab Goswami</p>
+                                    </div>
                                 </div>
-                                <h2 class="thumb petition-heading">
-                                    Rahulji, please have another interview with Arnab Goswami
-                                </h2>
-                            </div>
+                                <div class="col-xs-12 col-sm-6 noleftpadding visible-md visible-lg hidden-xs hidden-sm">
+                                    <div class="thumb petition-to">To: <strong>Rahul Gandhi</strong>
+                                    </div>
+                                    <h2 class="thumb petition-heading">
+                                        Rahulji, please have another interview with Arnab Goswami
+                                    </h2>
+                                </div>
 
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="panel panel-default">
+                                <div class="panel-body no-padding no-margin col-xs-12 col-sm-6">
+                                    <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_06:50:09-game-of-thrones.jpg" width="100%" alt="">
+                                    <div class="carousel-caption visible-xs visible-sm hidden-md hidden-lg">
+                                        <p>To: Rahul Gandhi</p>
+                                        <p>Rahulji, please have another interview with Arnab Goswami</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 noleftpadding visible-md visible-lg hidden-xs hidden-sm">
+                                    <div class="thumb petition-to">To: <strong>Rahul Gandhi</strong>
+                                    </div>
+                                    <h2 class="thumb petition-heading">
+                                        Rahulji, please have another interview with Arnab Goswami
+                                    </h2>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="panel panel-default">
+                                <div class="panel-body no-padding no-margin col-xs-12 col-sm-6">
+                                    <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_06:46:40-The_Lost_World_Jurassic_Park.jpg" width="100%" alt="">
+                                    <div class="carousel-caption visible-xs visible-sm hidden-md hidden-lg">
+                                        <p>To: Rahul Gandhi</p>
+                                        <p>Rahulji, please have another interview with Arnab Goswami</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 noleftpadding visible-md visible-lg hidden-xs hidden-sm">
+                                    <div class="thumb petition-to">To: <strong>Rahul Gandhi</strong>
+                                    </div>
+                                    <h2 class="thumb petition-heading">
+                                        Rahulji, please have another interview with Arnab Goswami
+                                    </h2>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="panel panel-default">
-                            <div class="panel-body no-padding no-margin col-xs-12 col-sm-7">
-                                <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_06:50:09-game-of-thrones.jpg" width="100%" alt="">
-                            </div>
-                            <div class="col-xs-12 col-sm-5 noleftpadding">
-                                <div class="thumb petition-to">To: <strong>Rahul Gandhi</strong>
-                                </div>
-                                <h2 class="thumb petition-heading">
-                                    Rahulji, please have another interview with Arnab Goswami
-                                </h2>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="panel panel-default">
-                            <div class="panel-body no-padding no-margin col-xs-12 col-sm-7">
-                                <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_06:46:40-The_Lost_World_Jurassic_Park.jpg" width="100%" alt="">
-                            </div>
-                            <div class="col-xs-12 col-sm-5 noleftpadding">
-                                <div class="thumb petition-to">To: <strong>Rahul Gandhi</strong>
-                                </div>
-                                <h2 class="thumb petition-heading">
-                                    Rahulji, please have another interview with Arnab Goswami
-                                </h2>
-                            </div>
-
-                        </div>
+                    <div class="carousel-arrow">
+                        <a data-slide="prev" href="#myCarousel" class="left carousel-control">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a data-slide="next" href="#myCarousel" class="right carousel-control">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     </div>
                 </div>
+                <hr class="transition-timer-carousel-progress-bar" />
 
-                <div class="carousel-arrow">
-                    <a data-slide="prev" href="#myCarousel-1" class="left carousel-control">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a data-slide="next" href="#myCarousel-1" class="right carousel-control">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </div>
+
+
+
+
             </div>
-
-
-
-
-
-        </div>
-
-
-        <div class="col-md-4">
-            <h4>Like us on Facebook</h4>
-            <div class="fb-like" data-href="https://www.facebook.com/petclown" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false">
-            </div>
-            <h4>Follow us on Twitter</h4>
-            <a class="twitter-follow-button"
-               href="https://twitter.com/TwitterDev">
-                Follow @TwitterDev</a>
         </div>
     </div>
 
 
+@stop
 
 
 
 
 
-
-
+@section('content')
 
     <!---===== HomePage Content =====----->
 
