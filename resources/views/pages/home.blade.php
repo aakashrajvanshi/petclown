@@ -9,7 +9,7 @@
 @section('jumbotron')
 
     <!---====== HomePage Jumbotron =====---->
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-12 home-jumbotron">
 
@@ -86,7 +86,6 @@
                         </a>
                     </div>
                 </div>
-                <hr class="transition-timer-carousel-progress-bar" />
 
 
 
