@@ -19,7 +19,7 @@ body {
 }
 
 body.header-fixed-space {
-  padding-top: 74px;
+  padding-top: 94px;
 }
 
 @media (max-width: 991px) {

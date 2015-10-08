@@ -348,7 +348,7 @@ ul.activity-list li.share-on {
 
 /*************************************  HOME PAGE STYLES ******************************************/
 
-
+/*
 div.home-jumbotron {
     height: 200px;
     background-image: url('http://petclown.com/images/banner.png');
@@ -358,7 +358,7 @@ div.home-jumbotron {
     background-color:#83D23C;
     #83D23C;
 }
-
+*/
 .home-petitions h2 {
     margin-bottom: 0px;
 }
