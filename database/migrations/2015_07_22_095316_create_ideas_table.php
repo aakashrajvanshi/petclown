@@ -18,7 +18,7 @@ class CreateIdeasTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('petition_to');
             $table->string('heading');
-            $table->string('content',2550);
+            $table->text('content');
             $table->string('image')->nullable();
             $table->string('image_thumb')->nullable();
             $table->string('slug');

@@ -1,23 +1,27 @@
 @extends('app')
 @section('title')
+    {{-- Regular HTML Meta Tags --}}
     <title>Petitions</title>
     <meta name="description" content="Petitions listings">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="petclown">
 
+    {{-- Facebook Open Graph Meta --}}
+    <meta property="og:title" content="Workday Sets Price Range for I.P.O." />
+    <meta property="og:site_name" content="My Favorite News"/>
+    <meta property="og:url" content="http://www.myfavnews.com/2013/1/1/workday-price-range" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here." />
+    <meta property="article:author" content="https://www.facebook.com/fareedzakaria" />
+    <meta property="fb:app_id" content="[FB_APP_ID]" />
 
-
-
-
-
+    {{-- Twitter Card Meta --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@nytimes">
+    <meta name="twitter:title" content="Parade of Fans for Houston’s Funeral">
+    <meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.">
+    <meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
 @stop
 
-
 @section('content')
-
-
-
-
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong></div>
@@ -31,12 +35,7 @@
         </div>
     </div>
 
-
-
-
-
     <div class="row">
-
         <div class="col-md-8">
             <img src="{{$petition->image}}" width="100%"/>
             <div class="petition-tags">
@@ -75,11 +74,8 @@
             <div class="contentmargin">
                 {!!$petition->content!!}
             </div>
-
         </div>
-
         <div class="col-md-4">
-
             <div class="sidebar hidden-sm hidden-xs visible-lg visible-md" data-spy="affix" data-offset-top="100" data-offset-bottom="350">
                 <strong>
                     {{$support = count($petition->supportedby)}} Supporters

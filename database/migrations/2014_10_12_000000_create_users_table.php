@@ -24,6 +24,9 @@ class CreateUsersTable extends Migration
             $table->string('city',25)->nullable();
             $table->string('country',25)->nullable();
             $table->string('alternate_email',60)->nullable();
+            $table->boolean('private')->default(false);
+            $table->string('slug')->nullable();
+            $table->boolean('blocked')->default(false);
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

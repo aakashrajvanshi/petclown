@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
+    protected $toTruncate = ['comments', 'petitions', 'users'];
     /**
      * Run the database seeds.
      *
@@ -14,8 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call('UserTableSeeder');
-
+        foreach ($this->toTruncate as $table){
+            //DB::table($table)->truncate();
+        }
+        $this->call('UserTableSeeder');
         Model::reguard();
     }
 }

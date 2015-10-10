@@ -12,6 +12,7 @@ class AddPrivacyUsers extends Migration
      */
     public function up()
     {
+        /*
         Schema::table('users', function ($table) {
             $table->boolean('private')->default(false);
             $table->string('slug')->nullable();
@@ -23,6 +24,7 @@ class AddPrivacyUsers extends Migration
         Schema::table('comments', function ($table) {
             $table->boolean('approved')->nullable();
         });
+        */
     }
     /**
      * Reverse the migrations.
@@ -31,6 +33,7 @@ class AddPrivacyUsers extends Migration
      */
     public function down()
     {
+        /*
         Schema::table('users', function ($table) {
             $table->dropColumn('private', 'slug','blocked');
         });
@@ -40,5 +43,6 @@ class AddPrivacyUsers extends Migration
         Schema::table('comments', function ($table) {
             $table->dropColumn('approved');
         });
+        */
     }
 }

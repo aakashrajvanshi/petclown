@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function ($faker) {
+$factory->define(App\Models\User::class, function ($faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -19,3 +19,33 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\Models\Petition::class, function ($faker) {
+    $heading = $faker->sentence;
+    $slug = str_slug($heading,"-");
+    return [
+        'user_id' => factory('App\Models\User')->create()->id,
+        'petition_to' => $faker->name,
+        'heading' => $heading,
+        'content' => $faker->paragraph(90),
+        'image' => $faker->imageUrl(960,540),
+        'image_thumb' => $faker->imageUrl(320,180),
+        'slug' => $slug,
+        'published' => 1,
+    ];
+});
+
+
+$factory->define(App\Models\Comment::class, function ($faker) {
+    return [
+        'petition_id' => factory('App\Models\Petition')->create()->id,
+        'user_id' => factory('App\Models\User')->create()->id,
+        'comment' => $faker->paragraph,
+        'approved' => 1,
+    ];
+});
+
+
+
+
