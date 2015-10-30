@@ -1,667 +1,777 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- NAME: 1:3 COLUMN -->
+    <!--[if gte mso 15]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>*|MC:SUBJECT|*</title>
+
     <style type="text/css">
-        /* /\/\/\/\/\/\/\/\/ CLIENT-SPECIFIC STYLES /\/\/\/\/\/\/\/\/ */
-        #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
-        .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
-        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
-        body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
-        table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
-        img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
-        /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
-        body{margin:0; padding:0;}
-        img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
-        table{border-collapse:collapse !important;}
-        body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;}
-        /* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
-        /* ========== Page Styles ========== */
-        #bodyCell{padding:20px;}
-        #templateContainer{width:600px;}
-        /**
-        * tab Page
-        * section background style
-        * tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
-        * theme page
-        */
-        body, #bodyTable{
-            /*editable*/ background-color:#DEE0E2;
+        p{
+            margin:10px 0;
+            padding:0;
         }
-        /**
-        * tab Page
-        * section background style
-        * tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
-        * theme page
-        */
+        table{
+            border-collapse:collapse;
+        }
+        h1,h2,h3,h4,h5,h6{
+            display:block;
+            margin:0;
+            padding:0;
+        }
+        img,a img{
+            border:0;
+            height:auto;
+            outline:none;
+            text-decoration:none;
+        }
+        body,#bodyTable,#bodyCell{
+            height:100%;
+            margin:0;
+            padding:0;
+            width:100%;
+        }
+        #outlook a{
+            padding:0;
+        }
+        img{
+            -ms-interpolation-mode:bicubic;
+        }
+        table{
+            mso-table-lspace:0pt;
+            mso-table-rspace:0pt;
+        }
+        .ReadMsgBody{
+            width:100%;
+        }
+        .ExternalClass{
+            width:100%;
+        }
+        p,a,li,td,blockquote{
+            mso-line-height-rule:exactly;
+        }
+        a[href^=tel],a[href^=sms]{
+            color:inherit;
+            cursor:default;
+            text-decoration:none;
+        }
+        p,a,li,td,body,table,blockquote{
+            -ms-text-size-adjust:100%;
+            -webkit-text-size-adjust:100%;
+        }
+        .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+            line-height:100%;
+        }
+        a[x-apple-data-detectors]{
+            color:inherit !important;
+            text-decoration:none !important;
+            font-size:inherit !important;
+            font-family:inherit !important;
+            font-weight:inherit !important;
+            line-height:inherit !important;
+        }
         #bodyCell{
-            /*editable*/ border-top:4px solid #BBBBBB;
+            padding:10px;
         }
-        /**
-        * tab Page
-        * section email border
-        * tip Set the border for your email.
-        */
-        #templateContainer{
-            /*editable*/ border:1px solid #BBBBBB;
+        .templateContainer{
+            max-width:600px !important;
         }
-        /**
-        * tab Page
-        * section heading 1
-        * tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
-        * style heading 1
-        */
+        a.mcnButton{
+            display:block;
+        }
+        .mcnImage{
+            vertical-align:bottom;
+        }
+        .mcnTextContent{
+            word-break:break-word;
+        }
+        .mcnTextContent img{
+            height:auto !important;
+        }
+        .mcnDividerBlock{
+            table-layout:fixed !important;
+        }
+
+        body,#bodyTable{
+            /*@editable*/background-color:#f4f4f4;
+        }
+
+        #bodyCell{
+            /*@editable*/border-top:0;
+        }
+
+        .templateContainer{
+            /*@editable*/border:0;
+        }
+
         h1{
-            /*editable*/ color:#202020 !important;
-            display:block;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:26px;
-            /*editable*/ font-style:normal;
-            /*editable*/ font-weight:bold;
-            /*editable*/ line-height:100%;
-            /*editable*/ letter-spacing:normal;
-            margin-top:0;
-            margin-right:0;
-            margin-bottom:10px;
-            margin-left:0;
-            /*editable*/ text-align:left;
+            /*@editable*/color:#202020;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:26px;
+            /*@editable*/font-style:normal;
+            /*@editable*/font-weight:bold;
+            /*@editable*/line-height:125%;
+            /*@editable*/letter-spacing:normal;
+            /*@editable*/text-align:left;
         }
-        /**
-        * tab Page
-        * section heading 2
-        * tip Set the styling for all second-level headings in your emails.
-        * style heading 2
-        */
+
         h2{
-            /*editable*/ color:#404040 !important;
-            display:block;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:20px;
-            /*editable*/ font-style:normal;
-            /*editable*/ font-weight:bold;
-            /*editable*/ line-height:100%;
-            /*editable*/ letter-spacing:normal;
-            margin-top:0;
-            margin-right:0;
-            margin-bottom:10px;
-            margin-left:0;
-            /*editable*/ text-align:left;
+            /*@editable*/color:#202020;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:22px;
+            /*@editable*/font-style:normal;
+            /*@editable*/font-weight:bold;
+            /*@editable*/line-height:125%;
+            /*@editable*/letter-spacing:normal;
+            /*@editable*/text-align:left;
         }
-        /**
-        * tab Page
-        * section heading 3
-        * tip Set the styling for all third-level headings in your emails.
-        * style heading 3
-        */
+
         h3{
-            /*editable*/ color:#606060 !important;
-            display:block;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:16px;
-            /*editable*/ font-style:italic;
-            /*editable*/ font-weight:normal;
-            /*editable*/ line-height:100%;
-            /*editable*/ letter-spacing:normal;
-            margin-top:0;
-            margin-right:0;
-            margin-bottom:10px;
-            margin-left:0;
-            /*editable*/ text-align:left;
+            /*@editable*/color:#202020;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:20px;
+            /*@editable*/font-style:normal;
+            /*@editable*/font-weight:bold;
+            /*@editable*/line-height:125%;
+            /*@editable*/letter-spacing:normal;
+            /*@editable*/text-align:left;
         }
-        /**
-        * tab Page
-        * section heading 4
-        * tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
-        * style heading 4
-        */
+
         h4{
-            /*editable*/ color:#808080 !important;
-            display:block;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:14px;
-            /*editable*/ font-style:italic;
-            /*editable*/ font-weight:normal;
-            /*editable*/ line-height:100%;
-            /*editable*/ letter-spacing:normal;
-            margin-top:0;
-            margin-right:0;
-            margin-bottom:10px;
-            margin-left:0;
-            /*editable*/ text-align:left;
+            /*@editable*/color:#202020;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:18px;
+            /*@editable*/font-style:normal;
+            /*@editable*/font-weight:bold;
+            /*@editable*/line-height:125%;
+            /*@editable*/letter-spacing:normal;
+            /*@editable*/text-align:left;
         }
-        /* ========== Header Styles ========== */
-        /**
-        * tab Header
-        * section preheader style
-        * tip Set the background color and bottom border for your email's preheader area.
-        * theme header
-        */
+
         #templatePreheader{
-            /*editable*/ background-color:#F4F4F4;
-            /*editable*/ border-bottom:1px solid #CCCCCC;
+            /*@editable*/background-color:#f4f4f4;
+            /*@editable*/border-top:0;
+            /*@editable*/border-bottom:0;
+            /*@editable*/padding-top:9px;
+            /*@editable*/padding-bottom:9px;
         }
-        /**
-        * tab Header
-        * section preheader text
-        * tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
-        */
-        .preheaderContent{
-            /*editable*/ color:#808080;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:10px;
-            /*editable*/ line-height:125%;
-            /*editable*/ text-align:left;
+
+        #templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent p{
+            /*@editable*/color:#656565;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:12px;
+            /*@editable*/line-height:150%;
+            /*@editable*/text-align:left;
         }
-        /**
-        * tab Header
-        * section preheader link
-        * tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
-        */
-        .preheaderContent a:link, .preheaderContent a:visited, /* Yahoo! Mail Override */ .preheaderContent a .yshortcuts /* Yahoo! Mail Override */{
-            /*editable*/ color:#606060;
-            /*editable*/ font-weight:normal;
-            /*editable*/ text-decoration:underline;
+
+        #templatePreheader .mcnTextContent a,#templatePreheader .mcnTextContent p a{
+            /*@editable*/color:#656565;
+            /*@editable*/font-weight:normal;
+            /*@editable*/text-decoration:underline;
         }
-        /**
-        * tab Header
-        * section header style
-        * tip Set the background color and borders for your email's header area.
-        * theme header
-        */
+
         #templateHeader{
-            /*editable*/ background-color:#F4F4F4;
-            /*editable*/ border-top:1px solid #FFFFFF;
-            /*editable*/ border-bottom:1px solid #CCCCCC;
+            /*@editable*/background-color:#FFFFFF;
+            /*@editable*/border-top:0;
+            /*@editable*/border-bottom:0;
+            /*@editable*/padding-top:9px;
+            /*@editable*/padding-bottom:0;
         }
-        /**
-        * tab Header
-        * section header text
-        * tip Set the styling for your email's header text. Choose a size and color that is easy to read.
-        */
-        .headerContent{
-            /*editable*/ color:#505050;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:20px;
-            /*editable*/ font-weight:bold;
-            /*editable*/ line-height:100%;
-            /*editable*/ padding-top:0;
-            /*editable*/ padding-right:0;
-            /*editable*/ padding-bottom:0;
-            /*editable*/ padding-left:0;
-            /*editable*/ text-align:left;
-            /*editable*/ vertical-align:middle;
+
+        #templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
+            /*@editable*/color:#202020;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:16px;
+            /*@editable*/line-height:150%;
+            /*@editable*/text-align:left;
         }
-        /**
-        * tab Header
-        * section header link
-        * tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
-        */
-        .headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
-            /*editable*/ color:#EB4102;
-            /*editable*/ font-weight:normal;
-            /*editable*/ text-decoration:underline;
+
+        #templateHeader .mcnTextContent a,#templateHeader .mcnTextContent p a{
+            /*@editable*/color:#2BAADF;
+            /*@editable*/font-weight:normal;
+            /*@editable*/text-decoration:underline;
         }
-        #headerImage{
-            height:auto;
-            max-width:600px;
-        }
-        /* ========== Body Styles ========== */
-        /**
-        * tab Body
-        * section body style
-        * tip Set the background color and borders for your email's body area.
-        */
+
         #templateBody{
-            /*editable*/ background-color:#F4F4F4;
-            /*editable*/ border-top:1px solid #FFFFFF;
-            /*editable*/ border-bottom:1px solid #CCCCCC;
+            /*@editable*/background-color:#FFFFFF;
+            /*@editable*/border-top:0;
+            /*@editable*/border-bottom:0;
+            /*@editable*/padding-top:0;
+            /*@editable*/padding-bottom:0;
         }
-        /**
-        * tab Body
-        * section body text
-        * tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
-        * theme main
-        */
-        .bodyContent{
-            /*editable*/ color:#505050;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:16px;
-            /*editable*/ line-height:150%;
-            padding-top:20px;
-            padding-right:20px;
-            padding-bottom:20px;
-            padding-left:20px;
-            /*editable*/ text-align:left;
+
+        #templateBody .mcnTextContent,#templateBody .mcnTextContent p{
+            /*@editable*/color:#202020;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:16px;
+            /*@editable*/line-height:150%;
+            /*@editable*/text-align:left;
         }
-        /**
-        * tab Body
-        * section body link
-        * tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
-        */
-        .bodyContent a:link, .bodyContent a:visited, /* Yahoo! Mail Override */ .bodyContent a .yshortcuts /* Yahoo! Mail Override */{
-            /*editable*/ color:#EB4102;
-            /*editable*/ font-weight:normal;
-            /*editable*/ text-decoration:underline;
+
+        #templateBody .mcnTextContent a,#templateBody .mcnTextContent p a{
+            /*@editable*/color:#2BAADF;
+            /*@editable*/font-weight:normal;
+            /*@editable*/text-decoration:underline;
         }
-        .bodyContent img{
-            display:inline;
-            height:auto;
-            max-width:560px;
-        }
-        /* ========== Column Styles ========== */
-        .templateColumnContainer{width:200px;}
-        /**
-        * tab Columns
-        * section column style
-        * tip Set the background color and borders for your email's column area.
-        */
+
         #templateColumns{
-            /*editable*/ background-color:#F4F4F4;
-            /*editable*/ border-top:1px solid #FFFFFF;
-            /*editable*/ border-bottom:1px solid #CCCCCC;
+            /*@editable*/background-color:#FFFFFF;
+            /*@editable*/border-top:0;
+            /*@editable*/border-bottom:2px solid #EAEAEA;
+            /*@editable*/padding-top:0;
+            /*@editable*/padding-bottom:9px;
         }
-        /**
-        * tab Columns
-        * section left column text
-        * tip Set the styling for your email's left column content text. Choose a size and color that is easy to read.
-        */
-        .leftColumnContent{
-            /*editable*/ color:#505050;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:14px;
-            /*editable*/ line-height:150%;
-            padding-top:0;
-            padding-right:20px;
-            padding-bottom:20px;
-            padding-left:20px;
-            /*editable*/ text-align:left;
+
+        #templateColumns .columnContainer .mcnTextContent,#templateColumns .columnContainer .mcnTextContent p{
+            /*@editable*/color:#202020;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:16px;
+            /*@editable*/line-height:150%;
+            /*@editable*/text-align:left;
         }
-        /**
-        * tab Columns
-        * section left column link
-        * tip Set the styling for your email's left column content links. Choose a color that helps them stand out from your text.
-        */
-        .leftColumnContent a:link, .leftColumnContent a:visited, /* Yahoo! Mail Override */ .leftColumnContent a .yshortcuts /* Yahoo! Mail Override */{
-            /*editable*/ color:#EB4102;
-            /*editable*/ font-weight:normal;
-            /*editable*/ text-decoration:underline;
+
+        #templateColumns .columnContainer .mcnTextContent a,#templateColumns .columnContainer .mcnTextContent p a{
+            /*@editable*/color:#2BAADF;
+            /*@editable*/font-weight:normal;
+            /*@editable*/text-decoration:underline;
         }
-        /**
-        * tab Columns
-        * section center column text
-        * tip Set the styling for your email's center column content text. Choose a size and color that is easy to read.
-        */
-        .centerColumnContent{
-            /*editable*/ color:#505050;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:14px;
-            /*editable*/ line-height:150%;
-            padding-top:0;
-            padding-right:20px;
-            padding-bottom:20px;
-            padding-left:20px;
-            /*editable*/ text-align:left;
-        }
-        /**
-        * tab Columns
-        * section center column link
-        * tip Set the styling for your email's center column content links. Choose a color that helps them stand out from your text.
-        */
-        .centerColumnContent a:link, .centerColumnContent a:visited, /* Yahoo! Mail Override */ .centerColumnContent a .yshortcuts /* Yahoo! Mail Override */{
-            /*editable*/ color:#EB4102;
-            /*editable*/ font-weight:normal;
-            /*editable*/ text-decoration:underline;
-        }
-        /**
-        * tab Columns
-        * section right column text
-        * tip Set the styling for your email's right column content text. Choose a size and color that is easy to read.
-        */
-        .rightColumnContent{
-            /*editable*/ color:#505050;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:14px;
-            /*editable*/ line-height:150%;
-            padding-top:0;
-            padding-right:20px;
-            padding-bottom:20px;
-            padding-left:20px;
-            /*editable*/ text-align:left;
-        }
-        /**
-        * tab Columns
-        * section right column link
-        * tip Set the styling for your email's right column content links. Choose a color that helps them stand out from your text.
-        */
-        .rightColumnContent a:link, .rightColumnContent a:visited, /* Yahoo! Mail Override */ .rightColumnContent a .yshortcuts /* Yahoo! Mail Override */{
-            /*editable*/ color:#EB4102;
-            /*editable*/ font-weight:normal;
-            /*editable*/ text-decoration:underline;
-        }
-        .leftColumnContent img, .rightColumnContent img{
-            display:inline;
-            height:auto;
-            max-width:260px;
-        }
-        /* ========== Footer Styles ========== */
-        /**
-        * tab Footer
-        * section footer style
-        * tip Set the background color and borders for your email's footer area.
-        * theme footer
-        */
+
         #templateFooter{
-            /*editable*/ background-color:#F4F4F4;
-            /*editable*/ border-top:1px solid #FFFFFF;
+            /*@editable*/background-color:#f4f4f4;
+            /*@editable*/border-top:0;
+            /*@editable*/border-bottom:0;
+            /*@editable*/padding-top:9px;
+            /*@editable*/padding-bottom:9px;
         }
-        /**
-        * tab Footer
-        * section footer text
-        * tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
-        * theme footer
-        */
-        .footerContent{
-            /*editable*/ color:#808080;
-            /*editable*/ font-family:Helvetica, Arial, Sans-Serif;
-            /*editable*/ font-size:10px;
-            /*editable*/ line-height:150%;
-            padding-top:20px;
-            padding-right:20px;
-            padding-bottom:20px;
-            padding-left:20px;
-            /*editable*/ text-align:left;
+
+        #templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
+            /*@editable*/color:#656565;
+            /*@editable*/font-family:Helvetica;
+            /*@editable*/font-size:12px;
+            /*@editable*/line-height:150%;
+            /*@editable*/text-align:center;
         }
-        /**
-        * tab Footer
-        * section footer link
-        * tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
-        */
-        .footerContent a:link, .footerContent a:visited, /* Yahoo! Mail Override */ .footerContent a .yshortcuts, .footerContent a span /* Yahoo! Mail Override */{
-            /*editable*/ color:#606060;
-            /*editable*/ font-weight:normal;
-            /*editable*/ text-decoration:underline;
+
+        #templateFooter .mcnTextContent a,#templateFooter .mcnTextContent p a{
+            /*@editable*/color:#656565;
+            /*@editable*/font-weight:normal;
+            /*@editable*/text-decoration:underline;
         }
-        /* /\/\/\/\/\/\/\/\/ MOBILE STYLES /\/\/\/\/\/\/\/\/ */
-        @media only screen and (max-width: 480px){
-            /* /\/\/\/\/\/\/ CLIENT-SPECIFIC MOBILE STYLES /\/\/\/\/\/\/ */
-            body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:none !important;} /* Prevent Webkit platforms from changing default text sizes */
-            body{width:100% !important; min-width:100% !important;} /* Prevent iOS Mail from adding padding to the body */
-            /* /\/\/\/\/\/\/ MOBILE RESET STYLES /\/\/\/\/\/\/ */
-            #bodyCell{padding:10px !important;}
-            /* /\/\/\/\/\/\/ MOBILE TEMPLATE STYLES /\/\/\/\/\/\/ */
-            /* ======== Page Styles ======== */
-            /**
-            * tab Mobile Styles
-			* section template width
-			* tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
-			*/
-            #templateContainer{
-                max-width:600px !important;
-                /*editable*/ width:100% !important;
+        @media only screen and (min-width:768px){
+            .templateContainer{
+                width:600px !important;
             }
-            /**
-            * tab Mobile Styles
-			* section heading 1
-			* tip Make the first-level headings larger in size for better readability on small screens.
-			*/
+
+        }	@media only screen and (max-width: 480px){
+            body,table,td,p,a,li,blockquote{
+                -webkit-text-size-adjust:none !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            body{
+                width:100% !important;
+                min-width:100% !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            #bodyCell{
+                padding-top:10px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .columnWrapper{
+                max-width:100% !important;
+                width:100% !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnImage{
+                width:100% !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnShareContent,.mcnCaptionTopContent,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer{
+                max-width:100% !important;
+                width:100% !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnBoxedTextContentContainer{
+                min-width:100% !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnImageGroupContent{
+                padding:9px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
+                padding-top:9px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnImageCardTopImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
+                padding-top:18px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnImageCardBottomImageContent{
+                padding-bottom:9px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnImageGroupBlockInner{
+                padding-top:0 !important;
+                padding-bottom:0 !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnImageGroupBlockOuter{
+                padding-top:9px !important;
+                padding-bottom:9px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnTextContent,.mcnBoxedTextContentColumn{
+                padding-right:18px !important;
+                padding-left:18px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
+                padding-right:18px !important;
+                padding-bottom:0 !important;
+                padding-left:18px !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+            .mcpreview-image-uploader{
+                display:none !important;
+                width:100% !important;
+            }
+
+        }	@media only screen and (max-width: 480px){
+
             h1{
-                /*editable*/ font-size:24px !important;
-                /*editable*/ line-height:100% !important;
+                /*@editable*/font-size:22px !important;
+                /*@editable*/line-height:125% !important;
             }
-            /**
-            * tab Mobile Styles
-			* section heading 2
-			* tip Make the second-level headings larger in size for better readability on small screens.
-			*/
+
+        }	@media only screen and (max-width: 480px){
+
             h2{
-                /*editable*/ font-size:20px !important;
-                /*editable*/ line-height:100% !important;
+                /*@editable*/font-size:20px !important;
+                /*@editable*/line-height:125% !important;
             }
-            /**
-            * tab Mobile Styles
-			* section heading 3
-			* tip Make the third-level headings larger in size for better readability on small screens.
-			*/
+
+        }	@media only screen and (max-width: 480px){
+
             h3{
-                /*editable*/ font-size:18px !important;
-                /*editable*/ line-height:100% !important;
+                /*@editable*/font-size:18px !important;
+                /*@editable*/line-height:125% !important;
             }
-            /**
-            * tab Mobile Styles
-			* section heading 4
-			* tip Make the fourth-level headings larger in size for better readability on small screens.
-			*/
+
+        }	@media only screen and (max-width: 480px){
+
             h4{
-                /*editable*/ font-size:16px !important;
-                /*editable*/ line-height:100% !important;
+                /*@editable*/font-size:16px !important;
+                /*@editable*/line-height:150% !important;
             }
-            /* ======== Header Styles ======== */
-            #templatePreheader{display:none !important;} /* Hide the template preheader to save space */
-            /**
-            * tab Mobile Styles
-			* section header image
-			* tip Make the main header image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
-			*/
-            #headerImage{
-                height:auto !important;
-                /*editable*/ max-width:600px !important;
-                /*editable*/ width:100% !important;
+
+        }	@media only screen and (max-width: 480px){
+
+            .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
+                /*@editable*/font-size:14px !important;
+                /*@editable*/line-height:150% !important;
             }
-            /**
-            * tab Mobile Styles
-			* section header text
-			* tip Make the header content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-			*/
-            .headerContent{
-                /*editable*/ font-size:20px !important;
-                /*editable*/ line-height:125% !important;
+
+        }	@media only screen and (max-width: 480px){
+
+            #templatePreheader{
+                /*@editable*/display:block !important;
             }
-            /* ======== Body Styles ======== */
-            /**
-            * tab Mobile Styles
-			* section body text
-			* tip Make the body content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-			*/
-            .bodyContent{
-                /*editable*/ font-size:18px !important;
-                /*editable*/ line-height:125% !important;
+
+        }	@media only screen and (max-width: 480px){
+
+            #templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent p{
+                /*@editable*/font-size:14px !important;
+                /*@editable*/line-height:150% !important;
             }
-            /* ======== Column Styles ======== */
-            .templateColumnContainer{display:block !important; width:100% !important;}
-            /**
-            * tab Mobile Styles
-			* section column image
-			* tip Make the column image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
-			*/
-            .columnImage{
-                height:auto !important;
-                /*editable*/ max-width:480px !important;
-                /*editable*/ width:100% !important;
+
+        }	@media only screen and (max-width: 480px){
+
+            #templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
+                /*@editable*/font-size:16px !important;
+                /*@editable*/line-height:150% !important;
             }
-            /**
-            * tab Mobile Styles
-			* section left column text
-			* tip Make the left column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-			*/
-            .leftColumnContent{
-                /*editable*/ font-size:16px !important;
-                /*editable*/ line-height:125% !important;
+
+        }	@media only screen and (max-width: 480px){
+
+            #templateBody .mcnTextContent,#templateBody .mcnTextContent p{
+                /*@editable*/font-size:16px !important;
+                /*@editable*/line-height:150% !important;
             }
-            /**
-            * tab Mobile Styles
-			* section center column text
-			* tip Make the center column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-			*/
-            .centerColumnContent{
-                /*editable*/ font-size:16px !important;
-                /*editable*/ line-height:125% !important;
+
+        }	@media only screen and (max-width: 480px){
+
+            #templateColumns .columnContainer .mcnTextContent,#templateColumns .columnContainer .mcnTextContent p{
+                /*@editable*/font-size:16px !important;
+                /*@editable*/line-height:150% !important;
             }
-            /**
-            * tab Mobile Styles
-			* section right column text
-			* tip Make the right column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
-			*/
-            .rightColumnContent{
-                /*editable*/ font-size:16px !important;
-                /*editable*/ line-height:125% !important;
+
+        }	@media only screen and (max-width: 480px){
+
+            #templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
+                /*@editable*/font-size:14px !important;
+                /*@editable*/line-height:150% !important;
             }
-            /* ======== Footer Styles ======== */
-            /**
-            * tab Mobile Styles
-			* section footer text
-			* tip Make the body content text larger in size for better readability on small screens.
-			*/
-            .footerContent{
-                /*editable*/ font-size:14px !important;
-                /*editable*/ line-height:115% !important;
-            }
-            .footerContent a{display:block !important;} /* Place footer social and utility links on their own lines, for easier access */
+
         }
     </style>
 </head>
-<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #DEE0E2;height: 100% !important;width: 100% !important;">
+<body>
 <center>
-    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 0;background-color: #DEE0E2;border-collapse: collapse !important;height: 100% !important;width: 100% !important;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
         <tr>
-            <td align="center" valign="top" id="bodyCell" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 20px;border-top: 4px solid #BBBBBB;height: 100% !important;width: 100% !important;">
+            <td align="center" valign="top" id="bodyCell">
                 <!-- BEGIN TEMPLATE // -->
-                <table border="0" cellpadding="0" cellspacing="0" id="templateContainer" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;border: 1px solid #BBBBBB;border-collapse: collapse !important;">
+                <!--[if gte mso 9]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
                     <tr>
-                        <td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <!-- BEGIN PREHEADER // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #F4F4F4;border-bottom: 1px solid #CCCCCC;border-collapse: collapse !important;">
+                        <td align="center" valign="top" width="600" style="width:600px;">
+                <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+                    <tr>
+                        <td valign="top" id="templatePreheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
+                                <tbody class="mcnImageBlockOuter">
                                 <tr>
-                                    <td valign="top" class="preheaderContent" style="padding-top: 10px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #808080;font-family: Helvetica, Arial, Sans-Serif;font-size: 10px;line-height: 125%;text-align: left;" mc:edit="preheader_content00">
-                                        Welcome to Petclown
+                                    <td valign="top" style="padding:0px" class="mcnImageBlockInner">
+                                        <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
+                                            <tbody><tr>
+                                                <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0;">
+
+
+                                                    <img align="left" alt="" src="https://gallery.mailchimp.com/655bce084fd8c9d0b5b413d86/images/38f429b4-2c69-4b5d-bf76-6c5251bdaf93.png" width="250" style="max-width:250px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+
+
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
                                     </td>
                                 </tr>
+                                </tbody>
+                            </table></td>
+                    </tr>
+                    <tr>
+                        <td valign="top" id="templateHeader"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                <tbody class="mcnTextBlockOuter">
+                                <tr>
+                                    <td valign="top" class="mcnTextBlockInner">
+
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+                                            <tbody><tr>
+
+                                                <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+
+                                                    <br>
+                                                    Hi {{$name}},&nbsp;<br>
+                                                    <br>
+                                                    This is Mr. Petition. Thanks for signing up on my website and becoming my friend :)<br>
+                                                    <br>
+                                                    Since you are my friend, I can share my secret with you - I have an OCD for raising petitions and requesting things from strangers.<br>
+                                                    <br>
+                                                    Well, strangers mostly shoo me away when I go to them but I know you, being my friend, will definitely fulfill my simple requests - won't you?<br>
+                                                    <br>
+                                                    Don't worry, I only have two very simple requests:<br>
+                                                    <br>
+                                                    1.&nbsp;Like my facebook page (or twitter page or both)
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowBlock">
+                                <tbody class="mcnFollowBlockOuter">
+                                <tr>
+                                    <td align="center" valign="top" style="padding:9px" class="mcnFollowBlockInner">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentContainer">
+                                            <tbody><tr>
+                                                <td align="center" style="padding-left:9px;padding-right:9px;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContent">
+                                                        <tbody><tr>
+                                                            <td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
+                                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                                    <tbody><tr>
+                                                                        <td valign="top">
+                                                                            <!--[if mso]>
+                                                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="524">
+                                                                                <tr>
+                                                                                    <td align="left" valign="top" width="524">
+                                                                            <![endif]-->
+
+
+                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnFollowStacked">
+
+                                                                                <tbody><tr>
+                                                                                    <td align="center" valign="top" class="mcnFollowIconContent" style="padding-right:10px; padding-bottom:9px;">
+                                                                                        <a href="http://www.facebook.com" target="_blank"><img src="http://cdn-images.mailchimp.com/icons/social-block-v2/color-facebook-96.png" alt="Facebook" class="mcnFollowBlockIcon" width="48" style="width:48px; max-width:48px; display:block;"></a>
+                                                                                    </td>
+                                                                                </tr>
+
+
+                                                                                </tbody></table>
+
+
+
+
+                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnFollowStacked">
+
+                                                                                <tbody><tr>
+                                                                                    <td align="center" valign="top" class="mcnFollowIconContent" style="padding-right:10px; padding-bottom:9px;">
+                                                                                        <a href="http://www.twitter.com/" target="_blank"><img src="http://cdn-images.mailchimp.com/icons/social-block-v2/color-twitter-96.png" alt="Twitter" class="mcnFollowBlockIcon" width="48" style="width:48px; max-width:48px; display:block;"></a>
+                                                                                    </td>
+                                                                                </tr>
+
+
+                                                                                </tbody></table>
+
+
+
+
+                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnFollowStacked">
+
+                                                                                <tbody><tr>
+                                                                                    <td align="center" valign="top" class="mcnFollowIconContent" style="padding-right:0; padding-bottom:9px;">
+                                                                                        <a href="http://plus.google.com" target="_blank"><img src="http://cdn-images.mailchimp.com/icons/social-block-v2/color-googleplus-96.png" alt="Google Plus" class="mcnFollowBlockIcon" width="48" style="width:48px; max-width:48px; display:block;"></a>
+                                                                                    </td>
+                                                                                </tr>
+
+
+                                                                                </tbody></table>
+
+
+
+                                                                            <!--[if mso]>
+                                                                            </td>
+                                                                            </tr>
+                                                                            </table>
+                                                                            <![endif]-->
+                                                                        </td>
+                                                                    </tr>
+                                                                    </tbody></table>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody></table>
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table></td>
+                    </tr>
+                    <tr>
+                        <td valign="top" id="templateBody"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                <tbody class="mcnTextBlockOuter">
+                                <tr>
+                                    <td valign="top" class="mcnTextBlockInner">
+
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+                                            <tbody><tr>
+
+                                                <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+
+                                                    2. Share one of my petitions (which you've liked the most)&nbsp;with&nbsp;your facebook/twitter friends<br>
+                                                    <br>
+                                                    So, that's it. Stay tuned to <a href="http://www.mrpetition.com" target="_blank">mrpetition.com</a>&nbsp;for more of my insane petitions. You can also browse a few of my favorite ones below.<br>
+                                                    <br>
+                                                    Thanks,<br>
+                                                    Mr. Petition<br>
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock">
+                                <tbody class="mcnCaptionBlockOuter">
+                                <tr>
+                                    <td class="mcnCaptionBlockInner" valign="top" style="padding:9px;">
+
+
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="282">
+                                            <tbody><tr>
+                                                <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+
+
+
+                                                    <img alt="" src="https://gallery.mailchimp.com/655bce084fd8c9d0b5b413d86/images/2dd07560-bdb1-4587-bae5-759d40abaf7c.jpg" width="264" style="max-width:320px;" class="mcnImage">
+
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="264">
+                                                    Your text caption goes here. You can change the position of the caption and set styles in the block’s settings tab.
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+
+                                        <table align="right" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="282">
+                                            <tbody><tr>
+                                                <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+
+
+
+                                                    <img alt="" src="https://gallery.mailchimp.com/655bce084fd8c9d0b5b413d86/images/ee35c867-d629-4a9f-a68b-dec7123252dc.jpg" width="264" style="max-width:320px;" class="mcnImage">
+
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="264">
+                                                    Your text caption goes here. You can change the position of the caption and set styles in the block’s settings tab.
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+
+
+
+
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock">
+                                <tbody class="mcnCaptionBlockOuter">
+                                <tr>
+                                    <td class="mcnCaptionBlockInner" valign="top" style="padding:9px;">
+
+
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="282">
+                                            <tbody><tr>
+                                                <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+
+
+
+                                                    <img alt="" src="https://gallery.mailchimp.com/655bce084fd8c9d0b5b413d86/images/37b603c7-fb0b-4972-b36f-29a74fd55498.jpg" width="264" style="max-width:320px;" class="mcnImage">
+
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="264">
+                                                    Your text caption goes here. You can change the position of the caption and set styles in the block’s settings tab.
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+
+                                        <table align="right" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="282">
+                                            <tbody><tr>
+                                                <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+
+
+
+                                                    <img alt="" src="https://gallery.mailchimp.com/655bce084fd8c9d0b5b413d86/images/2dd07560-bdb1-4587-bae5-759d40abaf7c.jpg" width="264" style="max-width:320px;" class="mcnImage">
+
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="264">
+                                                    Your text caption goes here. You can change the position of the caption and set styles in the block’s settings tab.
+                                                </td>
+                                            </tr>
+                                            </tbody></table>
+
+
+
+
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table></td>
+                    </tr>
+                    <tr>
+                        <td valign="top" id="templateColumns">
+                            <!--[if gte mso 9]>
+                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                <tr>
+                                    <td align="center" valign="top" width="200" style="width:200px;">
+                            <![endif]-->
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper">
+                                <tr>
+                                    <td valign="top" class="columnContainer"></td>
+                                </tr>
                             </table>
-                            <!-- // END PREHEADER -->
+                            <!--[if gte mso 9]>
+                            </td>
+                            <td align="center" valign="top" width="200" style="width:200px;">
+                            <![endif]-->
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper">
+                                <tr>
+                                    <td valign="top" class="columnContainer"></td>
+                                </tr>
+                            </table>
+                            <!--[if gte mso 9]>
+                            </td>
+                            <td align="center" valign="top" width="200" style="width:200px;">
+                            <![endif]-->
+                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper">
+                                <tr>
+                                    <td valign="top" class="columnContainer"></td>
+                                </tr>
+                            </table>
+                            <!--[if gte mso 9]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
                         </td>
                     </tr>
                     <tr>
-                        <td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <!-- BEGIN HEADER // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #F4F4F4;border-top: 1px solid #FFFFFF;border-bottom: 1px solid #CCCCCC;border-collapse: collapse !important;">
+                        <td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                <tbody class="mcnTextBlockOuter">
                                 <tr>
-                                    <td valign="top" class="headerContent" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 20px;font-weight: bold;line-height: 100%;padding-top: 0;padding-right: 0;padding-bottom: 0;padding-left: 0;text-align: left;vertical-align: middle;">
-                                        <img src="http://gallery.mailchimp.com/2425ea8ad3/images/header_placeholder_600px.png" style="max-width: 600px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- // END HEADER -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <!-- BEGIN BODY // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #F4F4F4;border-top: 1px solid #FFFFFF;border-bottom: 1px solid #CCCCCC;border-collapse: collapse !important;">
-                                <tr>
-                                    <td valign="top" class="bodyContent" mc:edit="body_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 16px;line-height: 150%;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                        <h1 style="display: block;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 100%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: left;color: #202020 !important;">Hi User, Welcome to Petclown</h1>
-                                        <h3 style="display: block;font-family: Helvetica;font-size: 16px;font-style: italic;font-weight: normal;line-height: 100%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: left;color: #606060 !important;">Thanks for Signing Up. You may do the following things</h3>
-                                        <ol>
-                                            <li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">You can create Petitions</li>
-                                            <li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">You can support and share Petitions</li>
-                                            <li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">You can comment on supported petitions</li>
-                                            <li style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">And you can make Friends.</li>
-                                        </ol>
-                                        <br/>
-                                        Regards!<br/>
-                                        The Petclown team
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- // END BODY -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <!-- BEGIN COLUMNS // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateColumns" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #F4F4F4;border-top: 1px solid #FFFFFF;border-bottom: 1px solid #CCCCCC;border-collapse: collapse !important;">
-                                <tr mc:repeatable>
-                                    <td align="center" valign="top" class="templateColumnContainer" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 200px;">
-                                        <table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
-                                            <tr>
-                                                <td class="leftColumnContent" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-top: 0;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                                    <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_11:44:20-rahul-gandhi.jpg" style="max-width: 160px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="left_column_image" mc:edit="left_column_image">
+                                    <td valign="top" class="mcnTextBlockInner">
+
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+                                            <tbody><tr>
+
+                                                <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+
+                                                    <strong>Our mailing address is: </strong>email@mrpetition.com | You&nbsp;can&nbsp;<a href="*|UNSUB|*">unsubscribe from this list</a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td valign="top" class="leftColumnContent" mc:edit="left_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-top: 0;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                                    <h3 style="display: block;font-family: Helvetica;font-size: 16px;font-style: italic;font-weight: normal;line-height: 100%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: left;color: #606060 !important;">To: Rahul Gandhi</h3>
-                                                    <a href="http://kb.mailchimp.com/article/how-do-i-work-with-repeatable-content-blocks" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #72c02c;font-weight: normal;text-decoration: none;">Rahulji, please have another interview with Arnab Goswami</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td align="center" valign="top" class="templateColumnContainer" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 200px;">
-                                        <table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
-                                            <tr>
-                                                <td class="centerColumnContent" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-top: 0;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                                    <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_10:38:55-beach.jpg" style="max-width: 160px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" class="columnImage" mc:label="center_column_image" mc:edit="center_column_image">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td valign="top" class="centerColumnContent" mc:edit="center_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-top: 0;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                                    <h3 style="display: block;font-family: Helvetica;font-size: 16px;font-style: italic;font-weight: normal;line-height: 100%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: left;color: #606060 !important;">To: Admin</h3>
-                                                    <a href="http://kb.mailchimp.com/article/how-do-i-work-with-repeatable-content-blocks" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #72c02c;font-weight: normal;text-decoration: none;">Another Petition with a long heading to see if the three l...</a>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td align="center" valign="top" class="templateColumnContainer" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 200px;">
-                                        <table border="0" cellpadding="20" cellspacing="0" width="100%" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
-                                            <tr>
-                                                <td class="rightColumnContent" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-top: 0;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                                    <img src="http://petclown.com/images/Aakash%20Rajvanshi/thumb_06:38:00-The_Lost_World_Jurassic_Park.jpg" style="max-width: 160px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;display: inline;" class="columnImage" mc:label="right_column_image" mc:edit="right_column_image">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td valign="top" class="rightColumnContent" mc:edit="right_column_content" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;padding-top: 0;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                                    <h3 style="display: block;font-family: Helvetica;font-size: 16px;font-style: italic;font-weight: normal;line-height: 100%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: left;color: #606060 !important;">To: Admin</h3>
-                                                    <a href="http://kb.mailchimp.com/article/how-do-i-work-with-repeatable-content-blocks" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #72c02c;font-weight: normal;text-decoration: none;">New Petition for testing the listing of petition</a>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                            </tbody></table>
+
                                     </td>
                                 </tr>
-                            </table>
-                            <!-- // END COLUMNS -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" valign="top" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-                            <!-- BEGIN FOOTER // -->
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #F4F4F4;border-top: 1px solid #FFFFFF;border-collapse: collapse !important;">
-                                <tr>
-                                    <td valign="top" class="footerContent" mc:edit="footer_content00" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #808080;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;">
-                                        <a href="*|TWITTER:PROFILEURL|*" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #606060;font-weight: normal;text-decoration: underline;">Follow on Twitter</a>&nbsp;&nbsp;&nbsp;<a href="*|FACEBOOK:PROFILEURL|*" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #606060;font-weight: normal;text-decoration: underline;">Friend on Facebook</a>&nbsp;&nbsp;&nbsp;<a href="*|FORWARD|*" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #606060;font-weight: normal;text-decoration: underline;">Forward to Friend</a>&nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="footerContent" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #808080;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;" mc:edit="footer_content01">
-                                        <em>Copyright &copy; *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
-                                        <br>
-                                        *|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*
-                                        <br>
-                                        <br>
-                                        <strong>Our mailing address is:</strong>
-                                        <br>
-                                        *|HTML:LIST_ADDRESS_HTML|* *|END:IF|*
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="footerContent" style="padding-top: 20px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #808080;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: left;" mc:edit="footer_content02">
-                                        <a href="*|UNSUB|*" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #606060;font-weight: normal;text-decoration: underline;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #606060;font-weight: normal;text-decoration: underline;">update subscription preferences</a>&nbsp;
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- // END FOOTER -->
-                        </td>
+                                </tbody>
+                            </table></td>
                     </tr>
                 </table>
+                <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
                 <!-- // END TEMPLATE -->
             </td>
         </tr>

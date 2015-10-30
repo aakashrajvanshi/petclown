@@ -41,6 +41,7 @@
                 {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'Add a comment...(optional)', 'rows'=>'5']) !!}
                 {!! Form::hidden('post_id', $petition->id) !!}
                 {!! Form::hidden('post_slug', $petition->slug) !!}
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
             </div>
             <div class="form-group">
 

@@ -29,6 +29,7 @@ $factory->define(App\Models\Petition::class, function ($faker) {
         'petition_to' => $faker->name,
         'heading' => $heading,
         'content' => $faker->paragraph(90),
+        'excerpt' => $faker->paragraph(3),
         'image' => $faker->imageUrl(960,540),
         'image_thumb' => $faker->imageUrl(320,180),
         'slug' => $slug,

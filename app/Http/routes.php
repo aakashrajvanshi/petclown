@@ -10,12 +10,28 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+View::share('currentUser1', Auth::User());
 
 Route::get('/', 'PagesController@home');
 Route::get('home', 'PagesController@home');
 
 Route::get('petition/{id}','PetitionController@show');
 Route::get('petitions','PetitionController@index');
+
+/************ LARAVEL CORE FILES WHERE CHANGES ARE MADE *****************
+
+RegistersUsers.php : Invoke UserRegistered event in function postRegister()
+                    event(new UserRegistered(Auth::user()));
+
+AuthenticatesUsers.php : function handleUserWasAuthenticated()
+ //return redirect()->intended($this->redirectPath());
+if(!empty(Session::get('url.intended')))
+return redirect()->intended('/');
+else
+return back();
+
+*************************************************************************/
+
 
 /*Change middleware to admin*/
 Route::get('ideas/create',['middleware' => 'auth', 'uses' => 'IdeasController@create']);
@@ -91,9 +107,8 @@ Route::get('/terms-of-use', function(){
 
 
 // Display all SQL executed in Eloquent
-/*
+
 Event::listen('illuminate.query', function($query)
 {
     var_dump($query);
 });
-*/

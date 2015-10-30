@@ -17,7 +17,6 @@ class LoginController extends Controller
     protected $user;
     private $provider;
 
-
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -43,31 +42,42 @@ class LoginController extends Controller
         return Socialite::with($provider)->redirect();
     }
 
-    public function callback($provider)
+    public function callback($provider, Request $request)
     {
-        $user = Socialite::with($provider)->user();
+        if(!$request->has('error')&&!$request->has('error_code'))
+        {
+            $user = Socialite::with($provider)->user();
 
-        // OAuth Two Providers
-        $token = $user->token;
+            // OAuth Two Providers
 
-        // All Providers
-        $user->getId();
-        $user->getNickname();
-        $name = $user->getName();
-        $email = $user->getEmail();
-        if($provider=="google")
-            $avatar = $user->getAvatar()."&sz=250";
+            $token = $user->token;
+
+            // All Providers
+            $user->getId();
+            $user->getNickname();
+            $name = $user->getName();
+            $email = $user->getEmail();
+            if ($provider == "google")
+                $avatar = $user->getAvatar() . "&sz=250";
+            else
+                $avatar = $user->getAvatar();
+            $this->user = User::updateOrCreate([
+                'email' => $email,
+            ], ['name' => $name, 'remember_token' => $token, 'verified' => true, 'avatar' => $avatar]);
+
+            Auth::login($this->user);
+
+        }
         else
-            $avatar = $user->getAvatar();
-        $this->user = User::updateOrCreate([
-            'email' => $email,
-        ], ['name' => $name, 'remember_token' => $token, 'verified'=>true, 'avatar' => $avatar]);
-
-        Auth::login($this->user);
-
+        {
+            return redirect('/auth/login');
+        }
+        /*
         if(!empty(Session::get('url.intended')))
             return redirect()->intended('/');
         else
             return back();
+        */
+        return redirect()->intended(URL('petitions'));
     }
 }

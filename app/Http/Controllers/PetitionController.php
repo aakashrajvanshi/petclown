@@ -12,6 +12,7 @@ use Auth;
 use Carbon\Carbon;
 use Session;
 use Image;
+use Cache;
 use App\Models\Petition;
 use App\Models\Comment;
 use App\Models\Tag;
@@ -64,17 +65,49 @@ class PetitionController extends Controller {
      */
     public function show($id, Request $request)
     {
-        if (is_numeric($id)) {
-            $petition = Petition::findorFail($id);
-        } else {
-            $petition = Petition::where('slug', '=', $id)->firstorFail();
-        }
-        $petition->load('user','supportedby');
-        $comments = $petition->comment()->latest()->paginate(4);
-        $comments->load('likedBy', 'user');
+        $minutes = env('QUERY_CACHE_DURATION', 60);
 
-        $tags = $petition->tags()->get();
-        $categories = $petition->category()->get();
+        $petition = Cache::remember($id, $minutes, function() use ($id) {
+            if (is_numeric($id)) {
+                return Petition::findorFail($id)->load('user');
+            } else {
+                return Petition::where('slug', '=', $id)->firstorFail()->load('user');
+            }
+        });
+
+        $supportkey = 'support'.$petition->id;
+
+        $petition = Cache::remember($supportkey, $minutes, function() use ($petition) {
+                    $petition->load('supportedby');
+                    return $petition;
+        });
+
+        $commentkey = 'comment'.$petition->id;
+
+        $comments = Cache::remember($commentkey, $minutes, function() use ($petition) {
+                        $comments = $petition->comment()->latest()->paginate(10);
+                        $comments->load('user');
+                        return $comments;
+        });
+
+
+        $commentlikes = 'clikes'.$petition->id;
+        $comments = Cache::remember($commentlikes, $minutes, function() use ($comments) {
+                    $comments->load('likedBy');
+                    return $comments;
+        });
+
+        //$comments->load('likedBy');
+        $tagskey = 'tag'.$id;
+        $catskey = 'cat'.$id;
+
+        $tags = Cache::remember($tagskey, $minutes, function() use ($petition) {
+            return $petition->tags()->get();
+        });
+
+        $categories = Cache::remember($catskey, $minutes, function() use ($petition) {
+            return $petition->category()->get();
+        });
 
         if ($request->ajax()) {
             return view('comments.list', ['petition' => $petition, 'comments' => $comments])->render();

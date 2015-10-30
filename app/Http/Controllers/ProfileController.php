@@ -63,7 +63,8 @@ class ProfileController extends Controller {
             $user->avatar = "/images/default/".$data['image1'];
         }
         if (!empty($data['image'])) {
-            $mytime = Carbon::now()->toTimeString();
+            //$mytime = Carbon::now()->toTimeString();
+            $mytime = time();
             $fileName = $data['image']->getClientOriginalName();
             $fileName = $mytime . "-" . $fileName;
 

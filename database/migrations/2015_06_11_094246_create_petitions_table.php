@@ -19,6 +19,7 @@ class CreatePetitionsTable extends Migration
             $table->string('petition_to');
             $table->string('heading');
             $table->text('content');
+            $table->string('excerpt',510)->nullable();
             $table->string('image')->nullable();
             $table->string('image_thumb')->nullable();
             $table->string('slug');

@@ -173,6 +173,7 @@ class AdminController extends Controller {
         $petition->heading = $data['heading'];
         $petition->petition_to = $data['petition_to'];
         $petition->content = $data['content'];
+        $petition->excerpt = $data['excerpt'];
         $petition->slug = str_slug($petition->heading, "-");
 
         if (isset($data['publish'])) {
@@ -182,7 +183,8 @@ class AdminController extends Controller {
         }
 
         if (!empty($data['image'])) {
-            $mytime = Carbon::now()->toTimeString();
+            //$mytime = Carbon::now()->toTimeString();
+            $mytime = time();
             $fileName = $data['image']->getClientOriginalName();
             $fileName = $mytime . "-" . $fileName;
             $thumbnail = "thumb_" . $fileName;
@@ -204,7 +206,7 @@ class AdminController extends Controller {
             $image->save(user_photo_path() . $fileName);
             $petition->image = user_photo_path('db') . $fileName;
 
-            $image->fit(320, 180)->save(user_photo_path() . $thumbnail);
+            $image->fit(400, 225)->save(user_photo_path() . $thumbnail);
             $petition->image_thumb = user_photo_path('db') . $thumbnail;
         }
         $petition->save();
@@ -284,6 +286,7 @@ class AdminController extends Controller {
         $petition->heading = $data['heading'];
         $petition->petition_to = $data['petition_to'];
         $petition->content = $data['content'];
+        $petition->excerpt = $data['excerpt'];
 
         if (isset($data['publish'])) {
             $petition->published = 1;
@@ -297,7 +300,8 @@ class AdminController extends Controller {
         }
 
         if (!empty($data['image'])) {
-            $mytime = Carbon::now()->toTimeString();
+            //$mytime = Carbon::now()->toTimeString();
+            $mytime = time();
             $fileName = $data['image']->getClientOriginalName();
             $fileName = $mytime . "-" . $fileName;
             $thumbnail = "thumb_" . $fileName;
@@ -319,7 +323,7 @@ class AdminController extends Controller {
             $image->save(user_photo_path() . $fileName);
             $petition->image = user_photo_path('db') . $fileName;
 
-            $image->fit(320, 180)->save(user_photo_path() . $thumbnail);
+            $image->fit(400, 225)->save(user_photo_path() . $thumbnail);
             $petition->image_thumb = user_photo_path('db') . $thumbnail;
         }
 

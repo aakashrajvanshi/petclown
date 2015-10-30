@@ -13,9 +13,9 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.styles([
-        "../plugins/bootstrap/css/bootstrap.min.css",
+        "../plugins/bootstrap/css/bootstrap.css",
         "ie8.css",
-        "blocks.css",
+        /*"blocks.css",*/
         "plugins.css",
         "app.css",
         "style.css",
@@ -23,8 +23,8 @@ elixir(function(mix) {
         "custom2.css",
         "headers/header-v6.css",
         "footers/footer-default.css",
-        "../plugins/animate.css",
-        "../plugins/line-icons/line-icons.css",
+        /*"../plugins/animate.css",*/
+        /*"../plugins/line-icons/line-icons.css",*/
         "../plugins/font-awesome/css/font-awesome.min.css",
         "../plugins/brand-buttons/brand-buttons.css",
         "../plugins/brand-buttons/brand-buttons-inversed.css",
@@ -38,11 +38,11 @@ elixir(function(mix) {
 
     mix.scripts([
         "../plugins/jquery/jquery.min.js",
-        "../plugins/jquery/jquery-migrate.min.js",
+        /*"../plugins/jquery/jquery-migrate.min.js",*/
         "../plugins/bootstrap/js/bootstrap.min.js",
         "../plugins/back-to-top.js",
         "../plugins/smoothScroll.js",
-        "../plugins/jquery.parallax.js",
+        /*"../plugins/jquery.parallax.js",*/
         "app.js",
         "custom.js",
         "custom2.js"

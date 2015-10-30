@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Petition;
 use Carbon\Carbon;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,18 +16,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $petitions = Petition::with('supportedby')->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
-        $petitions->load('comment');
-        $latest = Petition::orderBy('created_at','desc')->published()->get()->take(3);
+        $popular = Petition::with('supportedby')->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(4);
+        $popular->load('comment');
+        $latest = Petition::orderBy('created_at','desc')->published()->get()->take(4);
         $latest->load('comment','supportedby');
 
         $trending = Petition::with(['supportedby' => function($query){
-            $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(3));
-        }])->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(3);
+            $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(5));
+        }])->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(4);
 
         $trending->load('comment');
 
-        view()->share(compact('petitions','latest','trending'));
+        //$currentUser1 = Auth::User();
+
+        view()->share(compact('popular','latest','trending'));
     }
 
     /**

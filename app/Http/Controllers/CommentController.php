@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use Session;
+use Cache;
 use App\Models\Comment;
 use App\Models\Petition;
 
@@ -51,6 +52,8 @@ class CommentController extends Controller {
                 $comment->anon = 1;
             }
             $comment->save();
+            $commentkey = 'comment'.$data['post_id'];
+            Cache::forget($commentkey);
         }
         try{
             $request->user()->support()->attach($data['post_id']);
@@ -60,12 +63,16 @@ class CommentController extends Controller {
             //do nothing
         }
 
+        $supportkey = 'support'.$data['post_id'];
+        Cache::forget($supportkey);
+
         if (!empty($data['comment'])) {
             Session::flash('flash_message', 'Thanks! Your comment has been posted!');
         }
         else{
             Session::flash('flash_message', 'Thanks for supporting the petition!');
         }
+
         if(!empty($data['post_slug'])){
             $url = '/petition/'.$data['post_slug'];
             return redirect($url);
@@ -91,6 +98,8 @@ class CommentController extends Controller {
         catch (\Exception $e){
             //do nothing
         }
+        $supportkey = 'support'.$petition->id;
+        Cache::forget($supportkey);
         return view('petition.comment', ['petition'=>$petition]);
     }
 
@@ -112,6 +121,9 @@ class CommentController extends Controller {
         catch (\Exception $e){
             //do nothing
         }
+        $supportkey = 'support'.$petition->id;
+        Cache::forget($supportkey);
+
         Session::flash('flash_message', 'Thanks for supporting the petition. Add a comment!');
         $url = '/petition/'.$petition->slug;
         return redirect($url);
@@ -172,6 +184,9 @@ class CommentController extends Controller {
         $petition = $comment->petition()->firstorFail();
         $slug = $petition->slug;
 
+        $commentlikes = 'clikes'.$petition->id;
+        Cache::forget($commentlikes);
+
         $url = '/petition/'.$slug;
         return redirect($url);
     }
@@ -186,6 +201,8 @@ class CommentController extends Controller {
         $comment = Comment::findorFail($id);
         $petition = $comment->petition()->firstorFail();
         $slug = $petition->slug;
+        $commentlikes = 'clikes'.$petition->id;
+        Cache::forget($commentlikes);
 
         $url = '/petition/'.$slug;
         return redirect($url);

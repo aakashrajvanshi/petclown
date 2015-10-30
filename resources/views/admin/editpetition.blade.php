@@ -5,7 +5,7 @@
     <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script>tinymce.init({
             selector:'textarea',
-            plugins: "link,paste",
+            plugins: "link,paste,textcolor",
             target_list: false,
             relative_urls: false,
             content_css : "/css/tinymce.css",
@@ -14,7 +14,7 @@
             link_assume_external_targets: true,
             //paste_as_text: true,
             menubar: false,
-            toolbar: "bold italic | bullist numlist | link unlink",
+            toolbar: "bold italic | bullist numlist | link unlink |  formatselect fontselect fontsizeselect | forecolor backcolor",
             statusbar : false,
             valid_elements : '*[*]',
             //valid_elements : "a[href|target=_blank],strong/b,p,em/i,ol,ul,li,div[align],br,sup,sub,h3,h4,h5,h6,blockquote,code"
@@ -82,6 +82,12 @@
                 <div class="form-group">
                     {!! Form::label('content','Description of the appeals') !!}
                     {!! Form::textarea('content',$petition->content,['class' => 'form-control']) !!}
+                </div>
+
+                <!-- Excerpt Form Input -->
+                <div class="form-group">
+                    {!! Form::label('excerpt','Excerpt of the appeals') !!}
+                    {!! Form::text('excerpt',$petition->excerpt,['class' => 'form-control']) !!}
                 </div>
 
                 <!-- 'Categories Select' Form Input -->

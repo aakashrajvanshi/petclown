@@ -13,8 +13,9 @@
 
     <!-- Web Fonts -->
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+   <!--
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
-
+    -->
     <!-- Combined Stylesheets -->
     <link rel="stylesheet" href="assets/css/all.css">
 
@@ -51,22 +52,19 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <div class="menu-container">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{ url('/ideas/create') }}">Create an Idea</a></li>
+                            <li><a href="{{ url('/ideas/create') }}">Submit an Idea</a></li>
                             <li><a href="{{ url('/petitions') }}">Browse Petitions</a></li>
                             @if (Auth::guest())
                                 <li><a href="{{ url('/auth/login') }}"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
                                 <!--<li><a href="{{ url('/auth/register') }}">Register</a></li>-->
                             @else
-                                <li class="menu-icons">
-                                    <i class="menu-icons-style radius-x fa fa-envelope"></i>
-                                    <span class="badge rounded-x">0</span>
-                                </li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hello, {{ Auth::user()->name }} <span class="caret"></span></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ url('/profile') }}">Profile</a></li>
+                                        <li><a href="{{ url('/profile') }}">My Profile</a></li>
                                         <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                                     </ul>
+
                                 </li>
                             @endif
                         </ul>
@@ -115,7 +113,9 @@
     });
 </script>
 
+<!--
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+-->
 @yield('footer')
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.js"></script>

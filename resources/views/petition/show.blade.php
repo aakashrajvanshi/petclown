@@ -1,37 +1,38 @@
 @extends('app')
 @section('title')
     {{-- Regular HTML Meta Tags --}}
-    <title>Petitions</title>
-    <meta name="description" content="Petitions listings">
+    <title>{{$petition->heading}}</title>
+    <meta name="description" content="{{$petition->excerpt}}">
 
     {{-- Facebook Open Graph Meta --}}
-    <meta property="og:title" content="Workday Sets Price Range for I.P.O." />
-    <meta property="og:site_name" content="My Favorite News"/>
-    <meta property="og:url" content="http://www.myfavnews.com/2013/1/1/workday-price-range" />
+    <meta property="og:title" content="{{$petition->excerpt}}" />
+    <meta property="og:site_name" content="Mr. Petition"/>
+    <meta property="og:url" content="http://mrpetition.com/petition/{{$petition->slug}}" />
     <meta property="og:type" content="article" />
-    <meta property="og:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here." />
-    <meta property="article:author" content="https://www.facebook.com/fareedzakaria" />
+    <meta property="og:description" content="{{$petition->excerpt}}" />
+    <meta property="article:author" content="https://www.facebook.com/mrpetition" />
     <meta property="fb:app_id" content="[FB_APP_ID]" />
 
     {{-- Twitter Card Meta --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@nytimes">
-    <meta name="twitter:title" content="Parade of Fans for Houston’s Funeral">
-    <meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.">
-    <meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
+    <meta name="twitter:title" content="{{$petition->heading}}">
+    <meta name="twitter:description" content="{{$petition->excerpt}}">
+    <meta name="twitter:image" content="http://mrpetition.com{{$petition->image}}">
 @stop
 
 @section('content')
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong></div>
-            <h1 class="petition-heading">{{$petition->heading}}</h1>
+            <h1 class="petition-heading">{{$petition->heading}} and {{$currentUser1}}</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="petition-from"><a href="/profile/{{$petition->user->id}}"><img class="profileimagexs rounded-x"
                                                                                        src="{{$petition->user->avatar}}">{{$petition->user->name}}</a></div>
+
         </div>
     </div>
 
@@ -106,6 +107,9 @@
                 <div class="panel panel-u">
                     <div class="panel-body">
                         @if (Auth::guest())
+                            @if(Session::put('url.intended', URL::current()))
+
+                            @endif
                             <p align="center"><strong>Login to Support</strong></p>
                             <a class="btn btn-block btn-googleplus-inversed rounded" href="{{ url('/oauth/google') }}">
                                 <i class="fa fa-google-plus"></i> Google
@@ -155,7 +159,7 @@
                                 </div>
                             </div>
                         @else
-                            @if($petition->supportedby->contains(Auth::user()))
+                            @if($petition->supportedby->contains(Auth::User()))
                                 <div align="center">
                                     <h3><i class="icon-custom icon-sm rounded-x icon-bg-u fa fa-check"></i> Thanks, please share!</h3>
                                     <ul class="my-social-icons icon-rounded icon-zoom list-unstyled list-inline">
@@ -186,6 +190,7 @@
                                 <div class="form-group">
                                     {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'Add a comment...', 'rows'=>'5']) !!}
                                     {!! Form::hidden('post_id', $petition->id) !!}
+
                                 </div>
                                 <!--Petition Submit Button-->
                                 <div class="form-group">
@@ -203,14 +208,7 @@
                                     {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'I support this petition because ...', 'rows'=>'5']) !!}
                                     {!! Form::hidden('post_id', $petition->id) !!}
                                 </div>
-                                <!-- Content Form Input -->
-                                <!--
-                        <div class="form-group">
-                            {{---
-                            {!! Form::checkbox('anon',1, false) !!} Do not show my name (show Anonymous)
-                            --}}
-                        </div>
-                        -->
+
                                 <!--Petition Submit Button-->
                                 <div class="form-group">
                                     {!! Form::submit('Submit',['class' => 'btn btn-u form-control']) !!}
