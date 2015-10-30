@@ -10,7 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-View::share('currentUser1', Auth::User());
+
+get('testing', function (){
+
+    if(Auth::user()) {
+        $name = Auth::user()->name;
+        echo "<br>my name is " . $name . "<br>";
+        $id = Auth::user()->id;
+        echo "<br>my id is " . $id . "<br>";
+    }
+    echo Auth::user();
+});
 
 Route::get('/', 'PagesController@home');
 Route::get('home', 'PagesController@home');
@@ -107,8 +117,9 @@ Route::get('/terms-of-use', function(){
 
 
 // Display all SQL executed in Eloquent
-
+/*
 Event::listen('illuminate.query', function($query)
 {
     var_dump($query);
 });
+*/

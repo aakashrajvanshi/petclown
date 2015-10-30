@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong></div>
-            <h1 class="petition-heading">{{$petition->heading}} and {{$currentUser1}}</h1>
+            <h1 class="petition-heading">{{$petition->heading}}</h1>
         </div>
     </div>
     <div class="row">
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                         @else
-                            @if($petition->supportedby->contains(Auth::User()))
+                            @if($petition->supportedby->contains(Auth::user()))
                                 <div align="center">
                                     <h3><i class="icon-custom icon-sm rounded-x icon-bg-u fa fa-check"></i> Thanks, please share!</h3>
                                     <ul class="my-social-icons icon-rounded icon-zoom list-unstyled list-inline">
