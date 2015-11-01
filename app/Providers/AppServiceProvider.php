@@ -24,19 +24,18 @@ class AppServiceProvider extends ServiceProvider
             var_dump($query);
         });
         */
+        /*
         $minutes = env('QUERY_CACHE_DURATION', 60);
 
         $popular = Cache::remember('popular', $minutes, function() {
             return Petition::with('supportedby')->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(4)->load('comment');
         });
-        //$popular = Petition::with('supportedby')->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(4)->load('comment');
 
         $latest = Cache::remember('latest', $minutes, function() {
 
             return Petition::orderBy('created_at','desc')->published()->get()->take(4)->load('comment','supportedby');
 
         });
-        //$latest = Petition::orderBy('created_at','desc')->published()->get()->take(4)->load('comment','supportedby');
 
         $trending = Cache::remember('trending', $minutes, function() {
 
@@ -46,38 +45,8 @@ class AppServiceProvider extends ServiceProvider
 
         });
 
-        //dd(Auth::user());
-
-        /*
-        $trending = Petition::with(['supportedby' => function($query){
-            $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(5));
-        }])->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(4)->load('comment');
-        */
         view()->share(compact('popular','latest','trending'));
-
-        /*
-        view()->composer('*', function ($view) {
-            $popular = Petition::with('supportedby')->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(4);
-            $popular->load('comment');
-            $latest = Petition::orderBy('created_at','desc')->published()->get()->take(4);
-            $latest->load('comment','supportedby');
-
-            $trending = Petition::with(['supportedby' => function($query){
-                $query->where('user_support_petition.created_at', '>=', Carbon::now()->subDays(5));
-            }])->published()->get()->sortByDesc(function($item){ return $item->supportedby->count();})->take(4);
-
-            $trending->load('comment');
-
-            $currentUser = Auth::user();
-
-            $view->with(compact('popular','latest','trending','currentUser'));
-        });
-        */
-        /*
-        view()->composer('*', function ($view) {
-            $view->with('currentUser',Auth::user());
-        });
-        */
+    */
     }
 
     /**
