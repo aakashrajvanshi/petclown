@@ -1,16 +1,10 @@
 @extends('app')
 @section('title')
     <title>Petitions</title>
-
-
 @stop
 
-
 @section('content')
-
-
     <div class="row">
-
         <div class="col-md-8">
             <div>
                 <!-- Nav tabs -->
@@ -105,7 +99,7 @@
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="popular">
-                    @foreach($petitions_all as $petition)
+                    @foreach($popular_all as $petition)
                         <div class="panel panel-default">
                             <div class="panel-body no-padding no-margin">
                                 <div class="row  no-padding no-margin">

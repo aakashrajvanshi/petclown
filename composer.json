@@ -11,7 +11,8 @@
         "intervention/image": "dev-master",
         "illuminate/html": "^5.0@dev",
         "cviebrock/image-validator": "2.0.*@beta",
-        "nesbot/carbon": "~1.19"
+        "nesbot/carbon": "~1.19",
+        "predis/predis": "v1.0.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 function user_photo_path($id='notdb'){
     if($id === 'db') {
         return '/images/' . Auth::user()->name . '/' ;

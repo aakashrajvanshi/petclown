@@ -52,8 +52,8 @@ class CommentController extends Controller {
                 $comment->anon = 1;
             }
             $comment->save();
-            $commentkey = 'comment'.$data['post_id'];
-            Cache::forget($commentkey);
+            $commenttag = 'comment'.$data['post_id'];
+            Cache::tags($commenttag)->flush();
         }
         try{
             $request->user()->support()->attach($data['post_id']);
@@ -62,7 +62,6 @@ class CommentController extends Controller {
         {
             //do nothing
         }
-
         $supportkey = 'support'.$data['post_id'];
         Cache::forget($supportkey);
 
@@ -184,8 +183,8 @@ class CommentController extends Controller {
         $petition = $comment->petition()->firstorFail();
         $slug = $petition->slug;
 
-        $commentlikes = 'clikes'.$petition->id;
-        Cache::forget($commentlikes);
+        $likestag = 'clikes'.$petition->id;
+        Cache::tags($likestag)->flush();
 
         $url = '/petition/'.$slug;
         return redirect($url);
@@ -201,8 +200,8 @@ class CommentController extends Controller {
         $comment = Comment::findorFail($id);
         $petition = $comment->petition()->firstorFail();
         $slug = $petition->slug;
-        $commentlikes = 'clikes'.$petition->id;
-        Cache::forget($commentlikes);
+        $likestag = 'clikes'.$petition->id;
+        Cache::tags($likestag)->flush();
 
         $url = '/petition/'.$slug;
         return redirect($url);
