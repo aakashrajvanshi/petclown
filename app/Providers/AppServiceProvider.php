@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
             var_dump($query);
         });
         */
-        /*
+
         $minutes = env('QUERY_CACHE_DURATION', 60);
 
         $popular = Cache::remember('popular', $minutes, function() {
@@ -46,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->share(compact('popular','latest','trending'));
-    */
+    
     }
 
     /**
