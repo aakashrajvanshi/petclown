@@ -26,9 +26,12 @@ class EmailWelcomeNote
      */
     public function handle(UserRegistered $event)
     {
-        \Mail::queue(array('emails.welcome', 'emails.welcometext'), ['name'=>$event->user->name], function($message) use($event)
+        $name = $event->user->name;
+        $email = $event->user->email;
+
+        \Mail::queue(array('emails.welcome', 'emails.welcometext'), ['name'=>$name], function($message) use($name,$email)
         {
-            $message->to($event->user->email, $event->user->name)->subject('Welcome '.$event->user->name.'!');
+            $message->to($email, $name)->subject('Welcome '.$name.'!');
         });
     }
 }
