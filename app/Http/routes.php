@@ -117,9 +117,12 @@ Route::get('/terms-of-use', function(){
 
 
 // Display all SQL executed in Eloquent
+//Moved to AppServiceProvider.php
+
 /*
 Event::listen('illuminate.query', function($query)
 {
     var_dump($query);
 });
+
 */

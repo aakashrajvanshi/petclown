@@ -23,7 +23,7 @@
                             <a href="petition/{{$petition->slug}}">
                             <div class="panel panel-default">
                                 <div class="panel-body no-padding no-margin col-xs-12 col-sm-6">
-                                    <img src="{{$petition->image}}" width="100%" alt="{{$petition->heading}}">
+                                    <img src="{{$petition->image_thumb}}" width="100%" alt="{{$petition->heading}}">
                                     <div class="carousel-caption visible-xs visible-sm hidden-md hidden-lg">
                                         <p>To: {{$petition->petition_to}}</p>
                                         <p>{{$petition->heading}}</p>
