@@ -2,6 +2,7 @@
 @section('title')
     <title>Update your Petition</title>
     <meta name="description" content="Update a funny petition.">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
     <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script>tinymce.init({
             selector:'textarea',
@@ -121,6 +122,7 @@
 @stop
 @section('footer')
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
     <script type="text/javascript">
         $('#tag_list').select2({
             placeholder:'choose tags',
