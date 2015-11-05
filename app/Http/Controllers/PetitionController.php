@@ -18,6 +18,7 @@ use App\Models\Comment;
 use App\Models\Tag;
 use App\Models\Category;
 use DB;
+use Log;
 
 class PetitionController extends Controller {
 

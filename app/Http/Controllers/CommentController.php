@@ -53,7 +53,9 @@ class CommentController extends Controller {
             }
             $comment->save();
             $commenttag = 'comment'.$data['post_id'];
-            Cache::tags($commenttag)->flush();
+            $likestag = 'clikes'.$data['post_id'];
+            Cache::tags($likestag,$commenttag)->flush();
+            //dd($commenttag);
         }
         try{
             $request->user()->support()->attach($data['post_id']);

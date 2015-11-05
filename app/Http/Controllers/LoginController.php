@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserRegistered;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -61,12 +62,25 @@ class LoginController extends Controller
                 $avatar = $user->getAvatar() . "&sz=250";
             else
                 $avatar = $user->getAvatar();
+
+            if ($user1 = User::where('email', '=', $email)->first()) {
+                $user1->update(['name' => $name, 'remember_token' => $token, 'verified' => true, 'avatar' => $avatar]);
+                $this->user = $user1;
+                Auth::login($this->user);
+            }
+            else{
+                //create the user
+                $this->user = User::create(['email' => $email, 'name' => $name, 'remember_token' => $token, 'verified' => true, 'avatar' => $avatar]);
+                Auth::login($this->user);
+                event(new UserRegistered(Auth::user()));
+            }
+            /*
             $this->user = User::updateOrCreate([
                 'email' => $email,
             ], ['name' => $name, 'remember_token' => $token, 'verified' => true, 'avatar' => $avatar]);
 
             Auth::login($this->user);
-
+            */
         }
         else
         {
