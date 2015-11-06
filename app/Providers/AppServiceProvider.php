@@ -46,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->share(compact('popular','latest','trending'));
-    
+
     }
 
     /**

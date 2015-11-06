@@ -28,10 +28,18 @@ class EmailWelcomeNote
     {
         $name = $event->user->name;
         $email = $event->user->email;
+        $verified = $event->user->verified;
 
-        \Mail::queue(array('emails.welcome', 'emails.welcometext'), ['name'=>$name], function($message) use($name,$email)
-        {
-            $message->to($email, $name)->subject('Welcome '.$name.'!');
-        });
+        if($verified) {
+            \Mail::queue(array('emails.welcome', 'emails.welcometext'), ['name' => $name], function ($message) use ($name, $email) {
+                $message->to($email, $name)->subject('Welcome ' . $name . '!');
+            });
+        }
+        else{
+            $token = $event->user->emailtoken;
+            \Mail::queue('emails.confirm', ['name' => $name, 'token' => $token], function ($message) use ($name, $email) {
+                $message->to($email, $name)->subject('Email confirmation required');
+            });
+        }
     }
 }

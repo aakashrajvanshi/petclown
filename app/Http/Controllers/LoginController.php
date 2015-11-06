@@ -23,6 +23,19 @@ class LoginController extends Controller
         $this->user = $user;
     }
 
+    public function confirmEmail($token){
+        $user = User::where('emailtoken', '=', $token)->firstOrFail();
+        if(!$user->verified) {
+            $user->verified = 1;
+            $user->save();
+        }
+        if(Auth::user())
+            return redirect('/')->with('flash_message', 'Thanks, Email Verification Complete!');
+        else
+            return redirect('/auth/login')->with('flash_message', 'Email Verified! Login to continue...');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +43,7 @@ class LoginController extends Controller
      */
     public function oauth()
     {
-        return view('login.home');
+        return redirect('/auth/login');
     }
 
     /**

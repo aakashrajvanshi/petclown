@@ -11,16 +11,7 @@
 |
 */
 
-get('testing', function (){
 
-    if(Auth::user()) {
-        $name = Auth::user()->name;
-        echo "<br>my name is " . $name . "<br>";
-        $id = Auth::user()->id;
-        echo "<br>my id is " . $id . "<br>";
-    }
-    echo Auth::user();
-});
 
 Route::get('/', 'PagesController@home');
 Route::get('home', 'PagesController@home');
@@ -57,7 +48,6 @@ Route::get('addcomment/{id}',['middleware' => 'auth', 'uses' => 'CommentControll
 Route::get('support/{id}',['middleware' => 'auth', 'uses' => 'CommentController@support']);
 
 Route::get('admin',['middleware' => 'admin', 'uses' => 'AdminController@index']);
-
 Route::get('admin/createpetition',['middleware' => 'admin', 'uses' => 'AdminController@createpet']);
 Route::post('admin/createpetition',['middleware' => 'admin', 'uses' => 'AdminController@storepet']);
 Route::get('admin/editpetition/{id}',['middleware' => 'admin', 'uses' => 'AdminController@editpet']);
@@ -68,10 +58,7 @@ Route::get('admin/approve/{id}',['middleware' => 'admin', 'uses' => 'AdminContro
 Route::get('admin/disapprove/{id}',['middleware' => 'admin', 'uses' => 'AdminController@disapprove']);
 Route::get('admin/reviewidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@reviewidea']);
 Route::post('admin/reviewidea/{id}',['middleware' => 'admin', 'uses' => 'AdminController@storereview']);
-
 Route::get('admin/{id}',['middleware' => 'admin', 'uses' => 'AdminController@show']);
-
-
 
 //profile
 Route::get('profile', ['middleware' => 'auth', 'uses' => 'ProfileController@index']);
@@ -115,6 +102,7 @@ Route::get('/terms-of-use', function(){
     return view('pages.terms');
 });
 
+Route::get('confirm/{token}', 'LoginController@confirmEmail');
 
 // Display all SQL executed in Eloquent
 //Moved to AppServiceProvider.php
