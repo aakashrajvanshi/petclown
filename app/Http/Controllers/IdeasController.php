@@ -53,7 +53,8 @@ class IdeasController extends Controller
         $petition->slug = str_slug($petition->heading, "-");
 
         if (!empty($data['image'])) {
-            $mytime = Carbon::now()->toTimeString();
+            //$mytime = Carbon::now()->toTimeString();
+            $mytime = time();
             $fileName = $data['image']->getClientOriginalName();
             $fileName = $mytime . "-" . $fileName;
             $thumbnail = "thumb_" . $fileName;
@@ -151,7 +152,8 @@ class IdeasController extends Controller
         $petition->slug = str_slug($petition->heading, "-");
 
         if (!empty($data['image'])) {
-            $mytime = Carbon::now()->toTimeString();
+            //$mytime = Carbon::now()->toTimeString();
+            $mytime = time();
             $fileName = $data['image']->getClientOriginalName();
             $fileName = $mytime . "-" . $fileName;
             $thumbnail = "thumb_" . $fileName;

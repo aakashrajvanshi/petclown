@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-2 profile-pic">
                 <img class="hidden-sm hidden-xs img-responsive img-margin-bottom img-thumbnail" alt="{{$user->name}}"
-                     src="{{$user->avatar}}"
+                     src="{{cdn($user->avatar)}}"
                      width="100%">
                 <!--side navigation bar-->
 

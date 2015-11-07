@@ -7,7 +7,7 @@
             @foreach ($comments as $comment)
                 <div class="media media-v2">
                     <a class="pull-left" href="/profile/{{$comment->user->id}}">
-                        <img class="media-object rounded-x" src="{{$comment->user->avatar}}"
+                        <img class="media-object rounded-x" src="{{cdn($comment->user->avatar)}}"
                              alt="{{$comment->user->name}}">
                     </a>
 

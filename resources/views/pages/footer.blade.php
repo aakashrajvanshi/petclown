@@ -6,7 +6,7 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- About -->
                     <div class="headline"><h2>About</h2></div>
-                    <p class="margin-bottom-25 md-margin-bottom-40">Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.</p>
+                    <p class="margin-bottom-25 md-margin-bottom-40">Mr Petition is a comic website for raising funny, stupid, and completely insane petitions.</p>
                     <!-- End About -->
 
                     <!-- Social Links -->
@@ -29,7 +29,7 @@
                         <div class="headline"><h2>Trending Petitions</h2></div>
                         @foreach($trending->slice(0, 3) as $petition)
                         <dl class="dl-horizontal">
-                            <dt><a href="petition/{{$petition->slug}}"><img src="{{$petition->image_thumb}}" alt="{{$petition->petition_to}}"/></a></dt>
+                            <dt><a href="petition/{{$petition->slug}}"><img src="{{cdn($petition->image_thumb)}}" alt="{{$petition->petition_to}}"/></a></dt>
                             <dd>
                                 <p><h5 class="footer-to">To: {{$petition->petition_to}}</h5><a href="petition/{{$petition->slug}}">
                                     @if (strlen($petition->heading)>58)
@@ -52,7 +52,7 @@
                         <div class="headline"><h2>Latest Petitions</h2></div>
                         @foreach($latest->slice(0, 3) as $petition)
                             <dl class="dl-horizontal">
-                                <dt><a href="petition/{{$petition->slug}}"><img src="{{$petition->image_thumb}}" alt="{{$petition->petition_to}}"/></a></dt>
+                                <dt><a href="petition/{{$petition->slug}}"><img src="{{cdn($petition->image_thumb)}}" alt="{{$petition->petition_to}}"/></a></dt>
                                 <dd>
                                     <p><h5 class="footer-to">To: {{$petition->petition_to}}</h5><a href="petition/{{$petition->slug}}">
                                         @if (strlen($petition->heading)>58)

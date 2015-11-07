@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-12 col-xs-6">
                         <img class="img-responsive img-margin-bottom img-thumbnail" alt="{{$user->name}}"
-                             src="{{$user->avatar}}" width="100%">
+                             src="{{cdn($user->avatar)}}" width="100%">
                     </div>
                     <!--side navigation bar-->
                     <div class="col-md-12 col-xs-6">
@@ -73,43 +73,43 @@
                                                     <li>
                                                         <input type="radio" name="image1" value="avatar1.png" id="funnyclown1" />
                                                         <label for="funnyclown1">
-                                                            <img class="img-responsive" src="/images/default/avatar1.png" alt="">
+                                                            <img class="img-responsive" src="{{cdn('/images/default/avatar1.png')}}" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <input type="radio" name="image1" value="avatar2.png" id="funnyclown2" />
                                                         <label for="funnyclown2">
-                                                            <img class="img-responsive" src="/images/default/avatar2.png" alt="">
+                                                            <img class="img-responsive" src="{{cdn('/images/default/avatar2.png')}}" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <input type="radio" name="image1" value="avatar3.png" id="funnyclown3" />
                                                         <label for="funnyclown3">
-                                                            <img class="img-responsive" src="/images/default/avatar3.png" alt="">
+                                                            <img class="img-responsive" src="{{cdn('/images/default/avatar3.png')}}" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <input type="radio" name="image1" value="avatar4.png" id="funnyclown4" />
                                                         <label for="funnyclown4">
-                                                            <img class="img-responsive" src="/images/default/avatar4.png" alt="">
+                                                            <img class="img-responsive" src="{{cdn('/images/default/avatar4.png')}}" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <input type="radio" name="image1" value="avatar5.png" id="funnyclown5" />
                                                         <label for="funnyclown5">
-                                                            <img class="img-responsive" src="/images/default/avatar5.png" alt="">
+                                                            <img class="img-responsive" src="{{cdn('/images/default/avatar5.png')}}" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <input type="radio" name="image1" value="avatar6.png" id="funnyclown6" />
                                                         <label for="funnyclown6">
-                                                            <img class="img-responsive" src="/images/default/avatar6.png" alt="">
+                                                            <img class="img-responsive" src="{{cdn('/images/default/avatar6.png')}}" alt="">
                                                         </label>
                                                     </li>
                                                     <li>
                                                         <input type="radio" name="image1" value="avatar7.png" id="funnyclown7" />
                                                         <label for="funnyclown7">
-                                                            <img class="img-responsive" src="/images/default/avatar7.png" alt="">
+                                                            <img class="img-responsive" src="{{cdn('/images/default/avatar7.png')}}" alt="">
                                                         </label>
                                                     </li>
                                                 </ul>

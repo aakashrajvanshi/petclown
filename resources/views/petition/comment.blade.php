@@ -33,7 +33,7 @@
             <p align="center">Petitioning: <strong>{{$petition->petition_to}}</strong></p>
             <p align="center">{{$petition->heading}}</p>
             <div class="panel panel-default petition-from">
-                <img class="profileimagexs rounded-x" src="{{Auth::user()->avatar}}">{{Auth::user()->name}}
+                <img class="profileimagexs rounded-x" src="{{cdn(Auth::user()->avatar)}}">{{Auth::user()->name}}
             </div>
             {!! Form::Open(['url' => '/comment']) !!}
                     <!-- Content Form Input -->
@@ -41,7 +41,6 @@
                 {!! Form::textarea('comment',null,['class' => 'form-control', 'placeholder'=>'Add a comment...(optional)', 'rows'=>'5']) !!}
                 {!! Form::hidden('post_id', $petition->id) !!}
                 {!! Form::hidden('post_slug', $petition->slug) !!}
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
             </div>
             <div class="form-group">
 

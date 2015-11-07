@@ -17,7 +17,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
     -->
     <!-- Combined Stylesheets -->
-    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="{{cdn('assets/css/all.css')}}">
 
 </head>
 
@@ -41,7 +41,7 @@
                     <!-- Navbar Brand -->
                     <div class="navbar-brand">
                         <a href="{{ url('/') }}">
-                            <img class="shrink-logo" src="images/default/logo.png" alt="Logo">
+                            <img class="shrink-logo" src="{{cdn('images/default/logo.png')}}" alt="Logo">
                         </a>
                     </div>
                     <!-- ENd Navbar Brand -->
@@ -106,7 +106,7 @@
 
 <!-- JS Global Compulsory -->
 
-<script type="text/javascript" src="assets/js/all.js"></script>
+<script type="text/javascript" src="{{cdn('assets/js/all.js')}}"></script>
 
 <script type="text/javascript">
     $( document ).ready(function(){

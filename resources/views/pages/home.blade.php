@@ -23,7 +23,7 @@
                             <a href="petition/{{$petition->slug}}">
                             <div class="panel panel-default">
                                 <div class="panel-body no-padding no-margin col-xs-12 col-sm-6">
-                                    <img src="{{$petition->image_thumb}}" width="100%" alt="{{$petition->heading}}">
+                                    <img src="{{cdn($petition->image_thumb)}}" width="100%" alt="{{$petition->heading}}">
                                     <div class="carousel-caption visible-xs visible-sm hidden-md hidden-lg">
                                         <p>To: {{$petition->petition_to}}</p>
                                         <p>{{$petition->heading}}</p>
@@ -75,7 +75,7 @@
                         <div class="thumbnails thumbnail-style">
                             <a href="petition/{{$petition->slug}}">
                                 <img class="img-responsive"
-                                     src="{{$petition->image_thumb}}"
+                                     src="{{cdn($petition->image_thumb)}}"
                                      alt="{{$petition->heading}}" width="100%">
                             </a>
                             <div class="thumbnail-body">
@@ -115,7 +115,7 @@
                         <div class="thumbnails thumbnail-style">
                             <a href="petition/{{$petition->slug}}">
                                 <img class="img-responsive"
-                                     src="{{$petition->image_thumb}}"
+                                     src="{{cdn($petition->image_thumb)}}"
                                      alt="{{$petition->heading}}" width="100%">
                             </a>
                             <div class="thumbnail-body">
@@ -155,7 +155,7 @@
                         <div class="thumbnails thumbnail-style">
                             <a href="petition/{{$petition->slug}}">
                                 <img class="img-responsive"
-                                     src="{{$petition->image_thumb}}"
+                                     src="{{cdn($petition->image_thumb)}}"
                                      alt="{{$petition->heading}}" width="100%">
                             </a>
                             <div class="thumbnail-body">
@@ -190,7 +190,7 @@
             @foreach($activity as $act)
                 <div class="media media-v2">
                     <a class="pull-left" href="/profile/{{$act->id}}">
-                        <img class="rounded-x" src="{{$act->avatar}}" alt="{{$act->name}}">
+                        <img class="rounded-x" src="{{cdn($act->avatar)}}" alt="{{$act->name}}">
                     </a>
 
                     <div class="media-body">

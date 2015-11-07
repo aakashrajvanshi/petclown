@@ -31,14 +31,14 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="petition-from"><a href="/profile/{{$petition->user->id}}"><img class="profileimagexs rounded-x"
-                                                                                       src="{{$petition->user->avatar}}">{{$petition->user->name}}</a></div>
+                                                                                       src="{{cdn($petition->user->avatar)}}">{{$petition->user->name}}</a></div>
 
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-8">
-            <img src="{{$petition->image}}" width="100%"/>
+            <img src="{{cdn($petition->image)}}" width="100%"/>
             <div class="petition-tags">
                 <ul class="list-unstyled list-inline">
                     <li><i class="fa fa-calendar"></i> {{ date("d F Y",strtotime($petition->created_at)) }}</li>
@@ -183,7 +183,7 @@
                                 </div>
                                 <hr class="mymargin"/>
                                 <div class="panel panel-default petition-from">
-                                    <img class="profileimagexs rounded-x" src="{{Auth::user()->avatar}}">{{Auth::user()->name}}
+                                    <img class="profileimagexs rounded-x" src="{{cdn(Auth::user()->avatar)}}">{{Auth::user()->name}}
                                 </div>
                                 {!! Form::Open(['url' => '/comment']) !!}
                                         <!-- Content Form Input -->
@@ -200,7 +200,7 @@
                             @else
                                 <p align="center"><strong>Support this Petition</strong></p>
                                 <div class="panel panel-default petition-from">
-                                    <img class="profileimagexs rounded-x" src="{{Auth::user()->avatar}}">{{Auth::user()->name}}
+                                    <img class="profileimagexs rounded-x" src="{{cdn(Auth::user()->avatar)}}">{{Auth::user()->name}}
                                 </div>
                                 {!! Form::Open(['url' => '/comment']) !!}
                                         <!-- Content Form Input -->

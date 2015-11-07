@@ -28,7 +28,7 @@
                             <div class="panel-body no-padding no-margin">
                                 <div class="row  no-padding no-margin">
                                     <div class="col-xs-12 col-sm-5  no-padding no-margin">
-                                        <img src="{{$petition->image_thumb}}" width="100%">
+                                        <img src="{{cdn($petition->image_thumb)}}" width="100%">
                                     </div>
                                     <div class="col-xs-12 col-sm-7 no-padding no-margin">
                                         <div class="thumb petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong>
@@ -42,7 +42,7 @@
                                             </a></h2>
                                         <!--
                                 <div class="thumb petition-from"><img class="profileimagexs rounded-x"
-                                                                     src="{{$petition->user->avatar}}">{{$petition->user->name}}</div>
+                                                                     src="{{cdn($petition->user->avatar)}}">{{$petition->user->name}}</div>
                                 -->
                                         <div class="thumb petition-from"><span class="verylight">By</span> {{$petition->user->name}}</div>
                                         <div class="petpanel">
@@ -104,7 +104,7 @@
                             <div class="panel-body no-padding no-margin">
                                 <div class="row  no-padding no-margin">
                                     <div class="col-xs-12 col-sm-5  no-padding no-margin">
-                                        <img src="{{$petition->image_thumb}}" width="100%">
+                                        <img src="{{cdn($petition->image_thumb)}}" width="100%">
                                     </div>
                                     <div class="col-xs-12 col-sm-7 no-padding no-margin">
                                         <div class="thumb petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong>
@@ -118,7 +118,7 @@
                                             </a></h2>
                                         <!--
                                 <div class="thumb petition-from"><img class="profileimagexs rounded-x"
-                                                                     src="{{$petition->user->avatar}}">{{$petition->user->name}}</div>
+                                                                     src="{{cdn($petition->user->avatar)}}">{{$petition->user->name}}</div>
                                 -->
                                         <div class="thumb petition-from"><span class="verylight">By</span> {{$petition->user->name}}</div>
                                         <div class="petpanel">
@@ -180,7 +180,7 @@
                             <div class="panel-body no-padding no-margin">
                                 <div class="row  no-padding no-margin">
                                     <div class="col-xs-12 col-sm-5  no-padding no-margin">
-                                        <img src="{{$petition->image_thumb}}" width="100%">
+                                        <img src="{{cdn($petition->image_thumb)}}" width="100%">
                                     </div>
                                     <div class="col-xs-12 col-sm-7 no-padding no-margin">
                                         <div class="thumb petition-to">Petitioning: <strong>{{$petition->petition_to}}</strong>
@@ -194,7 +194,7 @@
                                             </a></h2>
                                         <!--
                                 <div class="thumb petition-from"><img class="profileimagexs rounded-x"
-                                                                     src="{{$petition->user->avatar}}">{{$petition->user->name}}</div>
+                                                                     src="{{cdn($petition->user->avatar)}}">{{$petition->user->name}}</div>
                                 -->
                                         <div class="thumb petition-from"><span class="verylight">By</span> {{$petition->user->name}}</div>
                                         <div class="petpanel">
@@ -266,7 +266,7 @@
             @foreach($activity as $act)
                 <div class="media media-v2">
                     <a class="pull-left" href="/profile/{{$act->id}}">
-                        <img class="rounded-x" src="{{$act->avatar}}" alt="{{$act->name}}">
+                        <img class="rounded-x" src="{{cdn($act->avatar)}}" alt="{{$act->name}}">
                     </a>
 
                     <div class="media-body">

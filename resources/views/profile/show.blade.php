@@ -16,7 +16,7 @@
             @else
             <div class="col-md-3 profile-pic">
                 <img class="img-responsive img-margin-bottom img-thumbnail" alt="{{$user->name}}"
-                             src="{{$user->avatar}}" width="100%">
+                             src="{{cdn($user->avatar)}}" width="100%">
             </div>
             <!--Profile Information-->
             <div class="col-md-9 col-sm-12">
