@@ -25,8 +25,8 @@
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1 class="page-heading">Submit an idea for a funny petition</h1>
-
+            <h1 class="page-heading">Submit an Idea for a Funny Petition</h1>
+            <br>
             @if($errors->any())
                 <ul class="alert alert-danger">
                     @foreach ($errors->all() as $error)
@@ -39,25 +39,26 @@
 
                         <!-- Petition Title -->
                 <div class="form-group">
-                    {!! Form::label('heading','Write the title for your petition') !!}
+                    {!! Form::label('heading','Heading for your Petition') !!}
                     {!! Form::text('heading',null,['class' => 'form-control']) !!}
                 </div>
 
                 <!-- 'Petition To' Form Input -->
                 <div class="form-group">
-                    {!! Form::label('petition_to','This petition is directed towards (name of the person or organization)') !!}
+                    {!! Form::label('petition_to','Petition directed to (person or organization name)') !!}
                     {!! Form::text('petition_to',null,['data-role' => 'tagsinput', 'class' => 'form-control']) !!}
                 </div>
 
                 <!-- File Input -->
+                <!-- Don't allow image upload for now
                 <div class="form-group">
                     {!! Form::label('image','Upload an image (Optional)') !!}
                     {!! Form::file('image') !!}
                 </div>
-
+                -->
                 <!-- Content Form Input -->
                 <div class="form-group">
-                    {!! Form::label('content','Description of the petition (Optional)') !!}
+                    {!! Form::label('content','Brief description of the petition (Optional)') !!}
                     {!! Form::textarea('content',null,['class' => 'form-control']) !!}
                 </div>
 

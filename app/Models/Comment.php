@@ -11,7 +11,7 @@ class Comment extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['petition_id', 'user_id', 'comment', 'anon','approved'];
+    protected $fillable = ['petition_id', 'user_id', 'comment', 'anon','ip_addr','approved'];
 
     public function petition()
     {

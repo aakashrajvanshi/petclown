@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('title')
-    <title>Funny Petitions, Stupid Requests | Mr. Petition</title>
-    <meta name="description" content="Mr. Petition raise petitions which are funny, crazy and sometimes totally insane.">
+    <title>Funny Petitions, Silly Requests | Mr. Petition</title>
+    <meta name="description" content="Mr. Petition raise petitions which are funny, silly and sometimes totally insane.">
 @stop
 
 @section('jumbotron')

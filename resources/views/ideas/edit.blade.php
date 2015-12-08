@@ -25,8 +25,8 @@
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1 class="page-heading">Update your Petition</h1>
-
+            <h1 class="page-heading">Update your Petition Idea</h1>
+            <br>
             @if($errors->any())
                 <ul class="alert alert-danger">
                     @foreach ($errors->all() as $error)
@@ -37,31 +37,33 @@
                 {!! Form::Open(['method' => 'POST','files'=>'true']) !!}
                         <!-- Petition Title -->
                 <div class="form-group">
-                    {!! Form::label('heading','Write the title for your petition') !!}
+                    {!! Form::label('heading','Heading for your Petition') !!}
                     {!! Form::text('heading',$petition->heading,['class' => 'form-control']) !!}
                 </div>
 
                 <!-- 'Petition To' Form Input -->
                 <div class="form-group">
-                    {!! Form::label('petition_to','This petition is directed towards (name of the person or organization)') !!}
+                    {!! Form::label('petition_to','Petition directed to (person or organization name)') !!}
                     {!! Form::text('petition_to',$petition->petition_to,['data-role' => 'tagsinput', 'class' => 'form-control']) !!}
                 </div>
 
                 <!-- File Input -->
+                <!-- Hide Image Upload for now
                 <div class="form-group">
                     {!! Form::label('image','Upload an image') !!}
                     {!! Form::file('image') !!}
                 </div>
+                -->
 
                 <!-- Content Form Input -->
                 <div class="form-group">
-                    {!! Form::label('content','Description of the appeals') !!}
+                    {!! Form::label('content','Brief description of the petition (Optional)') !!}
                     {!! Form::textarea('content',$petition->content,['class' => 'form-control']) !!}
                 </div>
 
                 <!--Petition Submit Button-->
                 <div class="form-group">
-                    {!! Form::submit('Submit Petition',['class' => 'btn btn-primary form-control']) !!}
+                    {!! Form::submit('Update Petition',['class' => 'btn btn-primary form-control']) !!}
                 </div>
 
                 {!! Form::Close() !!}

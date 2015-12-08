@@ -21,6 +21,7 @@ class CreateCommentsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->binary('anon');
             $table->text('comment')->nullable();
+            $table->string('ip_addr')->nullable();
             $table->boolean('approved')->nullable();
             $table->timestamps();
             $table->softDeletes();

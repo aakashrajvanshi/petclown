@@ -27,11 +27,13 @@ class CreateUsersTable extends Migration
             $table->boolean('private')->default(false);
             $table->string('slug')->nullable();
             $table->boolean('blocked')->default(false);
+            $table->string('ip_register')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
     }
+
 
     /**
      * Reverse the migrations.

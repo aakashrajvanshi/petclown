@@ -52,6 +52,8 @@ class IdeasController extends Controller
         $petition->content = $data['content'];
         $petition->slug = str_slug($petition->heading, "-");
 
+        $petition->ip_addr = user_ip();
+
         if (!empty($data['image'])) {
             //$mytime = Carbon::now()->toTimeString();
             $mytime = time();
@@ -150,6 +152,8 @@ class IdeasController extends Controller
         $petition->petition_to = $data['petition_to'];
         $petition->content = $data['content'];
         $petition->slug = str_slug($petition->heading, "-");
+
+        $petition->ip_addr = user_ip();
 
         if (!empty($data['image'])) {
             //$mytime = Carbon::now()->toTimeString();

@@ -25,6 +25,7 @@ class CreateIdeasTable extends Migration
             $table->string('review_comment')->nullable();
             $table->string('publish_comment')->nullable();
             $table->boolean('allow_editing')->default(TRUE);
+            $table->string('ip_addr')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -17,9 +17,9 @@ $factory->define(App\Models\User::class, function ($faker) {
         'email' => $faker->email,
         'password' => str_random(10),
         'remember_token' => str_random(10),
+        'ip_register' => $faker->ipv4,
     ];
 });
-
 
 $factory->define(App\Models\Petition::class, function ($faker) {
     $heading = $faker->sentence;
@@ -43,10 +43,7 @@ $factory->define(App\Models\Comment::class, function ($faker) {
         'petition_id' => factory('App\Models\Petition')->create()->id,
         'user_id' => factory('App\Models\User')->create()->id,
         'comment' => $faker->paragraph,
+        'ip_addr' => $faker->ipv4,
         'approved' => 1,
     ];
 });
-
-
-
-

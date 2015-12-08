@@ -6,7 +6,7 @@
                 <div class="col-md-4 md-margin-bottom-40">
                     <!-- About -->
                     <div class="headline"><h2>About</h2></div>
-                    <p class="margin-bottom-25 md-margin-bottom-40">Mr Petition is a comic website for raising funny, stupid, and completely insane petitions.</p>
+                    <p class="margin-bottom-25 md-margin-bottom-40">Mr. Petition is a comic website for raising silly, funny, or completely stupid petitions.</p>
                     <!-- End About -->
 
                     <!-- Social Links -->
@@ -78,8 +78,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <p>
-                        2015 &copy; Unify. ALL Rights Reserved.
-                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                        2015 &copy; Mr.Petition. ALL Rights Reserved.
+                        <a href="privacy">Privacy Policy</a> | <a href="terms-of-use">Terms of Use</a>
                     </p>
                 </div>
                 <div class="col-md-6">

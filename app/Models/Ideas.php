@@ -10,7 +10,7 @@ class Ideas extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['user_id', 'petition_to', 'heading', 'content','image','image_thumb','slug','published'];
+    protected $fillable = ['user_id', 'petition_to', 'heading', 'content','image','image_thumb','slug','published','ip_address'];
 
     public function user()
     {

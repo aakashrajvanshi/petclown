@@ -7,6 +7,18 @@ function user_photo_path($id='notdb'){
     return public_path() . '/images/' . Auth::user()->id . '/' ;
 }
 
+function user_ip(){
+    $ipAddress = '';
+    // Check for X-Forwarded-For headers and use those if found
+    if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && ('' !== trim($_SERVER['HTTP_X_FORWARDED_FOR']))) {
+        $ipAddress = trim($_SERVER['HTTP_X_FORWARDED_FOR']);
+    } else {
+        if (isset($_SERVER['REMOTE_ADDR']) && ('' !== trim($_SERVER['REMOTE_ADDR']))) {
+            $ipAddress = trim($_SERVER['REMOTE_ADDR']);
+        }
+    }
+    return $ipAddress;
+}
 
 function user_is_admin(){
     $user = Auth::user();

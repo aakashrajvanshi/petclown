@@ -38,7 +38,7 @@ class EmailWelcomeNote
         else{
             $token = $event->user->emailtoken;
             \Mail::queue('emails.confirm', ['name' => $name, 'token' => $token], function ($message) use ($name, $email) {
-                $message->to($email, $name)->subject('Email confirmation required');
+                $message->to($email, $name)->subject('Confirm your email');
             });
         }
     }

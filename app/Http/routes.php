@@ -95,7 +95,7 @@ Route::get('/contact', function(){
 Route::get('/faq', function(){
     return view('pages.faq');
 });
-Route::get('/privacy-policy', function(){
+Route::get('/privacy', function(){
     return view('pages.privacypolicy');
 });
 Route::get('/terms-of-use', function(){

@@ -18,10 +18,10 @@
                     <a href="faq">FAQs</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="privacypolicy">Privacy Policy</a>
+                    <a href="privacy">Privacy Policy</a>
                 </li>
                 <li class="list-group-item">
-                    <a href="terms">Terms and Conditions</a>
+                    <a href="terms-of-use">Terms of Use</a>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,9 @@
         <div class="col-md-9">
             <div class="panel panel-default">
                 <div class="panel-body">
-
+                    <h1>FAQs</h1>
+                    <br/>
+                    Coming Soon...
 
                 </div>
             </div>

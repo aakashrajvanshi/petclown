@@ -29,12 +29,9 @@ class LoginController extends Controller
             $user->verified = 1;
             $user->save();
         }
-        if(Auth::user())
-            return redirect('/')->with('flash_message', 'Thanks, Email Verification Complete!');
-        else
-            return redirect('/auth/login')->with('flash_message', 'Email Verified! Login to continue...');
-    }
-
+        Auth::login($user);
+        return redirect('/')->with('flash_message', 'Thanks, Email Verification Complete!');
+     }
 
     /**
      * Display a listing of the resource.
@@ -71,6 +68,7 @@ class LoginController extends Controller
             $user->getNickname();
             $name = $user->getName();
             $email = $user->getEmail();
+
             if ($provider == "google")
                 $avatar = $user->getAvatar() . "&sz=250";
             else
@@ -82,8 +80,9 @@ class LoginController extends Controller
                 Auth::login($this->user);
             }
             else{
+                $ip = user_ip();
                 //create the user
-                $this->user = User::create(['email' => $email, 'name' => $name, 'remember_token' => $token, 'verified' => true, 'avatar' => $avatar]);
+                $this->user = User::create(['email' => $email, 'name' => $name, 'remember_token' => $token, 'verified' => true, 'avatar' => $avatar, 'ip_register' => $ip ]);
                 Auth::login($this->user);
                 event(new UserRegistered(Auth::user()));
             }

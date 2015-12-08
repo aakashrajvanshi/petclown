@@ -51,6 +51,7 @@ class CommentController extends Controller {
             if (isset($data['anon'])) {
                 $comment->anon = 1;
             }
+            $comment->ip_addr = user_ip();
             $comment->save();
             $commenttag = 'comment'.$data['post_id'];
             $likestag = 'clikes'.$data['post_id'];
