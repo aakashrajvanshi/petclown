@@ -81,6 +81,8 @@ class LoginController extends Controller
             }
             else{
                 $ip = user_ip();
+                $emailtoken = str_random(30);
+
                 //create the user
                 $this->user = User::create(['email' => $email, 'name' => $name, 'remember_token' => $token, 'verified' => true, 'avatar' => $avatar, 'ip_register' => $ip ]);
                 Auth::login($this->user);

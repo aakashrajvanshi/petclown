@@ -6,13 +6,6 @@
 
     @section('content')
 
-
-            <!--my changes-->
-
-
-
-    <!--Profile Pic and Sidebar-->
-
         <div class="row">
             <div class="col-md-3 profile-pic">
                 <div class="row">
@@ -55,13 +48,25 @@
                             </label>
                             <div class="col-md-9 input-group">
                                 @if($user->private)
-                                    <input type="checkbox" name="public" unchecked/> Make my profile public (email ids will be hidden)
+                                    <input type="checkbox" name="public" unchecked/> Keep my profile public (email ids will remain hidden)
                                 @else
-                                    <input type="checkbox" name="private" unchecked/> Make my profile private
+                                    <input type="checkbox" name="public" checked/> Keep my profile public (email ids will remain hidden)
                                 @endif
-                                {!! csrf_field() !!}
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">
+                                Newsletter Subscription
+                            </label>
+                            <div class="col-md-9 input-group">
+                                @if($user->newsletter)
+                                    <input type="checkbox" name="newsletter" checked/> Newsletter Subscription (about 1 email per week)
+                                @else
+                                    <input type="checkbox" name="newsletter" unchecked/> Newsletter Subscription (about 1 email per week)
+                                @endif
+                            </div>
+                        </div>
+                        {!! csrf_field() !!}
                         <button class="pull-right btn-u" type="submit">Save Changes</button>
                     </form>
 

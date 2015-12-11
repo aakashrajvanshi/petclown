@@ -63,7 +63,7 @@
                                         <div class="panel-heading" role="tab" id="headingOne">
                                             <h4 class="panel-title">
                                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    Funny Clown 1
+                                                    Funny Avatars
                                                 </a>
                                             </h4>
                                         </div>
@@ -120,7 +120,7 @@
                                         <div class="panel-heading" role="tab" id="headingTwo">
                                             <h4 class="panel-title">
                                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Funny Clowns #2
+                                                    Funny Avatars #2
                                                 </a>
                                             </h4>
                                         </div>
@@ -134,7 +134,7 @@
                                         <div class="panel-heading" role="tab" id="headingThree">
                                             <h4 class="panel-title">
                                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    Funny Clowns #3
+                                                    Funny Avatars #3
                                                 </a>
                                             </h4>
                                         </div>

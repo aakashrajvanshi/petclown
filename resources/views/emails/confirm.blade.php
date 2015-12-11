@@ -1,10 +1,10 @@
-Hi {{$name}},
+Hey {{$name}},
+
+Thanks for signing up.
 
 Please confirm your email address to complete the signup process at MrPetition.com.
 
-Click to confirm you account - <a href="http://petclown.com/confirm/{{$token}}">http://petclown.com/confirm/{{$token}}</a>
+Click to confirm you account by visiting the following link - http://petclown.com/confirm/{{$token}}
 
-If you have not registered on mrpetition.com, you may ignore this email.
-
-Thanks,
+Thank you,
 Mr. Petition

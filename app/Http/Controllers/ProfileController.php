@@ -125,16 +125,24 @@ class ProfileController extends Controller {
     {
         $data = $request->all();
         $user = Auth::user();
-        if(!empty($data['private']))
-        {
-            $user->private = true;
-            $user->save();
-        }
+
         if(!empty($data['public']))
         {
-            $user->private = false;
-            $user->save();
+            $user->private = 0;
         }
+        else
+        {
+            $user->private = 1;
+        }
+        if(!empty($data['newsletter']))
+        {
+            $user->newsletter = 1;
+        }
+        else
+        {
+            $user->newsletter = 0;
+        }
+        $user->save();
         return redirect('profile');
     }
 

@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->boolean('private')->default(false);
             $table->string('slug')->nullable();
             $table->boolean('blocked')->default(false);
+            $table->boolean('newsletter')->default(true);
             $table->string('ip_register')->nullable();
             $table->rememberToken();
             $table->timestamps();

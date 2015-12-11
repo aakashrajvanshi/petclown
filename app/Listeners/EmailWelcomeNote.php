@@ -31,13 +31,15 @@ class EmailWelcomeNote
         $verified = $event->user->verified;
 
         if($verified) {
+            /*
             \Mail::queue(array('emails.welcome', 'emails.welcometext'), ['name' => $name], function ($message) use ($name, $email) {
                 $message->to($email, $name)->subject('Welcome ' . $name . '!');
             });
+            */
         }
         else{
             $token = $event->user->emailtoken;
-            \Mail::queue('emails.confirm', ['name' => $name, 'token' => $token], function ($message) use ($name, $email) {
+            \Mail::queue(array('emails.confirm2', 'emails.confirm'), ['name' => $name, 'token' => $token], function ($message) use ($name, $email) {
                 $message->to($email, $name)->subject('Confirm your email');
             });
         }

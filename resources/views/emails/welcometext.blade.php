@@ -14,7 +14,7 @@ Facebook page - http://facebook.com/mrpetition
 
 2. Share one of my petitions (which you've liked the most) with your facebook/twitter friends
 
-So, that's it. Stay tuned to mrpetition.com for more of my insane petitions. You can also browse a few of my favorite ones below.
+So, that's it. Stay tuned to www.mrpetition.com for more of my insane petitions. You can also browse a few of my favorite ones below.
 
 Thanks,
 Mr. Petition
