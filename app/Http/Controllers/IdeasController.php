@@ -94,7 +94,8 @@ class IdeasController extends Controller
      */
     public function show($id)
     {
-        if(user_is_admin())
+        $user = Auth::user();
+        if(user_is_admin($user))
         {
             if (is_numeric($id)) {
                 $petition = Ideas::findorFail($id);
@@ -104,7 +105,6 @@ class IdeasController extends Controller
         }
         else
         {
-            $user = Auth::user();
             if (is_numeric($id)) {
                 $petition = Ideas::where('user_id',$user->id)->findorFail($id);
             } else {

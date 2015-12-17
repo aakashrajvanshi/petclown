@@ -64,7 +64,7 @@
                                             </tr>
                                             <tr>
                                                 <td valign="top" style="background-color:#fff; border-collapse:collapse; color:#333; font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:1.5em; padding-bottom:20px; text-align:left; vertical-align:top" bgcolor="#fff" align="left">
-                                                    <b><br>Hey {{ $user-&gt;name }},</b><br><br>
+                                                    <b><br>Hey {{ $user->name }},</b><br><br>
                                                     So you've lost your password? No worries, just reset it now.
                                                 </td>
                                             </tr>
@@ -79,7 +79,7 @@
                                                                         <w:anchorlock/>
                                                                         <center>
                                                                     <![endif]-->
-                                                                    <a href="%7B%7B%20url('password/reset/'.%24token)%20%7D%7D" style="-webkit-text-size-adjust:none; background-color:#008000; color:#fff; display:inline-block; font-family:sans-serif; font-size:18px; line-height:40px; text-align:center; text-decoration:none; width:200px" bgcolor="#008000" align="center" width="200">Reset Password</a>
+                                                                    <a href="{{ url('password/reset/'.$token) }}" style="-webkit-text-size-adjust:none; background-color:#008000; color:#fff; display:inline-block; font-family:sans-serif; font-size:18px; line-height:40px; text-align:center; text-decoration:none; width:200px" bgcolor="#008000" align="center" width="200">Reset Password</a>
                                                                     <!--[if mso]>
                                                                     </center>
                                                                     </v:rect>
