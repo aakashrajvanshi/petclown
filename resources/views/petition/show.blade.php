@@ -42,21 +42,21 @@
             <div class="petition-tags">
                 <ul class="list-unstyled list-inline">
                     <li><i class="fa fa-calendar"></i> {{ date("d F Y",strtotime($petition->created_at)) }}</li>
-                    <li><i class="fa fa-comments"></i> <a href="#">
+                    <li><i class="fa fa-comments"></i>
                             {{$num = count($comments)}}
                             @if($num==1)
                                 Comment
                             @else
                                 Comments
                             @endif
-                        </a></li>
+                        </li>
                     <li><i class="fa fa-tags"></i>
                         <?php $last = count($tags); ?>
                         @foreach($tags as $tag)
                             @if($last-- > 1)
-                                <a href="#">{{$tag->tag}}</a>,
+                                {{$tag->tag}},
                             @else
-                                <a href="#">{{$tag->tag}}</a>
+                                {{$tag->tag}}
                             @endif
                         @endforeach
                     </li>
@@ -64,9 +64,9 @@
                         <?php $last = count($categories); ?>
                         @foreach($categories as $category)
                             @if($last-- > 1)
-                                <a href="#">{{ $category->category }}</a>,
+                                {{ $category->category }},
                             @else
-                                <a href="#">{{ $category->category }}</a>
+                                {{ $category->category }}
                             @endif
                         @endforeach
                     </li>
@@ -91,7 +91,7 @@
                     @endif
                 </strong>
 
-                <div class="progress goal">
+                <div class="progress goal">c
                     <div class="progress-bar progress-bar-success" role="progressbar" style="width:{{$support*100/$target}}%">
                         <span class="sr-only"></span>
                     </div>
