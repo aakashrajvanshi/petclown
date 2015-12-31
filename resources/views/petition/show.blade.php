@@ -73,7 +73,7 @@
                 </ul>
             </div>
             <div class="contentmargin">
-                {!!$petition->content!!}
+                {!! $petition->content !!}
             </div>
         </div>
         <div class="col-md-4">

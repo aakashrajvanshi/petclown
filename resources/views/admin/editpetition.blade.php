@@ -3,10 +3,14 @@
     <title>Update your Petition</title>
     <meta name="description" content="Update a funny petition.">
     <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
-    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({
             selector:'textarea',
-            plugins: "link,paste,textcolor",
+            formats: {
+                custom_format: {block : 'div', classes : 'funny-boxes funny-boxes-colored funny-boxes-blue',}
+            },
+            plugins: "link,paste,textcolor code",
             target_list: false,
             relative_urls: false,
             content_css : "/css/tinymce.css",
@@ -15,9 +19,22 @@
             link_assume_external_targets: true,
             //paste_as_text: true,
             menubar: false,
-            toolbar: "bold italic | bullist numlist | link unlink |  formatselect fontselect fontsizeselect | forecolor backcolor",
+            toolbar: "bold italic mybutton code | bullist numlist | link unlink blockquote |  formatselect fontselect fontsizeselect | forecolor backcolor sourcecode",
+            setup: function (editor) {
+                editor.addButton('mybutton', {
+                    text: 'Highlight Box',
+                    icon: false,
+                    onclick: function () {
+                        editor.formatter.apply('custom_format');
+                    }
+                });
+            },
             statusbar : false,
             valid_elements : '*[*]',
+            extended_valid_elements:"div[id|class|title|style]",
+            valid_classes: {
+                'div': 'funny-boxes funny-boxes-colored funny-boxes-blue funny-boxes-sea funny-boxes-red',
+            },
             //valid_elements : "a[href|target=_blank],strong/b,p,em/i,ol,ul,li,div[align],br,sup,sub,h3,h4,h5,h6,blockquote,code"
         });</script>
 

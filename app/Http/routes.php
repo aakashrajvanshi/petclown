@@ -30,8 +30,15 @@ if(!empty(Session::get('url.intended')))
 return redirect()->intended('/');
 else
 return back();
+ 
+ * To clean the caches etc.
+php artisan view:clear
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan clear-compiled
 
-*************************************************************************/
+ *************************************************************************/
 
 
 /*Change middleware to admin*/
