@@ -11,11 +11,11 @@
     <meta property="og:type" content="article" />
     <meta property="og:description" content="{{$petition->excerpt}}" />
     <meta property="article:author" content="https://www.facebook.com/mrpetition" />
-    <meta property="fb:app_id" content="[FB_APP_ID]" />
+    <meta property="fb:app_id" content="1640792816171265"/>
 
     {{-- Twitter Card Meta --}}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@nytimes">
+    <meta name="twitter:site" content="@mr_petition">
     <meta name="twitter:title" content="{{$petition->heading}}">
     <meta name="twitter:description" content="{{$petition->excerpt}}">
     <meta name="twitter:image" content="http://mrpetition.com{{$petition->image}}">
