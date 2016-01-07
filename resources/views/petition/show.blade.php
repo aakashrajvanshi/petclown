@@ -7,7 +7,7 @@
     {{-- Facebook Open Graph Meta --}}
     <meta property="og:title" content="{{$petition->excerpt}}" />
     <meta property="og:site_name" content="Mr. Petition"/>
-    <meta property="og:url" content="http://mrpetition.com/petition/{{$petition->slug}}" />
+    <meta property="og:url" content="http://www.mrpetition.com/petition/{{$petition->slug}}" />
     <meta property="og:type" content="article" />
     <meta property="og:description" content="{{$petition->excerpt}}" />
     <meta property="article:author" content="https://www.facebook.com/mrpetition" />
@@ -164,18 +164,18 @@
                                     <h3><i class="icon-custom icon-sm rounded-x icon-bg-u fa fa-check"></i> Thanks, please share!</h3>
                                     <ul class="my-social-icons icon-rounded icon-zoom list-unstyled list-inline">
                                         <li>
-                                            <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                            <a onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a onclick="javascript:window.open('https://plus.google.com/share?url=' + encodeURIComponent('https://petclown.com/petition/{{$petition->slug}}'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
+                                            <a onclick="javascript:window.open('https://plus.google.com/share?url=' + encodeURIComponent(location.href), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');">
                                                 <i class="fa fa-google-plus"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a class="twitter-share-button"
-                                                href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->slug}}&via=petclown">
+                                                href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,mrpetition&url=http://www.mrpetition.com/petition/{{$petition->slug}}&via=mr_petition">
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                         </li>
@@ -194,7 +194,7 @@
                                 </div>
                                 <!--Petition Submit Button-->
                                 <div class="form-group">
-                                    {!! Form::submit('Submit',['class' => 'btn btn-u form-control']) !!}
+                                    {!! Form::submit('Yes, I Support!',['class' => 'btn btn-u form-control']) !!}
                                 </div>
                                 {!! Form::Close() !!}
                             @else
@@ -211,7 +211,7 @@
 
                                 <!--Petition Submit Button-->
                                 <div class="form-group">
-                                    {!! Form::submit('Submit',['class' => 'btn btn-u form-control']) !!}
+                                    {!! Form::submit('Yes, I Support!',['class' => 'btn btn-u form-control']) !!}
                                 </div>
                                 {!! Form::Close() !!}
                             @endif
@@ -259,7 +259,7 @@
                                 </li>
                                 <li>
                                     <a class="twitter-share-button"
-                                       href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,Petclown&url=http://petclown.com/petition/{{$petition->slug}}&via=petclown">
+                                       href="https://twitter.com/intent/tweet?text={{$petition->heading}}&hashtags=forFun,mrpetition&url=http://www.mrpetition.com/petition/{{$petition->slug}}&via=mr_petition">
                                         <i class="fa fa-twitter"></i>
                                     </a>
                                 </li>
