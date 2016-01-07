@@ -91,7 +91,7 @@
                     @endif
                 </strong>
 
-                <div class="progress goal">c
+                <div class="progress goal">
                     <div class="progress-bar progress-bar-success" role="progressbar" style="width:{{$support*100/$target}}%">
                         <span class="sr-only"></span>
                     </div>
