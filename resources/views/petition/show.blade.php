@@ -8,6 +8,7 @@
     <meta property="og:title" content="{{$petition->heading}}" />
     <meta property="og:site_name" content="Mr. Petition"/>
     <meta property="og:url" content="http://www.mrpetition.com/petition/{{$petition->slug}}" />
+    <meta property="og:image" content="http://mrpetition.com{{$petition->image}}" />
     <meta property="og:type" content="article" />
     <meta property="og:description" content="{{$petition->excerpt}}" />
     <meta property="article:author" content="https://www.facebook.com/mrpetition" />
