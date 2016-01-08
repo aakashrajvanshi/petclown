@@ -5,7 +5,7 @@
     <meta name="description" content="{{$petition->excerpt}}">
 
     {{-- Facebook Open Graph Meta --}}
-    <meta property="og:title" content="{{$petition->excerpt}}" />
+    <meta property="og:title" content="{{$petition->heading}}" />
     <meta property="og:site_name" content="Mr. Petition"/>
     <meta property="og:url" content="http://www.mrpetition.com/petition/{{$petition->slug}}" />
     <meta property="og:type" content="article" />
@@ -194,7 +194,7 @@
                                 </div>
                                 <!--Petition Submit Button-->
                                 <div class="form-group">
-                                    {!! Form::submit('Yes, I Support!',['class' => 'btn btn-u form-control']) !!}
+                                    {!! Form::submit('Add My Comment!',['class' => 'btn btn-u form-control']) !!}
                                 </div>
                                 {!! Form::Close() !!}
                             @else
